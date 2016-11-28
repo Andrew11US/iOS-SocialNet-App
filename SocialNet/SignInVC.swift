@@ -8,18 +8,45 @@
 
 import UIKit
 
-class SignInVC: UIViewController {
+class SignInVC: UIViewController, UITextFieldDelegate {
 
+    // Outlets
+    @IBOutlet weak var emailTextField: CustomTF!
+    @IBOutlet weak var passwordTextField: CustomTF!
+    @IBOutlet weak var signInBtn: RoundedButton!
+    @IBOutlet weak var logInFacebook: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        return true
+    }
 
+    @IBAction func signInBtnPressed(_ sender: AnyObject) {
+        
+    }
+    
+    @IBAction func logInFacebookPressed(_ sender: AnyObject) {
+        
+    }
 
 }
 
