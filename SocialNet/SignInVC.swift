@@ -15,7 +15,7 @@ import Firebase
 import FirebaseCore
 import FirebaseDatabase
 import Foundation
-
+import SwiftKeychainWrapper
 
 class SignInVC: UIViewController, UITextFieldDelegate {
 
@@ -37,6 +37,16 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
+            print("ID found in keychain")
+            performSegue(withIdentifier: "goToFeed", sender: nil)
+        }
+        
     }
     
     // Dismiss keyboard function
@@ -123,10 +133,10 @@ class SignInVC: UIViewController, UITextFieldDelegate {
     
     func completeSignIn(id: String, userData: Dictionary<String, String>) {
 //        DataService.ds.createFirbaseDBUser(uid: id, userData: userData)
-//
-//        let keychainResult = KeychainWrapper.defaultKeychainWrapper.set(id, forKey: KEY_UID)
-//        print("Data saved to keychain \(keychainResult)")
-//        performSegue(withIdentifier: "goToFeed", sender: nil)
+        
+        let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
+        print("Data saved to keychain \(keychainResult)")
+        performSegue(withIdentifier: "goToFeed", sender: nil)
     }
 
 }

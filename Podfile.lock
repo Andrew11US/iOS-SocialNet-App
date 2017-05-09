@@ -70,6 +70,7 @@ PODS:
   - GoogleToolboxForMac/NSString+URLArguments (2.1.0)
   - GTMSessionFetcher/Core (1.1.9)
   - pop (1.0.9)
+  - SwiftKeychainWrapper (3.0.1)
 
 DEPENDENCIES:
   - FacebookCore
@@ -80,6 +81,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - pop (~> 1.0)
+  - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
@@ -101,7 +103,8 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
+  SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
 
-PODFILE CHECKSUM: 947be4903251f936b19695a7b6035e7b68e83b55
+PODFILE CHECKSUM: 865c20c13492f7d4ba0b3c1778c2ad8054094a64
 
 COCOAPODS: 1.2.0

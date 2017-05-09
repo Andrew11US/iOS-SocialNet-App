@@ -18,6 +18,8 @@
 		903DEC9E1EC2284800B0B1D2 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 903DEC9A1EC2284800B0B1D2 /* FBSDKCoreKit.framework */; };
 		903DEC9F1EC2284800B0B1D2 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 903DEC9B1EC2284800B0B1D2 /* FBSDKLoginKit.framework */; };
 		903DECA01EC2284800B0B1D2 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 903DEC9C1EC2284800B0B1D2 /* FBSDKShareKit.framework */; };
+		903DECA21EC240AF00B0B1D2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903DECA11EC240AF00B0B1D2 /* Constants.swift */; };
+		903DECA41EC2420E00B0B1D2 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903DECA31EC2420E00B0B1D2 /* FeedVC.swift */; };
 		9060034A1EC209F40001E24F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906003461EC209F40001E24F /* CustomButton.swift */; };
 		9060034B1EC209F40001E24F /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906003471EC209F40001E24F /* CustomTextField.swift */; };
 		9060034C1EC209F40001E24F /* Material Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906003481EC209F40001E24F /* Material Design.swift */; };
@@ -41,6 +43,8 @@
 		903DEC9A1EC2284800B0B1D2 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		903DEC9B1EC2284800B0B1D2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		903DEC9C1EC2284800B0B1D2 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		903DECA11EC240AF00B0B1D2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		903DECA31EC2420E00B0B1D2 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		906003461EC209F40001E24F /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		906003471EC209F40001E24F /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		906003481EC209F40001E24F /* Material Design.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Material Design.swift"; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 		902426881DE891CF00A8D94A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				903DECA11EC240AF00B0B1D2 /* Constants.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				902426761DE890D300A8D94A /* SignInVC.swift */,
+				903DECA31EC2420E00B0B1D2 /* FeedVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -290,6 +296,8 @@
 				902426771DE890D300A8D94A /* SignInVC.swift in Sources */,
 				9060034B1EC209F40001E24F /* CustomTextField.swift in Sources */,
 				902426751DE890D300A8D94A /* AppDelegate.swift in Sources */,
+				903DECA41EC2420E00B0B1D2 /* FeedVC.swift in Sources */,
+				903DECA21EC240AF00B0B1D2 /* Constants.swift in Sources */,
 				9060034A1EC209F40001E24F /* CustomButton.swift in Sources */,
 				9060034C1EC209F40001E24F /* Material Design.swift in Sources */,
 			);

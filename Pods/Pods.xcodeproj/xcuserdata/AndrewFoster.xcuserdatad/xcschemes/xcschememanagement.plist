@@ -54,6 +54,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftKeychainWrapper.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>pop.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,7 +72,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>230540FA53F01C4B370DB37850181819</key>
+		<key>2A7C0543BAB24226916F51A922834A16</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,7 +97,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>60CBFE7E336E220A138822CA2F496C36</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>7335E9C9689F3B8A16F063A884748533</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7BBD4B585EA2354F98A77EBE35984CAC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -103,11 +118,6 @@
 			<true/>
 		</dict>
 		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CF78D8CD775278891E902D37BB3DED44</key>
 		<dict>
 			<key>primary</key>
 			<true/>
