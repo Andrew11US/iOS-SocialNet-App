@@ -15,6 +15,10 @@
 		9024267F1DE890D300A8D94A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9024267D1DE890D300A8D94A /* LaunchScreen.storyboard */; };
 		902426871DE891C500A8D94A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 902426861DE891C500A8D94A /* GoogleService-Info.plist */; };
 		9025D19C1DEB7905003CB54C /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9025D19B1DEB7905003CB54C /* RoundedButton.swift */; };
+		9060034A1EC209F40001E24F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906003461EC209F40001E24F /* CustomButton.swift */; };
+		9060034B1EC209F40001E24F /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906003471EC209F40001E24F /* CustomTextField.swift */; };
+		9060034C1EC209F40001E24F /* Material Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906003481EC209F40001E24F /* Material Design.swift */; };
+		9060034D1EC209F40001E24F /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906003491EC209F40001E24F /* RoundedView.swift */; };
 		908595DD1DECB266007BC33C /* CustomTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908595DC1DECB266007BC33C /* CustomTF.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +35,11 @@
 		902426801DE890D300A8D94A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		902426861DE891C500A8D94A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9025D19B1DEB7905003CB54C /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		906003461EC209F40001E24F /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		906003471EC209F40001E24F /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		906003481EC209F40001E24F /* Material Design.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Material Design.swift"; sourceTree = "<group>"; };
+		906003491EC209F40001E24F /* RoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
+		9060034E1EC20A940001E24F /* SocialNet-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SocialNet-Bridging-Header.h"; sourceTree = "<group>"; };
 		908595DC1DECB266007BC33C /* CustomTF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTF.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,14 +84,11 @@
 		902426731DE890D300A8D94A /* SocialNet */ = {
 			isa = PBXGroup;
 			children = (
-				9024268B1DE891E500A8D94A /* Services */,
-				902426881DE891CF00A8D94A /* Model */,
-				902426891DE891D700A8D94A /* View */,
-				9024268A1DE891DD00A8D94A /* Contriller */,
-				902426741DE890D300A8D94A /* AppDelegate.swift */,
+				902426891DE891D700A8D94A /* UI */,
 				9024267B1DE890D300A8D94A /* Assets.xcassets */,
-				902426801DE890D300A8D94A /* Info.plist */,
-				902426861DE891C500A8D94A /* GoogleService-Info.plist */,
+				9024268A1DE891DD00A8D94A /* Controllers */,
+				902426881DE891CF00A8D94A /* Model */,
+				9024268B1DE891E500A8D94A /* Services */,
 			);
 			path = SocialNet;
 			sourceTree = "<group>";
@@ -94,28 +100,36 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		902426891DE891D700A8D94A /* View */ = {
+		902426891DE891D700A8D94A /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				9024267D1DE890D300A8D94A /* LaunchScreen.storyboard */,
 				902426781DE890D300A8D94A /* Main.storyboard */,
+				9025D19B1DEB7905003CB54C /* RoundedButton.swift */,
+				908595DC1DECB266007BC33C /* CustomTF.swift */,
+				906003461EC209F40001E24F /* CustomButton.swift */,
+				906003471EC209F40001E24F /* CustomTextField.swift */,
+				906003481EC209F40001E24F /* Material Design.swift */,
+				906003491EC209F40001E24F /* RoundedView.swift */,
 			);
-			name = View;
+			name = UI;
 			sourceTree = "<group>";
 		};
-		9024268A1DE891DD00A8D94A /* Contriller */ = {
+		9024268A1DE891DD00A8D94A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				902426761DE890D300A8D94A /* SignInVC.swift */,
 			);
-			name = Contriller;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		9024268B1DE891E500A8D94A /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				9025D19B1DEB7905003CB54C /* RoundedButton.swift */,
-				908595DC1DECB266007BC33C /* CustomTF.swift */,
+				902426741DE890D300A8D94A /* AppDelegate.swift */,
+				9060034E1EC20A940001E24F /* SocialNet-Bridging-Header.h */,
+				902426801DE890D300A8D94A /* Info.plist */,
+				902426861DE891C500A8D94A /* GoogleService-Info.plist */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -165,6 +179,7 @@
 					902426701DE890D300A8D94A = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = PTRW36GG78;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -254,10 +269,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9060034D1EC209F40001E24F /* RoundedView.swift in Sources */,
 				902426771DE890D300A8D94A /* SignInVC.swift in Sources */,
 				9025D19C1DEB7905003CB54C /* RoundedButton.swift in Sources */,
+				9060034B1EC209F40001E24F /* CustomTextField.swift in Sources */,
 				908595DD1DECB266007BC33C /* CustomTF.swift in Sources */,
 				902426751DE890D300A8D94A /* AppDelegate.swift in Sources */,
+				9060034A1EC209F40001E24F /* CustomButton.swift in Sources */,
+				9060034C1EC209F40001E24F /* Material Design.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,11 +402,14 @@
 			baseConfigurationReference = 514640B8C5F4588BFD2C7A77 /* Pods-SocialNet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = PTRW36GG78;
 				INFOPLIST_FILE = SocialNet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.losAngelesBoy.SocialNet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SocialNet/SocialNet-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -397,11 +419,13 @@
 			baseConfigurationReference = 6DB62236BD5DA921D1D7AF24 /* Pods-SocialNet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = PTRW36GG78;
 				INFOPLIST_FILE = SocialNet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.losAngelesBoy.SocialNet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SocialNet/SocialNet-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

@@ -24,11 +24,6 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         self.passwordTextField.delegate = self
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -42,9 +37,12 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 
     @IBAction func signInBtnPressed(_ sender: AnyObject) {
         
+        self.view.endEditing(true)
     }
     
     @IBAction func logInFacebookPressed(_ sender: AnyObject) {
+        
+        self.view.endEditing(true)
         
     }
 

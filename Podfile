@@ -7,5 +7,6 @@ target 'SocialNet' do
 
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'pop', '~> 1.0'
 
 end

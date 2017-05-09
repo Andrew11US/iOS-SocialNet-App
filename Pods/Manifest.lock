@@ -23,10 +23,12 @@ PODS:
   - GoogleToolboxForMac/Defines (2.1.0)
   - GoogleToolboxForMac/NSData+zlib (2.1.0):
     - GoogleToolboxForMac/Defines (= 2.1.0)
+  - pop (1.0.9)
 
 DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
+  - pop (~> 1.0)
 
 SPEC CHECKSUMS:
   Firebase: fdbecadb7b5cbef2774852d4fa659b9daf11f2af
@@ -37,7 +39,8 @@ SPEC CHECKSUMS:
   GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
 
-PODFILE CHECKSUM: c88be8b16504a4fb2bebafd58caed03c2e8abc2e
+PODFILE CHECKSUM: 8de6192c0229398e5c997c02769d12ed0be25ba2
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0
