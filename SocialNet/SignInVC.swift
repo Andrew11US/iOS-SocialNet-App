@@ -11,10 +11,10 @@ import UIKit
 class SignInVC: UIViewController, UITextFieldDelegate {
 
     // Outlets
-    @IBOutlet weak var emailTextField: CustomTF!
-    @IBOutlet weak var passwordTextField: CustomTF!
-    @IBOutlet weak var signInBtn: RoundedButton!
-    @IBOutlet weak var logInFacebook: UIButton!
+    @IBOutlet weak var emailTextField: CustomTextField!
+    @IBOutlet weak var passwordTextField: CustomTextField!
+    @IBOutlet weak var signInBtn: CustomButton!
+    @IBOutlet weak var logInFacebook: CustomButton!
     
     
     override func viewDidLoad() {
