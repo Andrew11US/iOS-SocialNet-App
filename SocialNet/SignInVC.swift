@@ -34,7 +34,6 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         loginButton.center = view.center
         view.addSubview(loginButton)
         
-        
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
     }
@@ -42,6 +41,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        // Using keychain if ID is found
         if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
             print("ID found in keychain")
             performSegue(withIdentifier: "goToFeed", sender: nil)
@@ -75,6 +75,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
                     }
                     
                 } else {
+                    
                     FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in
                         
                         if error != nil {
@@ -101,11 +102,16 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         let facebookLogin = FBSDKLoginManager()
         
         facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
+            
             if error != nil {
                 print("Unable to authenticate with Facebook - \(String(describing: error)))")
+                
             } else if result?.isCancelled == true {
+                
                 print("User cancelled Facebook authentication")
+                
             } else {
+                
                 print("Successfully authenticated with Facebook")
                 
                 let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
@@ -117,13 +123,19 @@ class SignInVC: UIViewController, UITextFieldDelegate {
     }
     
     func firebaseAuth(_ credential: FIRAuthCredential) {
+        
         FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
+            
             if error != nil {
+                
                 print("Unable to authenticate with Firebase - \(String(describing: error))")
+                
             } else {
+                
                 print("Successfully authenticated with Firebase")
                 
                 if let user = user {
+                    
                     let userData = ["provider": credential.provider]
                     self.completeSignIn(id: user.uid, userData: userData)
                 }
@@ -134,6 +146,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
     func completeSignIn(id: String, userData: Dictionary<String, String>) {
 //        DataService.ds.createFirbaseDBUser(uid: id, userData: userData)
         
+        // Using keychain for segue
         let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
         print("Data saved to keychain \(keychainResult)")
         performSegue(withIdentifier: "goToFeed", sender: nil)
