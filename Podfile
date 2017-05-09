@@ -7,6 +7,8 @@ target 'SocialNet' do
 
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
   pod 'pop', '~> 1.0'
   pod 'FacebookCore'
   pod 'FacebookLogin'
