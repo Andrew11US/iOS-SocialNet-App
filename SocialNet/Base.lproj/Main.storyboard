@@ -152,12 +152,16 @@
                                         </constraints>
                                         <state key="normal" title="Profile"/>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ril-NN-DfN">
+                                    <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ril-NN-DfN">
                                         <rect key="frame" x="8" y="7" width="45" height="45"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="Cmq-0z-FsI"/>
                                             <constraint firstAttribute="width" constant="45" id="ynC-H6-o8K"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="ihc-ia-FyH" appends="YES" id="QFH-O5-Rak"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -336,9 +340,15 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="0kb-om-Caa" id="bUY-Dr-9YD"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToSignIn" id="MHN-2f-NhB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jMc-c9-bm9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ihc-ia-FyH">
+                    <connections>
+                        <action selector="signOutTapped:" destination="rrP-G5-8K7" id="hoJ-3x-KKe"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1082.608695652174" y="134.5108695652174"/>
         </scene>

@@ -54,7 +54,7 @@ class Post {
             self._likes = likes
         }
         
-//        _postRef = DataService.ds.REF_POSTS.child(_postKey)
+        _postRef = DataService.ds.REF_POSTS.child(_postKey)
         
     }
     
