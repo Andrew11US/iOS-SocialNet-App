@@ -18,8 +18,8 @@ class Post {
     private var _postRef: FIRDatabaseReference!
     
     var caption: String {
-        return _caption
-//        return "Hello"
+//        return _caption
+        return "Hello"
     }
     
     var imageUrl: String {
@@ -36,7 +36,7 @@ class Post {
     
     init(caption: String, imageUrl: String, likes: Int) {
         self._caption = caption
-        self._imageUrl = caption
+        self._imageUrl = imageUrl
         self._likes = likes
     }
     

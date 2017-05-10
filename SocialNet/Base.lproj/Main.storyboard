@@ -135,7 +135,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6e-Mq-Ra4">
-                                        <rect key="frame" x="157.66666666666669" y="17" width="100.00000000000006" height="35"/>
+                                        <rect key="frame" x="157.66666666666669" y="25" width="100.00000000000006" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="G86-84-o7n"/>
                                             <constraint firstAttribute="height" constant="35" id="iLJ-pC-gbq"/>
@@ -152,7 +152,7 @@
                                         </constraints>
                                         <state key="normal" title="Profile"/>
                                     </button>
-                                    <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ril-NN-DfN">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quit" translatesAutoresizingMaskIntoConstraints="NO" id="Ril-NN-DfN">
                                         <rect key="frame" x="8" y="7" width="45" height="45"/>
                                         <gestureRecognizers/>
                                         <constraints>
@@ -171,7 +171,7 @@
                                     <constraint firstAttribute="height" constant="60" id="AU2-yl-Wbd"/>
                                     <constraint firstItem="Ril-NN-DfN" firstAttribute="leading" secondItem="v8O-uW-9j8" secondAttribute="leading" constant="8" id="MPZ-yN-L8t"/>
                                     <constraint firstAttribute="bottom" secondItem="Ril-NN-DfN" secondAttribute="bottom" constant="8" id="PIK-P2-N8C"/>
-                                    <constraint firstAttribute="bottom" secondItem="u6e-Mq-Ra4" secondAttribute="bottom" constant="8" id="hA8-F5-yXR"/>
+                                    <constraint firstAttribute="bottom" secondItem="u6e-Mq-Ra4" secondAttribute="bottom" id="hA8-F5-yXR"/>
                                     <constraint firstAttribute="bottom" secondItem="bvN-Z4-WCA" secondAttribute="bottom" constant="8" id="rSO-TZ-rKi"/>
                                 </constraints>
                             </view>
@@ -230,14 +230,14 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RLE-Fj-qkm">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="RLE-Fj-qkm">
                                                     <rect key="frame" x="348" y="8" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="20g-Kd-s0A"/>
                                                         <constraint firstAttribute="height" constant="50" id="yzf-ch-qTk"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NYC" translatesAutoresizingMaskIntoConstraints="NO" id="KG6-Qq-rvV">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NYC" translatesAutoresizingMaskIntoConstraints="NO" id="KG6-Qq-rvV">
                                                     <rect key="frame" x="8" y="66" width="398" height="398"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="KG6-Qq-rvV" secondAttribute="height" multiplier="1:1" id="P83-hC-py5"/>
@@ -286,7 +286,7 @@
                             <view clipsSubviews="YES" alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQE-0B-9AB">
                                 <rect key="frame" x="0.0" y="686" width="414" height="50"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2mG-hD-zE8">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="2mG-hD-zE8">
                                         <rect key="frame" x="8" y="8" width="50" height="34"/>
                                         <gestureRecognizers/>
                                         <constraints>
@@ -370,5 +370,8 @@
     <resources>
         <image name="NYC" width="5138" height="3425"/>
         <image name="Selfie" width="960" height="1280"/>
+        <image name="add" width="150" height="102"/>
+        <image name="empty" width="150" height="150"/>
+        <image name="quit" width="135" height="135"/>
     </resources>
 </document>

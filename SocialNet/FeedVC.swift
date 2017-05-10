@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import SwiftKeychainWrapper
 
-class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageAdd: UIImageView!
@@ -24,6 +24,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.captionField.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -50,6 +51,16 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         })
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    // Dismiss when return btn pressed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        captionField.resignFirstResponder()
+        return true
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -64,13 +75,22 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell {
             
-            if let img = FeedVC.imageCache.object(forKey: post.imageUrl as NSString) {
-                cell.configureCell(post: post, img: img)
-            } else {
-                cell.configureCell(post: post)
+            DispatchQueue.main.async {
+                if let img = FeedVC.imageCache.object(forKey: post.imageUrl as NSString) {
+                    cell.configureCell(post: post, img: img)
+                } else {
+                    cell.configureCell(post: post)
+                }
             }
+//            if let img = FeedVC.imageCache.object(forKey: post.imageUrl as NSString) {
+//                cell.configureCell(post: post, img: img)
+//            } else {
+//                cell.configureCell(post: post)
+//            }
             return cell
+            
         } else {
+            
             return PostCell()
         }
     }
