@@ -19,6 +19,7 @@ class Post {
     
     var caption: String {
         return _caption
+//        return "Hello"
     }
     
     var imageUrl: String {

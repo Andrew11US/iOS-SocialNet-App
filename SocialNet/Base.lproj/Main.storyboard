@@ -286,11 +286,15 @@
                             <view clipsSubviews="YES" alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQE-0B-9AB">
                                 <rect key="frame" x="0.0" y="686" width="414" height="50"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2mG-hD-zE8">
+                                    <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2mG-hD-zE8">
                                         <rect key="frame" x="8" y="8" width="50" height="34"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="tkQ-Mt-hc9"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="rNY-UV-ZNC" appends="YES" id="N9v-6J-bI5"/>
+                                        </connections>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abT-HY-dCh">
                                         <rect key="frame" x="360" y="10" width="46" height="30"/>
@@ -300,6 +304,9 @@
                                         <state key="normal" title="Post">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="postBtnTapped:" destination="rrP-G5-8K7" eventType="touchUpInside" id="QoM-gv-d7F"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gu7-WO-T5b">
                                         <rect key="frame" x="66" y="10" width="286" height="30"/>
@@ -339,6 +346,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="captionField" destination="gu7-WO-T5b" id="nU9-2n-hVq"/>
+                        <outlet property="imageAdd" destination="2mG-hD-zE8" id="IQt-lr-iFS"/>
                         <outlet property="tableView" destination="0kb-om-Caa" id="bUY-Dr-9YD"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToSignIn" id="MHN-2f-NhB"/>
                     </connections>
@@ -347,6 +356,11 @@
                 <tapGestureRecognizer id="ihc-ia-FyH">
                     <connections>
                         <action selector="signOutTapped:" destination="rrP-G5-8K7" id="hoJ-3x-KKe"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="rNY-UV-ZNC">
+                    <connections>
+                        <action selector="addImageTapped:" destination="rrP-G5-8K7" id="2h2-tj-VQh"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

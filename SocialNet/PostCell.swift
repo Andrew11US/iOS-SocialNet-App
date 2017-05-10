@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class PostCell: UITableViewCell {
-
+    
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var usernameLbl: UILabel!
     @IBOutlet weak var postImg: UIImageView!
@@ -29,10 +29,10 @@ class PostCell: UITableViewCell {
         likeImg.addGestureRecognizer(tap)
         likeImg.isUserInteractionEnabled = true
     }
-
+    
     func configureCell(post: Post, img: UIImage? = nil) {
         self.post = post
-//        likesRef = DataService.ds.REF_USER_CURRENT.child("likes").child(post.postKey)
+        likesRef = DataService.ds.REF_USER_CURRENT.child("likes").child(post.postKey)
         
         self.caption.text = post.caption
         self.likesLbl.text = "\(post.likes)"
@@ -43,9 +43,9 @@ class PostCell: UITableViewCell {
             let ref = FIRStorage.storage().reference(forURL: post.imageUrl)
             ref.data(withMaxSize: 2 * 1024 * 1024, completion: { (data, error) in
                 if error != nil {
-                    print("JESS: Unable to download image from Firebase storage")
+                    print("Unable to download image from Firebase storage")
                 } else {
-                    print("JESS: Image downloaded from Firebase storage")
+                    print("Image downloaded from Firebase storage")
                     if let imgData = data {
                         if let img = UIImage(data: imgData) {
                             self.postImg.image = img
@@ -78,5 +78,5 @@ class PostCell: UITableViewCell {
             }
         })
     }
-
+    
 }
