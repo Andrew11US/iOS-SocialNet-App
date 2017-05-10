@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
+import FirebaseStorage
 import SwiftKeychainWrapper
 
 class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {

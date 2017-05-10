@@ -14,6 +14,7 @@ import FBSDKLoginKit
 import Firebase
 import FirebaseCore
 import FirebaseDatabase
+import FirebaseAuth
 import Foundation
 import SwiftKeychainWrapper
 
