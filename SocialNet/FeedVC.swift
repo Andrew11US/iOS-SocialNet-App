@@ -8,12 +8,39 @@
 
 import UIKit
 
-class FeedVC: UIViewController {
+class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var imageAdd: CustomImageView!
+    @IBOutlet weak var captionField: CustomTextField!
+    
+//    var posts = [Post]()
+    var imagePicker: UIImagePickerController!
+    static var imageCache: NSCache<NSString, UIImage> = NSCache()
+    var imageSelected = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
+        
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
     }
 
     

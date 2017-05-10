@@ -171,15 +171,15 @@
                                     <constraint firstAttribute="bottom" secondItem="bvN-Z4-WCA" secondAttribute="bottom" constant="8" id="rSO-TZ-rKi"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="578" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0kb-om-Caa">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="578" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0kb-om-Caa">
                                 <rect key="frame" x="0.0" y="60" width="414" height="676"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="578" id="eaa-0R-wer">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="578" id="eaa-0R-wer" customClass="PostCell" customModule="SocialNet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eaa-0R-wer" id="rV5-ut-Zb4">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="577.66666666666663"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Selfie" translatesAutoresizingMaskIntoConstraints="NO" id="yOi-ta-BWo" customClass="CustomImageView" customModule="SocialNet" customModuleProvider="target">
@@ -239,24 +239,43 @@
                                                         <constraint firstAttribute="width" secondItem="KG6-Qq-rvV" secondAttribute="height" multiplier="1:1" id="P83-hC-py5"/>
                                                     </constraints>
                                                 </imageView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NEE-Xm-L6H">
+                                                    <rect key="frame" x="8" y="472" width="398" height="60"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="KG6-Qq-rvV" firstAttribute="top" secondItem="yOi-ta-BWo" secondAttribute="bottom" constant="8" id="672-2Y-BZp"/>
                                                 <constraint firstItem="kW0-jX-QC4" firstAttribute="top" secondItem="KG6-Qq-rvV" secondAttribute="bottom" constant="8" id="B5w-TV-STe"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="0Wg-Jk-Uqe" secondAttribute="trailing" constant="8" id="LGO-9U-3f2"/>
                                                 <constraint firstItem="0Wg-Jk-Uqe" firstAttribute="top" secondItem="kW0-jX-QC4" secondAttribute="bottom" constant="8" id="One-Bb-8AR"/>
+                                                <constraint firstItem="kW0-jX-QC4" firstAttribute="centerY" secondItem="NEE-Xm-L6H" secondAttribute="centerY" id="Qe5-yh-3OL"/>
                                                 <constraint firstItem="kW0-jX-QC4" firstAttribute="trailing" secondItem="rV5-ut-Zb4" secondAttribute="trailingMargin" id="Qmk-4k-tBY"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="RLE-Fj-qkm" secondAttribute="trailing" constant="8" id="d5d-fe-zcM"/>
                                                 <constraint firstItem="RLE-Fj-qkm" firstAttribute="centerY" secondItem="yOi-ta-BWo" secondAttribute="centerY" id="eax-3T-1rQ"/>
+                                                <constraint firstItem="kW0-jX-QC4" firstAttribute="width" secondItem="NEE-Xm-L6H" secondAttribute="width" id="ezL-65-J7h"/>
                                                 <constraint firstItem="yOi-ta-BWo" firstAttribute="top" secondItem="rV5-ut-Zb4" secondAttribute="topMargin" id="g2j-Uc-0St"/>
                                                 <constraint firstItem="KG6-Qq-rvV" firstAttribute="trailing" secondItem="rV5-ut-Zb4" secondAttribute="trailingMargin" id="hi8-W9-KtJ"/>
                                                 <constraint firstItem="yOi-ta-BWo" firstAttribute="leading" secondItem="rV5-ut-Zb4" secondAttribute="leadingMargin" id="iM8-8S-Baw"/>
+                                                <constraint firstItem="kW0-jX-QC4" firstAttribute="centerX" secondItem="NEE-Xm-L6H" secondAttribute="centerX" id="j3t-1L-hFm"/>
                                                 <constraint firstItem="4mm-O8-Kx0" firstAttribute="centerY" secondItem="yOi-ta-BWo" secondAttribute="centerY" id="rRB-fd-v2o"/>
+                                                <constraint firstItem="kW0-jX-QC4" firstAttribute="height" secondItem="NEE-Xm-L6H" secondAttribute="height" id="s1W-4l-2FQ"/>
                                                 <constraint firstItem="kW0-jX-QC4" firstAttribute="leading" secondItem="rV5-ut-Zb4" secondAttribute="leadingMargin" id="svA-UC-OyF"/>
                                                 <constraint firstItem="KG6-Qq-rvV" firstAttribute="leading" secondItem="rV5-ut-Zb4" secondAttribute="leadingMargin" id="uIj-Bv-eFh"/>
                                                 <constraint firstItem="4mm-O8-Kx0" firstAttribute="leading" secondItem="yOi-ta-BWo" secondAttribute="trailing" constant="8" id="ujQ-Wg-WFk"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="caption" destination="NEE-Xm-L6H" id="HfM-Gg-sRY"/>
+                                            <outlet property="likeImg" destination="RLE-Fj-qkm" id="jFK-O8-koS"/>
+                                            <outlet property="likesLbl" destination="IRX-Ch-oPg" id="O2t-PW-ays"/>
+                                            <outlet property="postImg" destination="KG6-Qq-rvV" id="FGD-gM-Yfi"/>
+                                            <outlet property="profileImg" destination="yOi-ta-BWo" id="qxT-tK-Ncc"/>
+                                            <outlet property="usernameLbl" destination="4mm-O8-Kx0" id="odO-bY-ezH"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -315,6 +334,9 @@
                             <constraint firstItem="v8O-uW-9j8" firstAttribute="leading" secondItem="Az7-sR-qZ9" secondAttribute="leading" id="oUb-54-VU4"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="0kb-om-Caa" id="bUY-Dr-9YD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jMc-c9-bm9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
