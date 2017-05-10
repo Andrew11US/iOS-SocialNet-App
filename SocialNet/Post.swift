@@ -18,8 +18,7 @@ class Post {
     private var _postRef: FIRDatabaseReference!
     
     var caption: String {
-//        return _caption
-        return "Hello"
+        return _caption
     }
     
     var imageUrl: String {

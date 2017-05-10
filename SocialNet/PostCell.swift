@@ -37,42 +37,72 @@ class PostCell: UITableViewCell {
         self.caption.text = post.caption
         self.likesLbl.text = "\(post.likes)"
         
-        if img != nil {
-//            DispatchQueue.main.async {
-//                self.postImg.image = img
-//            }
-            self.postImg.image = img
-        } else {
-            
-            let ref = FIRStorage.storage().reference(forURL: post.imageUrl)
-            ref.data(withMaxSize: 2 * 1024 * 1024, completion: { (data, error) in
-                if error != nil {
-                    print("Unable to download image from Firebase storage")
-                    print("\(String(describing: error))")
-                } else {
-                    print("Image downloaded from Firebase storage")
-                    if let imgData = data {
-                        if let img = UIImage(data: imgData) {
-                            DispatchQueue.main.async {
-                                self.postImg.image = img
-                                FeedVC.imageCache.setObject(img, forKey: post.imageUrl as NSString)
+        DispatchQueue.main.async {
+            if img != nil {
+                //            DispatchQueue.main.async {
+                //                self.postImg.image = img
+                //            }
+                self.postImg.image = img
+            } else {
+                
+                let ref = FIRStorage.storage().reference(forURL: post.imageUrl)
+                ref.data(withMaxSize: 2 * 1024 * 1024, completion: { (data, error) in
+                    if error != nil {
+                        print("Unable to download image from Firebase storage")
+                        print("\(String(describing: error))")
+                    } else {
+                        print("Image downloaded from Firebase storage")
+                        if let imgData = data {
+                            if let img = UIImage(data: imgData) {
+                                DispatchQueue.main.async {
+                                    self.postImg.image = img
+                                    FeedVC.imageCache.setObject(img, forKey: post.imageUrl as NSString)
+                                }
+                                //                            self.postImg.image = img
+                                //                            FeedVC.imageCache.setObject(img, forKey: post.imageUrl as NSString)
                             }
-//                            self.postImg.image = img
-//                            FeedVC.imageCache.setObject(img, forKey: post.imageUrl as NSString)
                         }
                     }
-                }
-            })
-        }
-        
-        likesRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            if let _ = snapshot.value as? NSNull {
-                self.likeImg.image = UIImage(named: "empty")
-            } else {
-                self.likeImg.image = UIImage(named: "fill")
+                })
             }
-        })
+        }
     }
+//        if img != nil {
+////            DispatchQueue.main.async {
+////                self.postImg.image = img
+////            }
+//            self.postImg.image = img
+//        } else {
+//            
+//            let ref = FIRStorage.storage().reference(forURL: post.imageUrl)
+//            ref.data(withMaxSize: 2 * 1024 * 1024, completion: { (data, error) in
+//                if error != nil {
+//                    print("Unable to download image from Firebase storage")
+//                    print("\(String(describing: error))")
+//                } else {
+//                    print("Image downloaded from Firebase storage")
+//                    if let imgData = data {
+//                        if let img = UIImage(data: imgData) {
+//                            DispatchQueue.main.async {
+//                                self.postImg.image = img
+//                                FeedVC.imageCache.setObject(img, forKey: post.imageUrl as NSString)
+//                            }
+////                            self.postImg.image = img
+////                            FeedVC.imageCache.setObject(img, forKey: post.imageUrl as NSString)
+//                        }
+//                    }
+//                }
+//            })
+//        }
+//        
+//        likesRef.observeSingleEvent(of: .value, with: { (snapshot) in
+//            if let _ = snapshot.value as? NSNull {
+//                self.likeImg.image = UIImage(named: "empty")
+//            } else {
+//                self.likeImg.image = UIImage(named: "fill")
+//            }
+//        })
+//    }
     
     func likeTapped(sender: UITapGestureRecognizer) {
         likesRef.observeSingleEvent(of: .value, with: { (snapshot) in
