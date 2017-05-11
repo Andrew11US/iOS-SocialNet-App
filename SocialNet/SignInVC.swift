@@ -79,20 +79,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
                     
                 } else {
                     
-                    FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in
-                        
-                        if error != nil {
-                            print("Unable to authenticate with Firebase using email")
-                            
-                        } else {
-                            print("Successfully authenticated with Firebase")
-                            
-                            if let user = user {
-                                let userData = ["provider": user.providerID]
-                                self.completeSignIn(id: user.uid, userData: userData)
-                            }
-                        }
-                    })
+                    print("Unable to authenticate")
                 }
             })
         }
@@ -125,6 +112,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
+    // Firebase authentication for Facebook logIn using credential
     func firebaseAuth(_ credential: FIRAuthCredential) {
         
         FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in

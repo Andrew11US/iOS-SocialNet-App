@@ -9,4 +9,5 @@
 import UIKit
 import Foundation
 
+// Unique Identifier
 let KEY_UID = "uid"
