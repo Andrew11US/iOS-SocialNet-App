@@ -26,7 +26,7 @@ class PostCell: UITableViewCell {
         super.awakeFromNib()
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(likeTapped))
-        tap.numberOfTapsRequired = 2
+        tap.numberOfTapsRequired = 1
         likeImg.addGestureRecognizer(tap)
         likeImg.isUserInteractionEnabled = true
     }
@@ -40,10 +40,9 @@ class PostCell: UITableViewCell {
         
         DispatchQueue.main.async {
             if img != nil {
-                //            DispatchQueue.main.async {
-                //                self.postImg.image = img
-                //            }
+                
                 self.postImg.image = img
+
             } else {
                 
                 let ref = FIRStorage.storage().reference(forURL: post.imageUrl)
@@ -51,16 +50,18 @@ class PostCell: UITableViewCell {
                     if error != nil {
                         print("Unable to download image from Firebase storage")
                         print("\(String(describing: error))")
+                        self.postImg.image = UIImage(named: "noImage")
                     } else {
                         print("Image downloaded from Firebase storage")
                         if let imgData = data {
+                            
                             if let img = UIImage(data: imgData) {
+                                
                                 DispatchQueue.main.async {
+                                    
                                     self.postImg.image = img
                                     FeedVC.imageCache.setObject(img, forKey: post.imageUrl as NSString)
                                 }
-                                //                            self.postImg.image = img
-                                //                            FeedVC.imageCache.setObject(img, forKey: post.imageUrl as NSString)
                             }
                         }
                     }
@@ -68,51 +69,18 @@ class PostCell: UITableViewCell {
             }
         }
     }
-//        if img != nil {
-////            DispatchQueue.main.async {
-////                self.postImg.image = img
-////            }
-//            self.postImg.image = img
-//        } else {
-//            
-//            let ref = FIRStorage.storage().reference(forURL: post.imageUrl)
-//            ref.data(withMaxSize: 2 * 1024 * 1024, completion: { (data, error) in
-//                if error != nil {
-//                    print("Unable to download image from Firebase storage")
-//                    print("\(String(describing: error))")
-//                } else {
-//                    print("Image downloaded from Firebase storage")
-//                    if let imgData = data {
-//                        if let img = UIImage(data: imgData) {
-//                            DispatchQueue.main.async {
-//                                self.postImg.image = img
-//                                FeedVC.imageCache.setObject(img, forKey: post.imageUrl as NSString)
-//                            }
-////                            self.postImg.image = img
-////                            FeedVC.imageCache.setObject(img, forKey: post.imageUrl as NSString)
-//                        }
-//                    }
-//                }
-//            })
-//        }
-//        
-//        likesRef.observeSingleEvent(of: .value, with: { (snapshot) in
-//            if let _ = snapshot.value as? NSNull {
-//                self.likeImg.image = UIImage(named: "empty")
-//            } else {
-//                self.likeImg.image = UIImage(named: "fill")
-//            }
-//        })
-//    }
     
     func likeTapped(sender: UITapGestureRecognizer) {
+        
         likesRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            
             if let _ = snapshot.value as? NSNull {
-                self.likeImg.image = UIImage(named: "fill")
+                self.likeImg.image = UIImage(named: "Liked")
                 self.post.adjustLikes(addLike: true)
                 self.likesRef.setValue(true)
+                
             } else {
-                self.likeImg.image = UIImage(named: "empty")
+                self.likeImg.image = UIImage(named: "noLiked")
                 self.post.adjustLikes(addLike: false)
                 self.likesRef.removeValue()
             }

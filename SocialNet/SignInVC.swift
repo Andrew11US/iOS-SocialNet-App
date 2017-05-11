@@ -25,15 +25,17 @@ class SignInVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: CustomTextField!
     @IBOutlet weak var signInBtn: CustomButton!
     @IBOutlet weak var logInFacebook: CustomButton!
-    
+    @IBOutlet weak var logo: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Facebook login button with public profile permission
+        /*
         let loginButton = LoginButton(readPermissions: [ .publicProfile ])
         loginButton.center = view.center
         view.addSubview(loginButton)
+        */
         
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
@@ -151,6 +153,30 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
         print("Data saved to keychain \(keychainResult)")
         performSegue(withIdentifier: "goToFeed", sender: nil)
+    }
+    
+    // Start Editing The Text Field
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        moveTextField(emailTextField, moveDistance: -40, up: true)
+        moveTextField(passwordTextField, moveDistance: -40, up: true)
+    }
+    
+    // Finish Editing The Text Field
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        moveTextField(emailTextField, moveDistance: -40, up: false)
+        moveTextField(passwordTextField, moveDistance: -40, up: false)
+    }
+    
+    // Move the text field in a pretty animation!
+    func moveTextField(_ textField: CustomTextField, moveDistance: Int, up: Bool) {
+        let moveDuration = 0.3
+        let movement: CGFloat = CGFloat(up ? moveDistance : -moveDistance)
+        
+        UIView.beginAnimations("animateTextField", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(moveDuration)
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        UIView.commitAnimations()
     }
 
 }

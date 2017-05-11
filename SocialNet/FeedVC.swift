@@ -17,6 +17,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageAdd: UIImageView!
     @IBOutlet weak var captionField: UITextField!
+    @IBOutlet weak var profileBtn: UIButton!
     
     var posts = [Post]()
     var imagePicker: UIImagePickerController!
@@ -78,17 +79,14 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell {
             
             DispatchQueue.main.async {
+                
                 if let img = FeedVC.imageCache.object(forKey: post.imageUrl as NSString) {
                     cell.configureCell(post: post, img: img)
                 } else {
                     cell.configureCell(post: post)
                 }
             }
-//            if let img = FeedVC.imageCache.object(forKey: post.imageUrl as NSString) {
-//                cell.configureCell(post: post, img: img)
-//            } else {
-//                cell.configureCell(post: post)
-//            }
+            
             return cell
             
         } else {
@@ -112,10 +110,12 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     }
     
     @IBAction func postBtnTapped(_ sender: AnyObject) {
+        
         guard let caption = captionField.text, caption != "" else {
             print("Caption must be entered")
             return
         }
+        
         guard let img = imageAdd.image, imageSelected == true else {
             print("An image must be selected")
             return
@@ -143,6 +143,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     
     func postToFirebase(imgUrl: String) {
         let post: Dictionary<String, AnyObject> = [
+            
             "caption": captionField.text! as AnyObject,
             "imageUrl": imgUrl as AnyObject,
             "likes": 0 as AnyObject
@@ -153,7 +154,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         
         captionField.text = ""
         imageSelected = false
-        imageAdd.image = UIImage(named: "add-image")
+        imageAdd.image = UIImage(named: "add")
         
         tableView.reloadData()
     }
@@ -164,6 +165,12 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         print("ID removed from keychain \(keychainResult)")
         try! FIRAuth.auth()?.signOut()
         performSegue(withIdentifier: "goToSignIn", sender: nil)
+        
+        self.view.endEditing(true)
     }
+    
+    @IBAction func profileBtnPressed(_ sender: Any) {
+    }
+    
 
 }
