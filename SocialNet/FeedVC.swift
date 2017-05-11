@@ -12,28 +12,19 @@ import FirebaseAuth
 import FirebaseStorage
 import SwiftKeychainWrapper
 
-class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var imageAdd: UIImageView!
-    @IBOutlet weak var captionField: UITextField!
     @IBOutlet weak var profileBtn: UIButton!
     
     var posts = [Post]()
-    var imagePicker: UIImagePickerController!
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
-    var imageSelected = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.captionField.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
-        
-        imagePicker = UIImagePickerController()
-        imagePicker.allowsEditing = true
-        imagePicker.delegate = self
         
         DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
             
@@ -54,13 +45,18 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         })
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        tableView.reloadData()
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
     // Dismiss when return btn pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        captionField.resignFirstResponder()
         return true
     }
     
@@ -99,82 +95,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         }
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
-            imageAdd.image = image
-            imageSelected = true
-        } else {
-            print("A valid image wasn't selected")
-        }
-        imagePicker.dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func addImageTapped(_ sender: AnyObject) {
-        present(imagePicker, animated: true, completion: nil)
-    }
-    
-    @IBAction func postBtnTapped(_ sender: AnyObject) {
-        
-        guard let caption = captionField.text, caption != "" else {
-            print("Caption must be entered")
-            return
-        }
-        
-        guard let img = imageAdd.image, imageSelected == true else {
-            print("An image must be selected")
-            return
-        }
-        
-        if let imgData = UIImageJPEGRepresentation(img, 0.2) {
-            
-            let imgUid = NSUUID().uuidString
-            let metadata = FIRStorageMetadata()
-            metadata.contentType = "image/jpeg"
-            
-            DataService.ds.REF_POST_IMAGES.child(imgUid).put(imgData, metadata: metadata) { (metadata, error) in
-                if error != nil {
-                    print("Unable to upload image to Firebasee storage")
-                } else {
-                    print("Successfully uploaded image to Firebase storage")
-                    let downloadURL = metadata?.downloadURL()?.absoluteString
-                    if let url = downloadURL {
-                        self.postToFirebase(imgUrl: url)
-                    }
-                }
-            }
-        }
-    }
-    
-    func postToFirebase(imgUrl: String) {
-        let post: Dictionary<String, AnyObject> = [
-            
-            "caption": captionField.text! as AnyObject,
-            "imageUrl": imgUrl as AnyObject,
-            "likes": 0 as AnyObject
-        ]
-        
-        let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
-        firebasePost.setValue(post)
-        
-        captionField.text = ""
-        imageSelected = false
-        imageAdd.image = UIImage(named: "add")
-        
-        tableView.reloadData()
-    }
-    
-    @IBAction func signOutTapped(_ sender: AnyObject) {
-
-        let keychainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
-        print("ID removed from keychain \(keychainResult)")
-        try! FIRAuth.auth()?.signOut()
-        performSegue(withIdentifier: "goToSignIn", sender: nil)
-        
-        self.view.endEditing(true)
-    }
-    
     @IBAction func profileBtnPressed(_ sender: Any) {
     }
     
-
 }

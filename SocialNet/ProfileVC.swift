@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
+import SwiftKeychainWrapper
 
 class ProfileVC: UIViewController {
 
@@ -15,7 +18,21 @@ class ProfileVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
-
+    
+    @IBAction func signOutTapped(_ sender: AnyObject) {
+        
+        let keychainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
+        print("ID removed from keychain \(keychainResult)")
+        try! FIRAuth.auth()?.signOut()
+        performSegue(withIdentifier: "goToSignIn", sender: nil)
+        
+        self.view.endEditing(true)
+    }
+    
+    @IBAction func backBtnPressed(_ sender: Any) {
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
 
 }
