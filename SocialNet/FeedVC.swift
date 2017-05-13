@@ -81,6 +81,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             DispatchQueue.main.async {
                 
                 if let img = FeedVC.imageCache.object(forKey: post.imageUrl as NSString) {
+                    
                     cell.configureCell(post: post, img: img)
                 } else {
                     cell.configureCell(post: post)

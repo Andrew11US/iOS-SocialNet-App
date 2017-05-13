@@ -363,7 +363,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="450"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selfieSquare" translatesAutoresizingMaskIntoConstraints="NO" id="yOi-ta-BWo" customClass="CustomImageView" customModule="SocialNet" customModuleProvider="target">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="yOi-ta-BWo" customClass="CustomImageView" customModule="SocialNet" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="8" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="UGO-m6-BIV"/>
@@ -375,14 +375,14 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AndrewFosterUS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mm-O8-Kx0">
-                                                    <rect key="frame" x="66" y="24.666666666666664" width="110" height="16.999999999999993"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- - - - -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mm-O8-Kx0">
+                                                    <rect key="frame" x="66" y="24.666666666666664" width="43" height="16.999999999999993"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0Wg-Jk-Uqe">
-                                                    <rect key="frame" x="314.66666666666674" y="374" width="83.333333333333314" height="25"/>
+                                                    <rect key="frame" x="312.33333333333326" y="374" width="85.666666666666686" height="25"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuN-gp-xHw">
                                                             <rect key="frame" x="0.0" y="0.0" width="44" height="25"/>
@@ -390,8 +390,8 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRX-Ch-oPg">
-                                                            <rect key="frame" x="54" y="0.0" width="29.333333333333314" height="25"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- - -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRX-Ch-oPg">
+                                                            <rect key="frame" x="54" y="0.0" width="31.666666666666686" height="25"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -448,7 +448,7 @@
                                             <outlet property="likeImg" destination="RLE-Fj-qkm" id="jFK-O8-koS"/>
                                             <outlet property="likesLbl" destination="IRX-Ch-oPg" id="O2t-PW-ays"/>
                                             <outlet property="postImg" destination="KG6-Qq-rvV" id="FGD-gM-Yfi"/>
-                                            <outlet property="profileImg" destination="yOi-ta-BWo" id="qxT-tK-Ncc"/>
+                                            <outlet property="userImg" destination="yOi-ta-BWo" id="KQx-D1-EFy"/>
                                             <outlet property="usernameLbl" destination="4mm-O8-Kx0" id="odO-bY-ezH"/>
                                         </connections>
                                     </tableViewCell>
@@ -722,7 +722,7 @@
                                     <constraint firstAttribute="bottom" secondItem="7ZF-Do-Lem" secondAttribute="bottom" id="xvo-mV-tYK"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selfieSquare" translatesAutoresizingMaskIntoConstraints="NO" id="sKK-wF-9BB" customClass="CustomImageView" customModule="SocialNet" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="sKK-wF-9BB" customClass="CustomImageView" customModule="SocialNet" customModuleProvider="target">
                                 <rect key="frame" x="20" y="80" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="1Qa-vo-dd6"/>
@@ -737,7 +737,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ovZ-wW-j4J">
                                 <rect key="frame" x="160" y="80" width="226" height="70"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AndrewFosterUS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CmH-da-KE8">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username*" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CmH-da-KE8">
                                         <rect key="frame" x="0.0" y="0.0" width="226" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="cAa-hx-Sjd"/>
@@ -746,7 +746,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Andrew Foster" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qmn-Ju-5mU">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name*" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qmn-Ju-5mU">
                                         <rect key="frame" x="0.0" y="40" width="226" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="u0C-Nn-KKH"/>
@@ -823,7 +823,6 @@
         <image name="noLiked" width="150" height="150"/>
         <image name="post" width="150" height="150"/>
         <image name="profile" width="150" height="150"/>
-        <image name="selfieSquare" width="960" height="960"/>
         <image name="sunrise2" width="2100" height="1400"/>
     </resources>
     <inferredMetricsTieBreakers>
