@@ -97,13 +97,13 @@ class PostCell: UITableViewCell {
                 ref.data(withMaxSize: 2 * 1024 * 1024, completion: { (data, error) in
                     
                     if error != nil {
-                        print("Unable to download image from Firebase storage")
+                        print("Unable to download pic from Firebase storage")
                         print("\(String(describing: error))")
                         self.userImg.image = UIImage(named: "noImage")
                         
                     } else {
                         
-                        print("Image downloaded from Firebase storage")
+                        print("Pic downloaded from Firebase storage")
                         if let imgData = data {
                             
                             if let img = UIImage(data: imgData) {

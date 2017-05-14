@@ -13,10 +13,17 @@ import SwiftKeychainWrapper
 
 class ProfileVC: UIViewController {
 
+    @IBOutlet weak var usernameLbl: UILabel!
+    @IBOutlet weak var nameLbl: UILabel!
+    @IBOutlet weak var userPic: CustomImageView!
+    
+    let username = DataService.ds.REF_USER_CURRENT.child("username")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(username)
 
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func signOutTapped(_ sender: AnyObject) {
@@ -34,5 +41,7 @@ class ProfileVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func editProfileBtnTapped(_ sender: Any) {
+    }
 
 }

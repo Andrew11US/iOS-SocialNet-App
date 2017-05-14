@@ -43,7 +43,7 @@ class Post {
         return _postKey
     }
     
-    init(caption: String, imageUrl: String, likes: Int, username: String, userPicUrl: String) {
+    init(caption: String, imageUrl: String, likes: Int, username: String, userImageUrl: String) {
         self._caption = caption
         self._imageUrl = imageUrl
         self._likes = likes

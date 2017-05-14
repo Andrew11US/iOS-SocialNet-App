@@ -75,6 +75,7 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
                         if error != nil {
                             
                             print("Unable to create account with Firebase")
+                            print(error!)
                             
                         } else {
                             

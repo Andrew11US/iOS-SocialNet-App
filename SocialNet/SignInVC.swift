@@ -75,6 +75,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
                     if let user = user {
                         let userData = ["provider": user.providerID]
                         self.completeSignIn(id: user.uid, userData: userData)
+                        
                     }
                     
                 } else {
@@ -129,13 +130,13 @@ class SignInVC: UIViewController, UITextFieldDelegate {
                     
                     let userData = ["provider": credential.provider]
                     self.completeSignIn(id: user.uid, userData: userData)
+                    
                 }
             }
         })
     }
     
     func completeSignIn(id: String, userData: Dictionary<String, String>) {
-        DataService.ds.createFirbaseDBUser(uid: id, userData: userData)
         
         // Using keychain for segue
         let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)

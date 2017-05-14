@@ -31,6 +31,7 @@
 		9090086B1EC49E4A00977BD3 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9090086A1EC49E4A00977BD3 /* SignUpVC.swift */; };
 		9090086D1EC4A04700977BD3 /* PostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9090086C1EC4A04700977BD3 /* PostVC.swift */; };
 		9090086F1EC4A05700977BD3 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9090086E1EC4A05700977BD3 /* ProfileVC.swift */; };
+		90DDFAC41EC781030038226C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDFAC31EC781030038226C /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		9090086A1EC49E4A00977BD3 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		9090086C1EC4A04700977BD3 /* PostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostVC.swift; sourceTree = "<group>"; };
 		9090086E1EC4A05700977BD3 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		90DDFAC31EC781030038226C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			children = (
 				903DECA11EC240AF00B0B1D2 /* Constants.swift */,
 				9055077A1EC2FE900000F6A2 /* Post.swift */,
+				90DDFAC31EC781030038226C /* User.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				9060034D1EC209F40001E24F /* RoundedView.swift in Sources */,
 				9055077B1EC2FE900000F6A2 /* Post.swift in Sources */,
 				903DECA61EC2583D00B0B1D2 /* CustomImageView.swift in Sources */,
+				90DDFAC41EC781030038226C /* User.swift in Sources */,
 				9055077D1EC309F60000F6A2 /* DataService.swift in Sources */,
 				9090086D1EC4A04700977BD3 /* PostVC.swift in Sources */,
 				902426771DE890D300A8D94A /* SignInVC.swift in Sources */,

@@ -787,6 +787,9 @@
                                 <state key="normal" title="Edit Profile">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="editProfileBtnTapped:" destination="Mcv-uX-0eA" eventType="touchUpInside" id="DTN-I1-f03"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -808,6 +811,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="nameLbl" destination="qmn-Ju-5mU" id="H7v-uc-qCM"/>
+                        <outlet property="userPic" destination="sKK-wF-9BB" id="OQv-nl-dw2"/>
+                        <outlet property="usernameLbl" destination="CmH-da-KE8" id="XYM-sf-Z81"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToSignIn" modalTransitionStyle="flipHorizontal" id="khv-Ya-V6S"/>
                     </connections>
                 </viewController>
@@ -826,6 +832,6 @@
         <image name="sunrise2" width="2100" height="1400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zsL-Ni-eFF"/>
+        <segue reference="Qeu-HZ-UYk"/>
     </inferredMetricsTieBreakers>
 </document>

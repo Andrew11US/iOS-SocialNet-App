@@ -26,6 +26,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         
+        // Read data from database
         DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
             
             // Fixes dublicate posts issue
@@ -78,15 +79,23 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell {
             
-            DispatchQueue.main.async {
+            if let img = FeedVC.imageCache.object(forKey: post.imageUrl as NSString) , let pic = FeedVC.imageCache.object(forKey: post.userImageUrl as NSString) {
                 
-                if let img = FeedVC.imageCache.object(forKey: post.imageUrl as NSString) {
-                    
-                    cell.configureCell(post: post, img: img)
-                } else {
-                    cell.configureCell(post: post)
-                }
+                cell.configureCell(post: post, img: img, pic: pic)
+            } else {
+                
+                cell.configureCell(post: post)
             }
+            
+//            DispatchQueue.main.async {
+//                
+//                if let img = FeedVC.imageCache.object(forKey: post.imageUrl as NSString) {
+//                    
+//                    cell.configureCell(post: post, img: img)
+//                } else {
+//                    cell.configureCell(post: post)
+//                }
+//            }
             
             return cell
             
