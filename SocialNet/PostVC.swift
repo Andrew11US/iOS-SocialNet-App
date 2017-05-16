@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseStorage
+import FirebaseAuth
 import Firebase
 
 class PostVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -18,6 +19,9 @@ class PostVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
     var imagePicker: UIImagePickerController!
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
     var imageSelected = false
+    let userID = FIRAuth.auth()?.currentUser?.uid
+    var username: String!
+    var userPicUrl: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +31,8 @@ class PostVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
         imagePicker.allowsEditing = true
         imagePicker.delegate = self
         
+        print(userID!)
+        getUserData()
     }
     
     // Dismiss keyboard function
@@ -95,8 +101,9 @@ class PostVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
             "caption": captionField.text! as AnyObject,
             "imageUrl": imgUrl as AnyObject,
             "likes": 0 as AnyObject,
-            "username": "andrewFosterUS" as AnyObject,
-            "userImageUrl": "gs://socialnet-4d29a.appspot.com/post-pics/959B2EA3-FE1D-4A22-B2C3-1EBDD369C6DC" as AnyObject
+            "userID": userID as AnyObject,
+            "username": username as AnyObject,
+            "userPicUrl": userPicUrl as AnyObject
         ]
         
         let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
@@ -104,7 +111,7 @@ class PostVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
         
         captionField.text = ""
         imageSelected = false
-        imageAdd.image = UIImage(named: "add")
+        imageAdd.image = UIImage(named: "noImage")
         
     }
 
@@ -113,6 +120,23 @@ class PostVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
         dismiss(animated: true, completion: nil)
         self.view.endEditing(true)
     }
-
+    
+    func getUserData() {
+        
+        let ref = DataService.ds.REF_USER_CURRENT
+        DispatchQueue.main.async {
+            ref.observe(.value, with: { (snapshot) in
+                
+                let value = snapshot.value as? NSDictionary
+                let userPic = value?["userPicUrl"] as? String ?? ""
+                let username = value?["username"] as? String ?? ""
+                self.userPicUrl = userPic
+                self.username = username
+                
+                print("UPU:" + self.userPicUrl)
+                print("UN:" + self.username)
+            })
+        }
+    }
 
 }

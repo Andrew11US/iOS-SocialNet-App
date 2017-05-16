@@ -183,7 +183,7 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         DispatchQueue.main.async {
             ref.observe(.value, with: { (snapshot) in
                 
-                self.userPicUrl = ""
+//                self.userPicUrl = ""
                 let value = snapshot.value as? NSDictionary
                 let userPic = value?["userPicUrl"] as? String ?? ""
                 self.userPicUrl = userPic

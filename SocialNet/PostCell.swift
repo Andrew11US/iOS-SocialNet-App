@@ -88,7 +88,7 @@ class PostCell: UITableViewCell {
                 
             } else {
                 
-                let ref = FIRStorage.storage().reference(forURL: post.userImageUrl)
+                let ref = FIRStorage.storage().reference(forURL: post.userPicUrl)
                 ref.data(withMaxSize: 2 * 1024 * 1024, completion: { (data, error) in
                     
                     if error != nil {
@@ -105,7 +105,7 @@ class PostCell: UITableViewCell {
                                 
                                 self.userImg.image = img
                                 // Add downloaded image to cache
-                                FeedVC.imageCache.setObject(img, forKey: post.userImageUrl as NSString)
+                                FeedVC.imageCache.setObject(img, forKey: post.userPicUrl as NSString)
                                 
                             }
                         }
