@@ -74,11 +74,6 @@ class PostCell: UITableViewCell {
                                 // Add downloaded image to cache
                                 FeedVC.imageCache.setObject(img, forKey: post.imageUrl as NSString)
                                 
-//                                DispatchQueue.main.async {
-//                                    
-//                                    self.postImg.image = img
-//                                    FeedVC.imageCache.setObject(img, forKey: post.imageUrl as NSString)
-//                                }
                             }
                         }
                     }

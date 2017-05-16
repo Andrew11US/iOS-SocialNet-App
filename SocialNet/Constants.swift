@@ -8,6 +8,11 @@
 
 import UIKit
 import Foundation
+import Firebase
+import FirebaseAuth
 
 // Unique Identifier
 let KEY_UID = "uid"
+
+// Global User reference
+//let user = FIRAuth.auth()?.currentUser

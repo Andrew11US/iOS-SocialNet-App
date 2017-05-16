@@ -29,6 +29,8 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var logo: UILabel!
     
+    let user = FIRAuth.auth()?.currentUser
+    let changeRequest = FIRAuth.auth()?.currentUser?.profileChangeRequest()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +40,7 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
         self.password2TextField.delegate = self
+        
     }
 
     @IBAction func backBtnPressed(_ sender: Any) {
@@ -63,6 +66,9 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func signUpBtnPressed(_ sender: AnyObject) {
         
+        if passwordTextField.text == password2TextField.text {
+            print("Identical")
+        
         if let email = emailTextField.text, let pwd = passwordTextField.text {
             // Sign In via Firebase using email & password
             FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, error) in
@@ -83,11 +89,20 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
                             
                             // Creating user
                             if let user = user {
-                                
+                                let username = self.usernameTextField.text
+                                let name = self.nameTextField.text
+                                let userPicUrl = "gs://socialnet-4d29a.appspot.com/user-pics/noImage.png"
+
                                 // Assign provider
-                                let userData = ["provider": user.providerID]
+                                let userData = [
+                                    "provider": user.providerID,
+                                    "username": username,
+                                    "name": name,
+                                    "userPicUrl": userPicUrl
+                                ]
+                                
                                 // Complete sign up & assign UID & userData
-                                self.completeSignUp(id: user.uid, userData: userData)
+                                self.completeSignUp(id: user.uid, userData: userData as! Dictionary<String, String>)
                             }
                         }
                     })
@@ -97,6 +112,9 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
                     print("Account already created")
                 }
             })
+            }
+        } else {
+            print("Password not match")
         }
         
         self.view.endEditing(true)

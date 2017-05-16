@@ -12,40 +12,47 @@ import Firebase
 
 class User {
     private var _username: String!
-    private var _userImageUrl: String!
-    private var _userKey: String!
+    private var _userPicUrl: String!
+    private var _userId: String!
+    private var _name: String!
     private var _userRef: FIRDatabaseReference!
     
     var username: String {
         return _username
     }
     
-    var userImageUrl: String {
-        return _userImageUrl
+    var userPicUrl: String {
+        return _userPicUrl
     }
     
-    var userKey: String {
-        return _userKey
+    var userId: String {
+        return _userId
     }
     
-    init(username: String, userImageUrl: String) {
+    var name: String {
+        return _name
+    }
+    
+    init(username: String, name: String, userPicUrl: String) {
         self._username = username
-        self._userImageUrl = userImageUrl
+        self._name = name
+        self._userPicUrl = userPicUrl
     }
     
-    init(userKey: String, userData: Dictionary<String, AnyObject>) {
-        self._userKey = userKey
+    init(userId: String, userData: Dictionary<String, AnyObject>) {
+        self._userId = userId
         
         if let username = userData["username"] as? String {
             self._username = username
         }
         
-        if let userImageUrl = userData["userImageUrl"] as? String {
-            self._userImageUrl = userImageUrl
+        if let name = userData["name"] as? String {
+            self._name = name
         }
         
-        _userRef = DataService.ds.REF_USERS.child(_userKey)
-        
+        if let userPicUrl = userData["userPicUrl"] as? String {
+            self._userPicUrl = userPicUrl
+        }
     }
     
 }

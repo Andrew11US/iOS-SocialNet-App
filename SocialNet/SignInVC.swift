@@ -128,8 +128,10 @@ class SignInVC: UIViewController, UITextFieldDelegate {
                 
                 if let user = user {
                     
-                    let userData = ["provider": credential.provider]
-                    self.completeSignIn(id: user.uid, userData: userData)
+                    let userData = [
+                        "provider": credential.provider
+                    ]
+                    self.completeSignUpFacebook(id: user.uid, userData: userData)
                     
                 }
             }
@@ -137,6 +139,15 @@ class SignInVC: UIViewController, UITextFieldDelegate {
     }
     
     func completeSignIn(id: String, userData: Dictionary<String, String>) {
+        // Using keychain for segue
+        let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
+        print("Data saved to keychain \(keychainResult)")
+        performSegue(withIdentifier: "goToFeed", sender: nil)
+    }
+    
+    func completeSignUpFacebook(id: String, userData: Dictionary<String, String>) {
+        // Creating user in Database
+        DataService.ds.createFirbaseDBUser(uid: id, userData: userData)
         
         // Using keychain for segue
         let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)

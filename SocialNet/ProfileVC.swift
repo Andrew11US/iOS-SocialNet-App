@@ -8,22 +8,37 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseStorage
 import Firebase
 import SwiftKeychainWrapper
 
-class ProfileVC: UIViewController {
+class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var usernameLbl: UILabel!
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var userPic: CustomImageView!
     
-    let username = DataService.ds.REF_USER_CURRENT.child("username")
+    var imagePicker: UIImagePickerController!
+    static var imageCache: NSCache<NSString, UIImage> = NSCache()
+    var imageSelected = false
+    var userPicUrl: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(username)
-
+        imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
+        
+        updateUI()
+        getUserImageUrl()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        downloadProfilePic()
     }
     
     @IBAction func signOutTapped(_ sender: AnyObject) {
@@ -42,6 +57,140 @@ class ProfileVC: UIViewController {
     }
     
     @IBAction func editProfileBtnTapped(_ sender: Any) {
+        
+        let superID = [
+            "superID": "userDatasuperID"
+        ]
+        
+        DataService.ds.REF_USER_CURRENT.updateChildValues(superID)
     }
-
+    
+    @IBAction func addImageTapped(_ sender: AnyObject) {
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            userPic.image = image
+            imageSelected = true
+        } else {
+            print("Image wasn't selected")
+        }
+        uploadProfileImg()
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
+    func uploadProfileImg() {
+        
+        guard let img = userPic.image, imageSelected == true else {
+            print("An image must be selected")
+            return
+        }
+        
+        if let imgData = UIImageJPEGRepresentation(img, 0.2) {
+            
+            let imgUid = NSUUID().uuidString
+            let metadata = FIRStorageMetadata()
+            metadata.contentType = "image/jpeg"
+            
+            DataService.ds.REF_USER_IMAGES.child(imgUid).put(imgData, metadata: metadata) { (metadata, error) in
+                
+                if error != nil {
+                    print("Unable to upload image to Firebasee storage")
+                    
+                } else {
+                    
+                    print("Successfully uploaded image to Firebase storage")
+                    let downloadURL = metadata?.downloadURL()?.absoluteString
+                    
+                    if let url = downloadURL {
+                        self.updateUserPicUrl(imgUrl: url)
+                    }
+                }
+            }
+        }
+    }
+    
+    func updateUserPicUrl(imgUrl: String) {
+        
+        let userPicUrl: Dictionary<String, String> = [
+            
+            "userPicUrl": imgUrl
+        ]
+        let firebaseProfileImage = DataService.ds.REF_USER_CURRENT
+        firebaseProfileImage.updateChildValues(userPicUrl)
+        
+        imageSelected = false
+    }
+    
+    func downloadProfilePic(img: UIImage? = nil) {
+        
+        // Download User Image & handle errors
+        DispatchQueue.main.async {
+            if img != nil {
+                
+                self.userPic.image = img
+                
+            } else {
+                
+                let ref = FIRStorage.storage().reference(forURL: self.userPicUrl)
+                ref.data(withMaxSize: 2 * 1024 * 1024, completion: { (data, error) in
+                    
+                    if error != nil {
+                        print("Unable to download image from Firebase storage")
+                        print("\(String(describing: error))")
+                        self.userPic.image = UIImage(named: "noImage")
+                        
+                    } else {
+                        
+                        print("Image downloaded from Firebase storage")
+                        if let imgData = data {
+                            
+                            if let img = UIImage(data: imgData) {
+                                
+                                self.userPic.image = img
+                                // Add downloaded image to cache
+                                ProfileVC.imageCache.setObject(img, forKey: self.userPicUrl as NSString)
+                            }
+                        }
+                    }
+                })
+            }
+        }
+    }
+    
+    func updateUI() {
+        
+        let ref = DataService.ds.REF_USER_CURRENT
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            let value = snapshot.value as? NSDictionary
+            let username = value?["username"] as? String ?? ""
+            let name = value?["name"] as? String ?? ""
+            
+            self.usernameLbl.text = username
+            self.nameLbl.text = name
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
+    func getUserImageUrl() {
+        
+        let ref = DataService.ds.REF_USER_CURRENT
+        DispatchQueue.main.async {
+            ref.observe(.value, with: { (snapshot) in
+                
+                self.userPicUrl = ""
+                let value = snapshot.value as? NSDictionary
+                let userPic = value?["userPicUrl"] as? String ?? ""
+                self.userPicUrl = userPic
+                
+                print("UPU:" + self.userPicUrl)
+            })
+        }
+    }
+    
 }

@@ -94,7 +94,9 @@ class PostVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
             
             "caption": captionField.text! as AnyObject,
             "imageUrl": imgUrl as AnyObject,
-            "likes": 0 as AnyObject
+            "likes": 0 as AnyObject,
+            "username": "andrewFosterUS" as AnyObject,
+            "userImageUrl": "gs://socialnet-4d29a.appspot.com/post-pics/959B2EA3-FE1D-4A22-B2C3-1EBDD369C6DC" as AnyObject
         ]
         
         let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
