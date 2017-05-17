@@ -22,6 +22,10 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
     var imageSelected = false
     var userPicUrl: String!
+    var currentUsername: String!
+    var posts = [Post]()
+//    var usernamesArray = [String]()
+    var myPosts = [Post]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,13 +36,15 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         
         updateUI()
         getUserImageUrl()
-        
+//        loadMyPosts()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         downloadProfilePic()
+        loadMyPosts()
+        
     }
     
     @IBAction func signOutTapped(_ sender: AnyObject) {
@@ -62,7 +68,12 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
             "superID": "userDatasuperID"
         ]
         
+        let testJSONtree = [
+            "test" : "TEST"
+        ]
+        
         DataService.ds.REF_USER_CURRENT.updateChildValues(superID)
+        DataService.ds.REF_USER_CURRENT.child("testTree").updateChildValues(testJSONtree)
     }
     
     @IBAction func addImageTapped(_ sender: AnyObject) {
@@ -171,6 +182,7 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
             
             self.usernameLbl.text = username
             self.nameLbl.text = name
+            self.currentUsername = username
             
         }) { (error) in
             print(error.localizedDescription)
@@ -183,13 +195,43 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         DispatchQueue.main.async {
             ref.observe(.value, with: { (snapshot) in
                 
-//                self.userPicUrl = ""
                 let value = snapshot.value as? NSDictionary
                 let userPic = value?["userPicUrl"] as? String ?? ""
                 self.userPicUrl = userPic
                 
                 print("UPU:" + self.userPicUrl)
             })
+        }
+    }
+    
+    func loadMyPosts() {
+        let ref = DataService.ds.REF_POSTS
+        DispatchQueue.main.async {
+            
+            ref.observe(.value, with: { (snapshot) in
+                
+                // Fixes dublicate posts issue
+                self.posts = []
+                
+                if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                    for snap in snapshot {
+                        print("SNAPSHOT: \(snap)")
+                        let key = snap.key
+                        let value = snap.value as? NSDictionary
+                        let username = value?["username"] as? String ?? ""
+                        
+                        print("GETUN:" , username)
+                        if self.currentUsername == username {
+                            print("EQUAL")
+                            let post = Post(postKey: key, postData: value as! Dictionary<String, AnyObject>)
+                            self.myPosts.append(post)
+                            print("myPOSTS:" , self.myPosts)
+                        }
+                    }
+                    
+                }
+            })
+            
         }
     }
     

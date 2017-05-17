@@ -593,7 +593,7 @@
                                     <action selector="postBtnTapped:" destination="Q5N-Nv-F07" eventType="touchUpInside" id="R8P-74-u4a"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="wNG-NI-TZn" customClass="CustomImageView" customModule="SocialNet" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImageJPG" translatesAutoresizingMaskIntoConstraints="NO" id="wNG-NI-TZn" customClass="CustomImageView" customModule="SocialNet" customModuleProvider="target">
                                 <rect key="frame" x="20" y="136" width="374" height="374"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -854,6 +854,7 @@
         <image name="back" width="150" height="150"/>
         <image name="backBlack" width="150" height="150"/>
         <image name="noImage" width="1024" height="1024"/>
+        <image name="noImageJPG" width="1024" height="1024"/>
         <image name="noLiked" width="150" height="150"/>
         <image name="post" width="150" height="150"/>
         <image name="profile" width="150" height="150"/>

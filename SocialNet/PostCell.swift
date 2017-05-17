@@ -42,7 +42,7 @@ class PostCell: UITableViewCell {
         
         self.post = post
         likesRef = DataService.ds.REF_USER_CURRENT.child("likes").child(post.postKey)
-        
+        loadLikes()
         self.caption.text = post.caption
         self.likesLbl.text = "\(post.likes)"
         self.usernameLbl.text = post.username
@@ -81,7 +81,7 @@ class PostCell: UITableViewCell {
             }
         }
         
-        DispatchQueue.main.async {
+//        DispatchQueue.main.async {
             if pic != nil {
                 
                 self.userImg.image = pic
@@ -112,7 +112,7 @@ class PostCell: UITableViewCell {
                     }
                 })
             }
-        }
+//        }
         
     }
     
@@ -129,6 +129,19 @@ class PostCell: UITableViewCell {
                 self.likeImg.image = UIImage(named: "noLiked")
                 self.post.adjustLikes(addLike: false)
                 self.likesRef.removeValue()
+            }
+        })
+    }
+    
+    func loadLikes() {
+        
+        likesRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            if let _ = snapshot.value as? NSNull {
+                self.likeImg.image = UIImage(named: "noLiked")
+                
+            } else {
+                self.likeImg.image = UIImage(named: "Liked")
             }
         })
     }

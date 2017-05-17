@@ -32,6 +32,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             // Fixes dublicate posts issue
             self.posts = []
             
+            // Stores temporary data 
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshot {
                     print("SNAP: \(snap)")
@@ -79,12 +80,14 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell {
             
-            if let img = FeedVC.imageCache.object(forKey: post.imageUrl as NSString) , let pic = FeedVC.imageCache.object(forKey: post.userPicUrl as NSString) {
-                
-                cell.configureCell(post: post, img: img, pic: pic)
-            } else {
-                
-                cell.configureCell(post: post)
+            DispatchQueue.main.async {
+                if let img = FeedVC.imageCache.object(forKey: post.imageUrl as NSString) , let pic = FeedVC.imageCache.object(forKey: post.userPicUrl as NSString) {
+                    
+                    cell.configureCell(post: post, img: img, pic: pic)
+                } else {
+                    
+                    cell.configureCell(post: post)
+                }
             }
             
             return cell
