@@ -263,7 +263,7 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 400
+        return 305
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -276,7 +276,7 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
                 if let img = ProfileVC.imageCache.object(forKey: post.imageUrl as NSString) {
                     
                     cell.configureCell(post: post, img: img)
-                    print("Cell configured")
+                    
                 } else {
                     
                     cell.configureCell(post: post)
