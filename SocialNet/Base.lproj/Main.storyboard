@@ -786,18 +786,18 @@
                                     <action selector="editProfileBtnTapped:" destination="Mcv-uX-0eA" eventType="touchUpInside" id="DTN-I1-f03"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="353" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kev-eY-gh3">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="353" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kev-eY-gh3">
                                 <rect key="frame" x="0.0" y="238" width="414" height="498"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="320" id="ml1-Lj-DAH">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="profilePostCell" rowHeight="320" id="ml1-Lj-DAH" customClass="ProfilePostCell" customModule="SocialNet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="320"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ml1-Lj-DAH" id="2rP-6D-4ee">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="319"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="320"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q4g-C1-W6y">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="Q4g-C1-W6y">
                                                     <rect key="frame" x="8" y="8" width="398" height="300"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="300" id="FXQ-MQ-0Zu"/>
@@ -810,6 +810,9 @@
                                                 <constraint firstItem="Q4g-C1-W6y" firstAttribute="top" secondItem="2rP-6D-4ee" secondAttribute="topMargin" id="GkM-rj-Ioj"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="postImg" destination="Q4g-C1-W6y" id="RKN-KX-Z2U"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -842,6 +845,7 @@
                     </view>
                     <connections>
                         <outlet property="nameLbl" destination="qmn-Ju-5mU" id="H7v-uc-qCM"/>
+                        <outlet property="profileTableView" destination="Kev-eY-gh3" id="ioI-Oo-I8K"/>
                         <outlet property="userPic" destination="sKK-wF-9BB" id="OQv-nl-dw2"/>
                         <outlet property="usernameLbl" destination="CmH-da-KE8" id="XYM-sf-Z81"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToSignIn" modalTransitionStyle="flipHorizontal" id="khv-Ya-V6S"/>

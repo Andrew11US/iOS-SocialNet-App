@@ -12,11 +12,12 @@ import FirebaseStorage
 import Firebase
 import SwiftKeychainWrapper
 
-class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var usernameLbl: UILabel!
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var userPic: CustomImageView!
+    @IBOutlet weak var profileTableView: UITableView!
     
     var imagePicker: UIImagePickerController!
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
@@ -34,9 +35,12 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         imagePicker.allowsEditing = true
         imagePicker.delegate = self
         
+        profileTableView.delegate = self
+        profileTableView.dataSource = self
+        
         updateUI()
         getUserImageUrl()
-//        loadMyPosts()
+        loadMyPosts()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -195,33 +199,95 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     }
     
     func loadMyPosts() {
-        let ref = DataService.ds.REF_POSTS
-        DispatchQueue.main.async {
+//        let ref = DataService.ds.REF_POSTS
+//        DispatchQueue.main.async {
+//            
+//            ref.observe(.value, with: { (snapshot) in
+//                
+//                // Fixes dublicate posts issue
+//                self.posts = []
+//                
+//                if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
+//                    for snap in snapshot {
+//                        print("SNAPSHOT: \(snap)")
+//                        let key = snap.key
+//                        let value = snap.value as? NSDictionary
+//                        let username = value?["username"] as? String ?? ""
+//                        
+//                        print("GETUN:" , username)
+//                        let post = Post(postKey: key, postData: value as! Dictionary<String, AnyObject>)
+////                        self.posts.append(post)
+//                        
+//                        if self.currentUsername == username {
+//                            print("EQUAL")
+//                            let post = Post(postKey: key, postData: value as! Dictionary<String, AnyObject>)
+//                            self.myPosts.append(post)
+//                            print("myPOSTS:" , self.myPosts)
+//                        }
+//                    }
+//                    
+//                }
+//                self.profileTableView.reloadData()
+//            })
+//            
+//        }
+        
+        
+        DataService.ds.REF_POSTS.queryOrdered(byChild: "timeStamp").observe(.value, with: { (snapshot) in
             
-            ref.observe(.value, with: { (snapshot) in
-                
-                // Fixes dublicate posts issue
-                self.posts = []
-                
-                if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                    for snap in snapshot {
-                        print("SNAPSHOT: \(snap)")
+            // Fixes dublicate posts issue
+            self.posts = []
+            
+            // Stores temporary data
+            if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for snap in snapshot {
+                    print("SNAP: \(snap)")
+                    if let postDict = snap.value as? Dictionary<String, AnyObject> {
                         let key = snap.key
-                        let value = snap.value as? NSDictionary
-                        let username = value?["username"] as? String ?? ""
-                        
-                        print("GETUN:" , username)
-                        if self.currentUsername == username {
-                            print("EQUAL")
-                            let post = Post(postKey: key, postData: value as! Dictionary<String, AnyObject>)
-                            self.myPosts.append(post)
-                            print("myPOSTS:" , self.myPosts)
-                        }
+                        let post = Post(postKey: key, postData: postDict)
+                        self.posts.append(post)
+                        print("Posts:", self.posts)
                     }
-                    
                 }
-            })
+            }
+            self.profileTableView.reloadData()
+        })
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 400
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let post = posts[indexPath.row]
+        
+        if let cell = profileTableView.dequeueReusableCell(withIdentifier: "profilePostCell") as? ProfilePostCell {
             
+            DispatchQueue.main.async {
+                if let img = ProfileVC.imageCache.object(forKey: post.imageUrl as NSString) {
+                    
+                    cell.configureCell(post: post, img: img)
+                    print("Cell configured")
+                } else {
+                    
+                    cell.configureCell(post: post)
+                }
+            }
+            
+            return cell
+            
+        } else {
+            
+            return PostCell()
         }
     }
     
