@@ -103,7 +103,8 @@ class PostVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
             "likes": 0 as AnyObject,
             "userID": userID as AnyObject,
             "username": username as AnyObject,
-            "userPicUrl": userPicUrl as AnyObject
+            "userPicUrl": userPicUrl as AnyObject,
+            "timeStamp": FIRServerValue.timestamp() as AnyObject
         ]
         
         let firebasePost = DataService.ds.REF_POSTS.childByAutoId()

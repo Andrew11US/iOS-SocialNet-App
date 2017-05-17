@@ -64,16 +64,6 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     
     @IBAction func editProfileBtnTapped(_ sender: Any) {
         
-        let superID = [
-            "superID": "userDatasuperID"
-        ]
-        
-        let testJSONtree = [
-            "test" : "TEST"
-        ]
-        
-        DataService.ds.REF_USER_CURRENT.updateChildValues(superID)
-        DataService.ds.REF_USER_CURRENT.child("testTree").updateChildValues(testJSONtree)
     }
     
     @IBAction func addImageTapped(_ sender: AnyObject) {

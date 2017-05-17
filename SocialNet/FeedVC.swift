@@ -27,7 +27,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.dataSource = self
         
         // Read data from database
-        DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
+        DataService.ds.REF_POSTS.queryOrdered(byChild: "timeStamp").observe(.value, with: { (snapshot) in
             
             // Fixes dublicate posts issue
             self.posts = []
