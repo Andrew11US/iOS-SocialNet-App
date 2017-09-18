@@ -81,6 +81,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
                 } else {
                     
                     print("Unable to authenticate")
+                    self.showAlertWithTitle("Error", message: "E-mail or password is not correct")
                 }
             })
         }
@@ -177,6 +178,21 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         UIView.setAnimationDuration(moveDuration)
         self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
         UIView.commitAnimations()
+    }
+    
+    func showAlertWithTitle( _ title:String, message:String ) {
+        
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertVC.addAction(okAction)
+        
+        DispatchQueue.main.async { () -> Void in
+            
+            self.present(alertVC, animated: true, completion: nil)
+            
+        }
+        
     }
 
 }

@@ -107,8 +107,16 @@ class PostVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
             "timeStamp": FIRServerValue.timestamp() as AnyObject
         ]
         
-        let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
-        firebasePost.setValue(post)
+        let key = DataService.ds.REF_POSTS.childByAutoId().key
+//        let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
+//        firebasePost.setValue(post)
+        
+        let childUpdates = [
+            
+            "/posts/\(key)": post,
+            "/users/\(userID!)/myPosts/\(key)/": post
+        ]
+        DataService.ds.REF_BASE.updateChildValues(childUpdates)
         
         captionField.text = ""
         imageSelected = false

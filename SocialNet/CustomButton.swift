@@ -24,6 +24,12 @@ class CustomButton: UIButton {
         }
     }
     
+    @IBInspectable var borderColor: UIColor? {
+        didSet {
+            layer.borderColor = borderColor?.cgColor
+        }
+    }
+    
     @IBInspectable var fontColor: UIColor = UIColor.white {
         didSet {
             self.tintColor = fontColor
@@ -42,7 +48,6 @@ class CustomButton: UIButton {
     func setupView() {
         self.layer.cornerRadius = cornerRadius
         self.layer.borderWidth = borderWidth
-        self.layer.borderColor = UIColor.red.cgColor
         
         self.addTarget(self, action: #selector(CustomButton.scaleToSmall), for: .touchDown)
         self.addTarget(self, action: #selector(CustomButton.scaleToSmall), for: .touchDragEnter)
