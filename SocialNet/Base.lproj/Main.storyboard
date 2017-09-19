@@ -100,7 +100,7 @@
                                     </label>
                                     <button opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aA0-EE-gjo" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="345.5" width="327" height="50"/>
-                                        <color key="backgroundColor" red="0.98685997719999996" green="0.2954109311" blue="0.2442416251" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.9882352941176471" green="0.29411764705882354" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="wJd-w2-pdW"/>
                                         </constraints>
@@ -177,7 +177,7 @@
                                     <constraint firstAttribute="height" constant="50" id="x7j-H9-6kV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="42"/>
-                                <color key="textColor" red="0.98644536733627319" green="0.35986316204071045" blue="0.31364399194717407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.9882352941176471" green="0.29411764705882354" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bnb-y0-Yyi">
@@ -200,7 +200,7 @@
                                                 <real key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.94703644514083862" green="0.29263269901275635" blue="0.41515830159187317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.9882352941176471" green="0.29411764705882354" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
@@ -221,7 +221,7 @@
                                                 <real key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.94703644514083862" green="0.29263269901275635" blue="0.41515830159187317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.9882352941176471" green="0.29411764705882354" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
@@ -242,7 +242,7 @@
                                                 <real key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.94703644514083862" green="0.29263269901275635" blue="0.41515830159187317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.9882352941176471" green="0.29411764705882354" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
@@ -262,7 +262,7 @@
                                                 <real key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.94703644514083862" green="0.29263269901275635" blue="0.41515830159187317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.9882352941176471" green="0.29411764705882354" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
@@ -282,13 +282,13 @@
                                                 <real key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.94703644514083862" green="0.29263269901275635" blue="0.41515830159187317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.9882352941176471" green="0.29411764705882354" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0b-mU-FHZ" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="300" width="327" height="50"/>
-                                        <color key="backgroundColor" red="0.98685997719999996" green="0.2954109311" blue="0.2442416251" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.9882352941176471" green="0.29411764705882354" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="1Ki-dN-CI0"/>
                                         </constraints>
@@ -576,7 +576,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.82528257369995117" blue="0.0045134611427783966" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.19769617919999999" green="0.62058788539999998" blue="0.30837213990000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="yXo-oq-0t1" secondAttribute="bottom" id="EQg-qg-qVm"/>
                                     <constraint firstAttribute="bottom" secondItem="5Ei-Bf-2f9" secondAttribute="bottom" id="HeK-6E-QRD"/>
@@ -822,7 +822,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.22253462008888888" green="0.70249903197499997" blue="0.96225875620000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="sKK-wF-9BB" firstAttribute="leading" secondItem="e2Z-WQ-FE9" secondAttribute="leadingMargin" id="1VV-uo-Vr6"/>
                             <constraint firstItem="Kev-eY-gh3" firstAttribute="top" secondItem="ubU-jd-0sD" secondAttribute="bottom" constant="50" id="6Cg-up-xLm"/>
@@ -867,6 +867,6 @@
         <image name="profile" width="150" height="150"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zsL-Ni-eFF"/>
+        <segue reference="Qeu-HZ-UYk"/>
     </inferredMetricsTieBreakers>
 </document>
