@@ -803,7 +803,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="Q4g-C1-W6y">
-                                                    <rect key="frame" x="8" y="8" width="398" height="300"/>
+                                                    <rect key="frame" x="8" y="8" width="359" height="300"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="300" id="FXQ-MQ-0Zu"/>
                                                     </constraints>
