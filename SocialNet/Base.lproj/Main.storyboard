@@ -26,138 +26,177 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uEt-Cs-GLH">
-                                <rect key="frame" x="24" y="121.5" width="327" height="395.5"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="ZR0-u5-cxA">
-                                        <rect key="frame" x="0.0" y="0.0" width="327" height="128"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="128" id="ByP-Ow-50r"/>
-                                        </constraints>
-                                    </imageView>
-                                    <button opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4XL-8f-6fw" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="138" width="327" height="50"/>
-                                        <color key="backgroundColor" red="0.20296481251716614" green="0.66011899709701538" blue="0.32704442739486694" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="QFb-Ag-z6e"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
-                                        <state key="normal" title="Sign In">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="3"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="signInBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bVt-Wb-7Tj"/>
-                                        </connections>
-                                    </button>
-                                    <textField opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uSX-BU-yRA" customClass="CustomTextField" customModule="SocialNet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="198" width="327" height="50"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="MXy-BM-fDL"/>
-                                        </constraints>
-                                        <color key="textColor" red="0.14135066060000001" green="0.25542525420000001" blue="0.30012690359999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.20296481250000001" green="0.66011899709999999" blue="0.3270444274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bHR-gr-iFu" customClass="CustomTextField" customModule="SocialNet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="258" width="327" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="jqq-KH-l69"/>
-                                        </constraints>
-                                        <color key="textColor" red="0.14135066060000001" green="0.25542525420000001" blue="0.30012690359999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.20296481250000001" green="0.66011899709999999" blue="0.3270444274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZu-zw-JtY">
-                                        <rect key="frame" x="0.0" y="318" width="327" height="17.5"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aA0-EE-gjo" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="345.5" width="327" height="50"/>
-                                        <color key="backgroundColor" red="0.9882352941176471" green="0.29411764705882354" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="wJd-w2-pdW"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
-                                        <state key="normal" title="Sign Up">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="3"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <segue destination="J8c-ph-LPg" kind="presentation" identifier="goToSignUp" modalTransitionStyle="flipHorizontal" id="IgG-lj-xtA"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMV-e6-7mr" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
-                                <rect key="frame" x="24" y="587" width="327" height="50"/>
-                                <color key="backgroundColor" red="0.23137254901960785" green="0.34509803921568627" blue="0.59607843137254901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMV-e6-7mr" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
+                                <rect key="frame" x="162.5" y="519" width="50" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="WNV-L8-7Q0"/>
+                                    <constraint firstAttribute="width" constant="50" id="Xoj-MZ-6JS"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
-                                <state key="normal" title="Log in with Facebook"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                <state key="normal" title="f">
+                                    <color key="titleColor" red="0.30196078430000001" green="0.31764705879999999" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="3"/>
+                                        <real key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="logInFacebookPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qip-tQ-64S"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SocialNet3" translatesAutoresizingMaskIntoConstraints="NO" id="ZR0-u5-cxA">
+                                <rect key="frame" x="127.5" y="40" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="YT1-63-gCr"/>
+                                    <constraint firstAttribute="width" constant="120" id="ggG-fg-CZS"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="anT-4q-YPw">
+                                <rect key="frame" x="34" y="200" width="58.5" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="3fL-DY-6Pm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" red="0.17254901960784313" green="0.20784313725490194" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4mY-2v-eQ9">
+                                <rect key="frame" x="34" y="272" width="307" height="25"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-MAIL" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uSX-BU-yRA" customClass="CustomTextField" customModule="SocialNet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="307" height="24"/>
+                                        <color key="textColor" red="0.17254901959999999" green="0.20784313730000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TKz-db-P7r">
+                                        <rect key="frame" x="0.0" y="24" width="307" height="1"/>
+                                        <color key="backgroundColor" red="0.7803921568627451" green="0.7803921568627451" blue="0.80392156862745101" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="GgI-kL-45j"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="rZe-iE-LX4"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mUV-zX-O4o">
+                                <rect key="frame" x="34" y="337" width="307" height="25"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="PASSWORD" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Q4Z-8u-KP9" customClass="CustomTextField" customModule="SocialNet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="307" height="24"/>
+                                        <color key="textColor" red="0.17254901959999999" green="0.20784313730000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dYn-4B-Dpa">
+                                        <rect key="frame" x="0.0" y="24" width="307" height="1"/>
+                                        <color key="backgroundColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="WIe-OI-kNT"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="Aqy-cZ-Gaa"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="7YZ-El-97v">
+                                <rect key="frame" x="34" y="610" width="307" height="27"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aA0-EE-gjo" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="140" height="27"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                                        <state key="normal" title="Don't Have An Account?">
+                                            <color key="titleColor" red="0.17254901959999999" green="0.20784313730000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="J8c-ph-LPg" kind="presentation" identifier="goToSignUp" modalTransitionStyle="flipHorizontal" id="IgG-lj-xtA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3oN-Vq-Pvw" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
+                                        <rect key="frame" x="202" y="0.0" width="105" height="27"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                                        <state key="normal" title="Forgot Password?">
+                                            <color key="titleColor" red="0.17254901959999999" green="0.20784313730000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4XL-8f-6fw" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
+                                <rect key="frame" x="56" y="417" width="263" height="40"/>
+                                <color key="backgroundColor" red="0.17254901959999999" green="0.20784313730000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="QFb-Ag-z6e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                <state key="normal" title="SIGN IN">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signInBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bVt-Wb-7Tj"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or sign in with:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73V-W3-7ry">
+                                <rect key="frame" x="36" y="487" width="303.5" height="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" red="0.30196078431372547" green="0.31764705882352939" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uEt-Cs-GLH" secondAttribute="bottom" constant="150" id="CR6-sy-78W"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="uEt-Cs-GLH" secondAttribute="trailing" constant="8" id="XgP-wR-SNw"/>
-                            <constraint firstItem="fMV-e6-7mr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="vYl-yy-5uH"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="fMV-e6-7mr" secondAttribute="trailing" constant="8" id="vve-zq-1Iv"/>
-                            <constraint firstItem="uEt-Cs-GLH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="xwf-4D-SD5"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fMV-e6-7mr" secondAttribute="bottom" constant="30" id="zWY-uq-KTc"/>
+                            <constraint firstItem="mUV-zX-O4o" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="18" id="3oY-Z3-1ES"/>
+                            <constraint firstItem="anT-4q-YPw" firstAttribute="top" secondItem="ZR0-u5-cxA" secondAttribute="bottom" constant="40" id="8Vc-Bm-YgL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4mY-2v-eQ9" secondAttribute="trailing" constant="18" id="Dcu-ex-g6j"/>
+                            <constraint firstItem="fMV-e6-7mr" firstAttribute="top" secondItem="73V-W3-7ry" secondAttribute="bottom" constant="15" id="IQv-l7-oBU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7YZ-El-97v" secondAttribute="trailing" constant="18" id="L67-Sd-QM3"/>
+                            <constraint firstItem="73V-W3-7ry" firstAttribute="top" secondItem="4XL-8f-6fw" secondAttribute="bottom" constant="30" id="LVN-1Q-GXV"/>
+                            <constraint firstItem="ZR0-u5-cxA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PCr-pK-hBd"/>
+                            <constraint firstItem="73V-W3-7ry" firstAttribute="centerX" secondItem="4XL-8f-6fw" secondAttribute="centerX" id="PRQ-MM-aIC"/>
+                            <constraint firstItem="7YZ-El-97v" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="18" id="Snw-Ow-3tp"/>
+                            <constraint firstItem="4XL-8f-6fw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="VxN-2f-2tC"/>
+                            <constraint firstItem="4XL-8f-6fw" firstAttribute="top" secondItem="mUV-zX-O4o" secondAttribute="bottom" constant="55" id="Vzd-OX-unJ"/>
+                            <constraint firstItem="mUV-zX-O4o" firstAttribute="top" secondItem="4mY-2v-eQ9" secondAttribute="bottom" constant="40" id="ZdS-yR-PQf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="73V-W3-7ry" secondAttribute="trailing" constant="20" id="Zva-oe-AJw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4XL-8f-6fw" secondAttribute="trailing" constant="40" id="bWm-3E-xU9"/>
+                            <constraint firstItem="4mY-2v-eQ9" firstAttribute="top" secondItem="anT-4q-YPw" secondAttribute="bottom" constant="50" id="hvi-Sg-L0w"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7YZ-El-97v" secondAttribute="bottom" constant="30" id="lch-9F-mBa"/>
+                            <constraint firstItem="73V-W3-7ry" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="lrf-zf-b8W"/>
+                            <constraint firstItem="4mY-2v-eQ9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="18" id="mrR-wb-VjY"/>
+                            <constraint firstItem="anT-4q-YPw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="18" id="qJb-Yg-Qxa"/>
+                            <constraint firstItem="fMV-e6-7mr" firstAttribute="centerX" secondItem="4XL-8f-6fw" secondAttribute="centerX" id="qy7-Bz-7Rx"/>
+                            <constraint firstItem="ZR0-u5-cxA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="ybL-zu-ftS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mUV-zX-O4o" secondAttribute="trailing" constant="18" id="zpx-YL-KcB"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="uSX-BU-yRA" id="4cD-Kk-nfp"/>
                         <outlet property="logInFacebook" destination="fMV-e6-7mr" id="J6k-P8-lwM"/>
-                        <outlet property="passwordTextField" destination="bHR-gr-iFu" id="88r-xO-rYx"/>
+                        <outlet property="passwordTextField" destination="Q4Z-8u-KP9" id="2IM-1N-Hg9"/>
                         <outlet property="signInBtn" destination="4XL-8f-6fw" id="dqm-gC-wlY"/>
                         <segue destination="rrP-G5-8K7" kind="presentation" identifier="goToFeed" modalTransitionStyle="flipHorizontal" id="zsL-Ni-eFF"/>
                     </connections>
@@ -863,6 +902,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="SocialNet3" width="360" height="360"/>
         <image name="back" width="150" height="150"/>
         <image name="backBlack" width="150" height="150"/>
         <image name="noImage" width="1024" height="1024"/>
