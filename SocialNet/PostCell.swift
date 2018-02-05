@@ -116,7 +116,7 @@ class PostCell: UITableViewCell {
         
     }
     
-    func likeTapped(sender: UITapGestureRecognizer) {
+    @objc func likeTapped(sender: UITapGestureRecognizer) {
         
         likesRef.observeSingleEvent(of: .value, with: { (snapshot) in
             

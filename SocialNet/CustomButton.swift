@@ -55,7 +55,7 @@ class CustomButton: UIButton {
         self.addTarget(self, action: #selector(CustomButton.scaleDefault), for: .touchDragExit)
     }
     
-    func scaleToSmall() {
+    @objc func scaleToSmall() {
         
         let scaleAmim = POPBasicAnimation(propertyNamed: kPOPLayerScaleXY)
         scaleAmim?.toValue = NSValue(cgSize: CGSize(width: 0.9, height: 0.9))
@@ -63,7 +63,7 @@ class CustomButton: UIButton {
 
     }
     
-    func scaleAnimation() {
+    @objc func scaleAnimation() {
 
         let scaleAnim = POPSpringAnimation(propertyNamed: kPOPLayerScaleXY)
         scaleAnim?.velocity = NSValue(cgPoint: CGPoint(x: 3.0, y: 3.0))
@@ -73,7 +73,7 @@ class CustomButton: UIButton {
         
     }
     
-    func scaleDefault() {
+    @objc func scaleDefault() {
         
         let scaleAnim = POPBasicAnimation(propertyNamed: kPOPLayerScaleXY)
         scaleAnim?.toValue = NSValue(cgSize: CGSize(width: 1, height: 1))
