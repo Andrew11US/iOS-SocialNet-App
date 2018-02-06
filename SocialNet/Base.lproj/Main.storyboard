@@ -470,13 +470,13 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- - - - -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mm-O8-Kx0">
-                                                    <rect key="frame" x="156" y="17.5" width="43" height="17"/>
+                                                    <rect key="frame" x="162.5" y="17.5" width="43" height="17"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="textColor" red="0.47450980392156861" green="0.4823529411764706" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="---" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEE-Xm-L6H">
-                                                    <rect key="frame" x="52" y="35.5" width="308" height="40"/>
+                                                    <rect key="frame" x="52" y="36.5" width="308" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="hYv-Wm-GI0"/>
                                                     </constraints>
@@ -486,14 +486,14 @@
                                                     <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES" shipmentTrackingNumber="YES" flightNumber="YES" lookupSuggestion="YES"/>
                                                 </textView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noLiked" translatesAutoresizingMaskIntoConstraints="NO" id="RLE-Fj-qkm">
-                                                    <rect key="frame" x="15" y="165.5" width="30" height="30"/>
+                                                    <rect key="frame" x="15" y="166.5" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="CBg-9h-ZF0"/>
                                                         <constraint firstAttribute="width" constant="30" id="Sl9-sv-cEE"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunrise2" translatesAutoresizingMaskIntoConstraints="NO" id="KG6-Qq-rvV" customClass="CustomImageView" customModule="SocialNet" customModuleProvider="target">
-                                                    <rect key="frame" x="72.5" y="75.5" width="230" height="90"/>
+                                                    <rect key="frame" x="72.5" y="76.5" width="230" height="90"/>
                                                     <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="230" id="SUP-3l-4MI"/>
@@ -509,24 +509,24 @@
                                                     </connections>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EKt-Ro-4YK">
-                                                    <rect key="frame" x="52" y="17.5" width="99" height="18"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                    <rect key="frame" x="52" y="17" width="105.5" height="19.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" red="0.30196078431372547" green="0.31764705882352939" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0Wg-Jk-Uqe">
-                                                    <rect key="frame" x="53" y="168.5" width="51.5" height="25"/>
+                                                <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0Wg-Jk-Uqe">
+                                                    <rect key="frame" x="53" y="169.5" width="60.5" height="25"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuN-gp-xHw">
-                                                            <rect key="frame" x="0.0" y="0.0" width="28.5" height="25"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="10"/>
-                                                            <nil key="textColor"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="34" height="25"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                                                            <color key="textColor" red="0.30196078430000001" green="0.31764705879999999" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- - -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRX-Ch-oPg">
-                                                            <rect key="frame" x="33.5" y="0.0" width="18" height="25"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="10"/>
-                                                            <nil key="textColor"/>
+                                                            <rect key="frame" x="39" y="0.0" width="21.5" height="25"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                                                            <color key="textColor" red="0.30196078430000001" green="0.31764705879999999" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -845,7 +845,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ua9-9F-XrE">
-                                <rect key="frame" x="139" y="50" width="95.5" height="35"/>
+                                <rect key="frame" x="140" y="50" width="95.5" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="cEW-h9-BHP"/>
                                 </constraints>
@@ -859,7 +859,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="Diq-qn-oOi"/>
                                     <constraint firstAttribute="height" constant="30" id="OoR-nJ-AGw"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                 <state key="normal" title="Log Out">
                                     <color key="titleColor" red="0.30196078430000001" green="0.31764705879999999" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -1025,11 +1025,12 @@
                                                     <constraint firstAttribute="height" constant="40" id="WHE-b0-Ca8"/>
                                                     <constraint firstAttribute="width" constant="40" id="Zgg-Kc-QSe"/>
                                                 </constraints>
-                                                <state key="normal" image="Feed S">
+                                                <state key="normal" image="Feed">
                                                     <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="profileBtnPressed:" destination="rrP-G5-8K7" eventType="touchUpInside" id="3JC-nE-Obh"/>
+                                                    <segue destination="rrP-G5-8K7" kind="show" id="WCd-TQ-Caj"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dH3-Kb-tyu" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
@@ -1068,7 +1069,7 @@
                                                     <constraint firstAttribute="width" constant="40" id="seX-KX-4tA"/>
                                                     <constraint firstAttribute="height" constant="40" id="yWk-mE-N1j"/>
                                                 </constraints>
-                                                <state key="normal" image="Profile">
+                                                <state key="normal" image="Profile S">
                                                     <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
@@ -1225,17 +1226,19 @@
     <resources>
         <image name="Connect" width="41" height="40"/>
         <image name="Exit" width="150" height="150"/>
+        <image name="Feed" width="40" height="40"/>
         <image name="Feed S" width="40" height="40"/>
         <image name="Notifications" width="40" height="40"/>
         <image name="Profile" width="40" height="40"/>
+        <image name="Profile S" width="40" height="40"/>
         <image name="Search" width="28" height="28"/>
         <image name="SocialNet3" width="360" height="360"/>
         <image name="add" width="90" height="90"/>
         <image name="noImage" width="1024" height="1024"/>
-        <image name="noLiked" width="150" height="150"/>
+        <image name="noLiked" width="90" height="90"/>
         <image name="sunrise2" width="2100" height="1400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Qeu-HZ-UYk"/>
+        <segue reference="WCd-TQ-Caj"/>
     </inferredMetricsTieBreakers>
 </document>
