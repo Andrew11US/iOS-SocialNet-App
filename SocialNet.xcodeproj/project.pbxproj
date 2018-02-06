@@ -32,6 +32,12 @@
 		9090086B1EC49E4A00977BD3 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9090086A1EC49E4A00977BD3 /* SignUpVC.swift */; };
 		9090086D1EC4A04700977BD3 /* PostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9090086C1EC4A04700977BD3 /* PostVC.swift */; };
 		9090086F1EC4A05700977BD3 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9090086E1EC4A05700977BD3 /* ProfileVC.swift */; };
+		90DC99B1202A6AA20062AF05 /* EditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DC99B0202A6AA20062AF05 /* EditVC.swift */; };
+		90DC99B3202A6B260062AF05 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DC99B2202A6B260062AF05 /* SettingsVC.swift */; };
+		90DC99B5202A6B3B0062AF05 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DC99B4202A6B3B0062AF05 /* SearchVC.swift */; };
+		90DC99B7202A6B7F0062AF05 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DC99B6202A6B7F0062AF05 /* NotificationVC.swift */; };
+		90DC99B9202A6B8D0062AF05 /* ConnectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DC99B8202A6B8D0062AF05 /* ConnectVC.swift */; };
+		90DC99BB202A6B990062AF05 /* MessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DC99BA202A6B990062AF05 /* MessageVC.swift */; };
 		90DDFAC41EC781030038226C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDFAC31EC781030038226C /* User.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +73,12 @@
 		9090086A1EC49E4A00977BD3 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		9090086C1EC4A04700977BD3 /* PostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostVC.swift; sourceTree = "<group>"; };
 		9090086E1EC4A05700977BD3 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		90DC99B0202A6AA20062AF05 /* EditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVC.swift; sourceTree = "<group>"; };
+		90DC99B2202A6B260062AF05 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		90DC99B4202A6B3B0062AF05 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		90DC99B6202A6B7F0062AF05 /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
+		90DC99B8202A6B8D0062AF05 /* ConnectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectVC.swift; sourceTree = "<group>"; };
+		90DC99BA202A6B990062AF05 /* MessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVC.swift; sourceTree = "<group>"; };
 		90DDFAC31EC781030038226C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,6 +175,12 @@
 				9090086A1EC49E4A00977BD3 /* SignUpVC.swift */,
 				9090086C1EC4A04700977BD3 /* PostVC.swift */,
 				9090086E1EC4A05700977BD3 /* ProfileVC.swift */,
+				90DC99B0202A6AA20062AF05 /* EditVC.swift */,
+				90DC99B2202A6B260062AF05 /* SettingsVC.swift */,
+				90DC99B4202A6B3B0062AF05 /* SearchVC.swift */,
+				90DC99B6202A6B7F0062AF05 /* NotificationVC.swift */,
+				90DC99B8202A6B8D0062AF05 /* ConnectVC.swift */,
+				90DC99BA202A6B990062AF05 /* MessageVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -319,6 +337,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90DC99B3202A6B260062AF05 /* SettingsVC.swift in Sources */,
+				90DC99BB202A6B990062AF05 /* MessageVC.swift in Sources */,
 				9090086F1EC4A05700977BD3 /* ProfileVC.swift in Sources */,
 				9060034D1EC209F40001E24F /* RoundedView.swift in Sources */,
 				9055077B1EC2FE900000F6A2 /* Post.swift in Sources */,
@@ -329,10 +349,14 @@
 				902426771DE890D300A8D94A /* SignInVC.swift in Sources */,
 				9060034B1EC209F40001E24F /* CustomTextField.swift in Sources */,
 				90315AFE1ECCA448006EE467 /* ProfilePostCell.swift in Sources */,
+				90DC99B1202A6AA20062AF05 /* EditVC.swift in Sources */,
 				902426751DE890D300A8D94A /* AppDelegate.swift in Sources */,
+				90DC99B9202A6B8D0062AF05 /* ConnectVC.swift in Sources */,
+				90DC99B7202A6B7F0062AF05 /* NotificationVC.swift in Sources */,
 				903DECA41EC2420E00B0B1D2 /* FeedVC.swift in Sources */,
 				903DECA21EC240AF00B0B1D2 /* Constants.swift in Sources */,
 				9060034A1EC209F40001E24F /* CustomButton.swift in Sources */,
+				90DC99B5202A6B3B0062AF05 /* SearchVC.swift in Sources */,
 				9090086B1EC49E4A00977BD3 /* SignUpVC.swift in Sources */,
 				9060034C1EC209F40001E24F /* Material Design.swift in Sources */,
 				905507791EC2FDCC0000F6A2 /* PostCell.swift in Sources */,

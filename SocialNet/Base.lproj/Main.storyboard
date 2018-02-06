@@ -624,6 +624,9 @@
                                                 <state key="normal" image="Search">
                                                     <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="70T-lS-ZoS" kind="show" id="bTm-fa-nDk"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fb7-Vr-B62" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
                                                 <rect key="frame" x="147.5" y="0.0" width="40" height="40"/>
@@ -834,6 +837,42 @@
             </objects>
             <point key="canvasLocation" x="1079.2" y="1104.1979010494754"/>
         </scene>
+        <!--EditVC-->
+        <scene sceneID="Eb8-2S-Web">
+            <objects>
+                <viewController id="TQA-Ti-7Pa" customClass="EditVC" customModule="SocialNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="awz-WX-W7m"/>
+                        <viewControllerLayoutGuide type="bottom" id="3pF-eA-WId"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xc2-5v-YKV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0pN-JU-eLl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2079" y="1104"/>
+        </scene>
+        <!--SettingsVC-->
+        <scene sceneID="AlY-TM-BBN">
+            <objects>
+                <viewController id="By0-ca-Asr" customClass="SettingsVC" customModule="SocialNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QLV-aX-cjx"/>
+                        <viewControllerLayoutGuide type="bottom" id="1wZ-Wz-zVk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hx2-gD-UwU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cDx-2V-9Ya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2079" y="1880"/>
+        </scene>
         <!--ProfileVC-->
         <scene sceneID="XYF-yZ-eY1">
             <objects>
@@ -877,7 +916,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="signOutTapped:" destination="Mcv-uX-0eA" eventType="touchUpInside" id="cb1-08-ZGv"/>
+                                    <segue destination="By0-ca-Asr" kind="show" id="ERQ-kP-ZBf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubU-jd-0sD" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
@@ -903,6 +942,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="editProfileBtnTapped:" destination="Mcv-uX-0eA" eventType="touchUpInside" id="DTN-I1-f03"/>
+                                    <segue destination="TQA-Ti-7Pa" kind="show" id="6qo-lM-qrh"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="353" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kev-eY-gh3">
@@ -1044,6 +1084,9 @@
                                                 <state key="normal" image="Search">
                                                     <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="70T-lS-ZoS" kind="show" id="ixe-Eg-9QW"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="otm-0T-Llo" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
                                                 <rect key="frame" x="147.5" y="0.0" width="40" height="40"/>
@@ -1074,9 +1117,6 @@
                                                 <state key="normal" image="Profile S">
                                                     <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="profileBtnPressed:" destination="rrP-G5-8K7" eventType="touchUpInside" id="gHJ-C2-1fz"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -1224,9 +1264,224 @@
             </objects>
             <point key="canvasLocation" x="2079.1999999999998" y="134.48275862068968"/>
         </scene>
+        <!--SearchVC-->
+        <scene sceneID="jsP-Z4-gAT">
+            <objects>
+                <viewController id="70T-lS-ZoS" customClass="SearchVC" customModule="SocialNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ymR-MW-JLS"/>
+                        <viewControllerLayoutGuide type="bottom" id="PHh-lk-J2d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0ro-fr-y6s">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yno-Kb-WBr">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <subviews>
+                                    <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="BD0-OU-2ET">
+                                        <rect key="frame" x="20" y="5" width="335" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19I-z3-Rg0" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="Try-nL-atB"/>
+                                                    <constraint firstAttribute="height" constant="40" id="gHk-Vn-U6r"/>
+                                                </constraints>
+                                                <state key="normal" image="Feed">
+                                                    <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="profileBtnPressed:" destination="rrP-G5-8K7" eventType="touchUpInside" id="tyk-gZ-t92"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEf-y3-Ag9" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
+                                                <rect key="frame" x="74" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="bpZ-ut-ee3"/>
+                                                    <constraint firstAttribute="width" constant="40" id="lqw-GY-qBm"/>
+                                                </constraints>
+                                                <state key="normal" image="Search S">
+                                                    <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LtE-7n-f3O" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
+                                                <rect key="frame" x="147.5" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="HRG-8S-vIn"/>
+                                                    <constraint firstAttribute="width" constant="40" id="uFt-fP-ddR"/>
+                                                </constraints>
+                                                <state key="normal" image="Connect">
+                                                    <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="nuW-NF-jhY" kind="show" id="niV-z5-BbD"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xby-rf-vJT" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
+                                                <rect key="frame" x="221.5" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="sGl-kJ-lFy"/>
+                                                    <constraint firstAttribute="width" constant="40" id="xxX-Tg-Kbf"/>
+                                                </constraints>
+                                                <state key="normal" image="Notifications">
+                                                    <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Fz-9s-hRX" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
+                                                <rect key="frame" x="295" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="AEC-Mh-Rhi"/>
+                                                    <constraint firstAttribute="height" constant="40" id="dKZ-Lf-4H3"/>
+                                                </constraints>
+                                                <state key="normal" image="Profile">
+                                                    <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="BD0-OU-2ET" firstAttribute="leading" secondItem="Yno-Kb-WBr" secondAttribute="leadingMargin" constant="12" id="4w1-vB-0Vg"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="BD0-OU-2ET" secondAttribute="trailing" constant="12" id="9mr-EV-Tvs"/>
+                                    <constraint firstItem="BD0-OU-2ET" firstAttribute="centerY" secondItem="Yno-Kb-WBr" secondAttribute="centerY" id="FbM-zY-k3Z"/>
+                                    <constraint firstAttribute="height" constant="50" id="c3C-9D-cvd"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Yno-Kb-WBr" firstAttribute="leading" secondItem="0ro-fr-y6s" secondAttribute="leading" id="GNC-8v-aND"/>
+                            <constraint firstItem="PHh-lk-J2d" firstAttribute="top" secondItem="Yno-Kb-WBr" secondAttribute="bottom" id="QWH-7F-E7B"/>
+                            <constraint firstAttribute="trailing" secondItem="Yno-Kb-WBr" secondAttribute="trailing" id="wsR-px-jEh"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wpf-gi-j0H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3078" y="134"/>
+        </scene>
+        <!--ConnectVC-->
+        <scene sceneID="fiR-u5-NQ7">
+            <objects>
+                <viewController id="nuW-NF-jhY" customClass="ConnectVC" customModule="SocialNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eTT-VC-0Sy"/>
+                        <viewControllerLayoutGuide type="bottom" id="3H8-d0-VvI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zAw-B1-mcf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a9U-i4-XvL">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <subviews>
+                                    <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="WGL-Im-d6n">
+                                        <rect key="frame" x="20" y="5" width="335" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fhl-XT-t8a" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="bLg-5i-Bwl"/>
+                                                    <constraint firstAttribute="height" constant="40" id="nmY-As-sn7"/>
+                                                </constraints>
+                                                <state key="normal" image="Feed">
+                                                    <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="profileBtnPressed:" destination="rrP-G5-8K7" eventType="touchUpInside" id="YNN-tC-ktd"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KxS-ZT-m6c" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
+                                                <rect key="frame" x="74" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="DDP-9K-J2g"/>
+                                                    <constraint firstAttribute="width" constant="40" id="xJs-fw-f5H"/>
+                                                </constraints>
+                                                <state key="normal" image="Search">
+                                                    <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="70T-lS-ZoS" kind="show" id="fNe-HU-NK7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8c-Ly-QeA" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
+                                                <rect key="frame" x="147.5" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="Mqt-dk-lCG"/>
+                                                    <constraint firstAttribute="height" constant="40" id="kVf-0o-Dw4"/>
+                                                </constraints>
+                                                <state key="normal" image="Connect S">
+                                                    <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reD-tT-VYb" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
+                                                <rect key="frame" x="221.5" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="PoW-4R-7jA"/>
+                                                    <constraint firstAttribute="width" constant="40" id="a6W-Rk-CUs"/>
+                                                </constraints>
+                                                <state key="normal" image="Notifications">
+                                                    <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmC-SN-OLl" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
+                                                <rect key="frame" x="295" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="jlJ-K9-WLE"/>
+                                                    <constraint firstAttribute="height" constant="40" id="pdO-Rh-Vck"/>
+                                                </constraints>
+                                                <state key="normal" image="Profile">
+                                                    <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="WGL-Im-d6n" firstAttribute="leading" secondItem="a9U-i4-XvL" secondAttribute="leadingMargin" constant="12" id="J5T-59-idK"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="WGL-Im-d6n" secondAttribute="trailing" constant="12" id="Quv-4P-k1o"/>
+                                    <constraint firstItem="WGL-Im-d6n" firstAttribute="centerY" secondItem="a9U-i4-XvL" secondAttribute="centerY" id="U1o-BQ-bVf"/>
+                                    <constraint firstAttribute="height" constant="50" id="ZvG-hV-UEK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="a9U-i4-XvL" secondAttribute="trailing" id="82B-Jl-BJK"/>
+                            <constraint firstItem="a9U-i4-XvL" firstAttribute="leading" secondItem="zAw-B1-mcf" secondAttribute="leading" id="GIg-iH-SLq"/>
+                            <constraint firstAttribute="bottom" secondItem="a9U-i4-XvL" secondAttribute="bottom" id="kVz-Xz-gqX"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PJe-rz-pLw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4194" y="134"/>
+        </scene>
+        <!--MessageVC-->
+        <scene sceneID="2h0-wz-xlh">
+            <objects>
+                <viewController id="ueO-iD-06C" customClass="MessageVC" customModule="SocialNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ebl-M9-9ng"/>
+                        <viewControllerLayoutGuide type="bottom" id="mqh-n5-0G5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tfd-Tl-K5m">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Jo-ah-NVD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4193" y="1103"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Connect" width="41" height="40"/>
+        <image name="Connect S" width="41" height="40"/>
         <image name="Exit" width="150" height="150"/>
         <image name="Feed" width="40" height="40"/>
         <image name="Feed S" width="40" height="40"/>
@@ -1234,6 +1489,7 @@
         <image name="Profile" width="40" height="40"/>
         <image name="Profile S" width="40" height="40"/>
         <image name="Search" width="28" height="28"/>
+        <image name="Search S" width="41" height="40"/>
         <image name="SocialNet3" width="360" height="360"/>
         <image name="add" width="90" height="90"/>
         <image name="noImage" width="1024" height="1024"/>
@@ -1241,7 +1497,7 @@
         <image name="sunrise2" width="2100" height="1400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qLF-zD-TeY"/>
+        <segue reference="fNe-HU-NK7"/>
         <segue reference="WCd-TQ-Caj"/>
     </inferredMetricsTieBreakers>
 </document>
