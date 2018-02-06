@@ -115,6 +115,7 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
             }
         } else {
             print("Password not match")
+            showAlertWithTitle("Error!", message: "Password do not match")
         }
         
         self.view.endEditing(true)
@@ -128,6 +129,21 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
         let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
         print("Data saved to keychain \(keychainResult)")
         performSegue(withIdentifier: "signedUp", sender: nil)
+    }
+    
+    func showAlertWithTitle( _ title:String, message:String ) {
+        
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertVC.addAction(okAction)
+        
+        DispatchQueue.main.async { () -> Void in
+            
+            self.present(alertVC, animated: true, completion: nil)
+            
+        }
+        
     }
     
     /*
