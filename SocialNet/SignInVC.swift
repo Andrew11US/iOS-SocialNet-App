@@ -157,16 +157,16 @@ class SignInVC: UIViewController, UITextFieldDelegate {
     }
     
     // Start Editing The Text Field
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        moveTextField(emailTextField, moveDistance: -40, up: true)
-        moveTextField(passwordTextField, moveDistance: -40, up: true)
-    }
+//    func textFieldDidBeginEditing(_ textField: UITextField) {
+//        moveTextField(emailTextField, moveDistance: -40, up: true)
+//        moveTextField(passwordTextField, moveDistance: -40, up: true)
+//    }
     
     // Finish Editing The Text Field
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        moveTextField(emailTextField, moveDistance: -40, up: false)
-        moveTextField(passwordTextField, moveDistance: -40, up: false)
-    }
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//        moveTextField(emailTextField, moveDistance: -40, up: false)
+//        moveTextField(passwordTextField, moveDistance: -40, up: false)
+//    }
     
     // Move the text field in a pretty animation!
     func moveTextField(_ textField: CustomTextField, moveDistance: Int, up: Bool) {

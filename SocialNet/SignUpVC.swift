@@ -130,6 +130,7 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
         performSegue(withIdentifier: "signedUp", sender: nil)
     }
     
+    /*
     // Start Editing The Text Field
     func textFieldDidBeginEditing(_ textField: UITextField) {
         moveTextField(nameTextField, moveDistance: -20, up: true)
@@ -156,12 +157,13 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
     func moveTextField(_ textField: CustomTextField, moveDistance: Int, up: Bool) {
         let moveDuration = 0.3
         let movement: CGFloat = CGFloat(up ? moveDistance : -moveDistance)
-        
+
         UIView.beginAnimations("animateTextField", context: nil)
         UIView.setAnimationBeginsFromCurrentState(true)
         UIView.setAnimationDuration(moveDuration)
         self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
         UIView.commitAnimations()
     }
+ */
 
 }
