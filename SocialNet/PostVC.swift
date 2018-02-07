@@ -15,6 +15,7 @@ class PostVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
 
     @IBOutlet weak var captionField: CustomTextField!
     @IBOutlet weak var imageAdd: UIImageView!
+    @IBOutlet weak var userPic: CustomImageView!
     
     var imagePicker: UIImagePickerController!
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
@@ -33,6 +34,12 @@ class PostVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
         
         print(userID!)
         getUserData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        downloadProfilePic()
     }
     
     // Dismiss keyboard function
@@ -145,6 +152,42 @@ class PostVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
                 print("UPU:" + self.userPicUrl)
                 print("UN:" + self.username)
             })
+        }
+    }
+    
+    func downloadProfilePic(img: UIImage? = nil) {
+        
+        // Download User Image & handle errors
+        DispatchQueue.main.async {
+            if img != nil {
+                
+                self.userPic.image = img
+                
+            } else {
+                
+                let ref = FIRStorage.storage().reference(forURL: self.userPicUrl)
+                ref.data(withMaxSize: 2 * 1024 * 1024, completion: { (data, error) in
+                    
+                    if error != nil {
+                        print("Unable to download image from Firebase storage")
+                        print("\(String(describing: error))")
+                        self.userPic.image = UIImage(named: "noImage")
+                        
+                    } else {
+                        
+                        print("Image downloaded from Firebase storage")
+                        if let imgData = data {
+                            
+                            if let img = UIImage(data: imgData) {
+                                
+                                self.userPic.image = img
+                                // Add downloaded image to cache
+                                PostVC.imageCache.setObject(img, forKey: self.userPicUrl as NSString)
+                            }
+                        }
+                    }
+                })
+            }
         }
     }
 

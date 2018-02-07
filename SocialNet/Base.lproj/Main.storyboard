@@ -204,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="134.48275862068968"/>
+            <point key="canvasLocation" x="-311" y="134"/>
         </scene>
         <!--Sign UpVC-->
         <scene sceneID="zgZ-IY-rU6">
@@ -432,7 +432,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p82-CN-CGp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133" y="1106"/>
+            <point key="canvasLocation" x="-311" y="1101"/>
         </scene>
         <!--FeedVC-->
         <scene sceneID="EYG-Lk-AxA">
@@ -611,9 +611,6 @@
                                                 <state key="normal" image="Feed S">
                                                     <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="profileBtnPressed:" destination="rrP-G5-8K7" eventType="touchUpInside" id="kX8-JZ-QLa"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zPp-7B-xCf" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
                                                 <rect key="frame" x="74" y="0.0" width="40" height="40"/>
@@ -625,7 +622,7 @@
                                                     <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="70T-lS-ZoS" kind="show" id="bTm-fa-nDk"/>
+                                                    <segue destination="70T-lS-ZoS" kind="presentation" modalTransitionStyle="crossDissolve" id="bTm-fa-nDk"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fb7-Vr-B62" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
@@ -637,6 +634,9 @@
                                                 <state key="normal" image="Connect">
                                                     <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="nuW-NF-jhY" kind="presentation" modalTransitionStyle="crossDissolve" id="hdW-If-ih7"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcP-WV-iOu" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
                                                 <rect key="frame" x="221.5" y="0.0" width="40" height="40"/>
@@ -647,6 +647,9 @@
                                                 <state key="normal" image="Notifications">
                                                     <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="zCH-5D-gCE" kind="presentation" modalTransitionStyle="crossDissolve" id="tas-G0-moo"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvN-Z4-WCA" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
                                                 <rect key="frame" x="295" y="0.0" width="40" height="40"/>
@@ -659,7 +662,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="profileBtnPressed:" destination="rrP-G5-8K7" eventType="touchUpInside" id="1Vb-qo-Wx9"/>
-                                                    <segue destination="Mcv-uX-0eA" kind="show" id="qLF-zD-TeY"/>
+                                                    <segue destination="Mcv-uX-0eA" kind="presentation" modalTransitionStyle="crossDissolve" id="qLF-zD-TeY"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -697,7 +700,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jMc-c9-bm9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="DzK-LC-SQi"/>
             </objects>
-            <point key="canvasLocation" x="1080.8" y="133.5832083958021"/>
+            <point key="canvasLocation" x="1081" y="134"/>
         </scene>
         <!--PostVC-->
         <scene sceneID="M8I-5T-k2f">
@@ -826,6 +829,7 @@
                     <connections>
                         <outlet property="captionField" destination="Mug-gJ-FVf" id="7MX-rI-qKy"/>
                         <outlet property="imageAdd" destination="wNG-NI-TZn" id="XEN-wR-61G"/>
+                        <outlet property="userPic" destination="gor-kM-27a" id="Ixv-LP-qdM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9vy-Nb-RmI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -835,7 +839,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1079.2" y="1104.1979010494754"/>
+            <point key="canvasLocation" x="1081" y="1101"/>
         </scene>
         <!--EditVC-->
         <scene sceneID="Eb8-2S-Web">
@@ -853,7 +857,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0pN-JU-eLl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2079" y="1104"/>
+            <point key="canvasLocation" x="2122" y="2058"/>
         </scene>
         <!--SettingsVC-->
         <scene sceneID="AlY-TM-BBN">
@@ -871,7 +875,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cDx-2V-9Ya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2079" y="1880"/>
+            <point key="canvasLocation" x="3177" y="2058"/>
         </scene>
         <!--ProfileVC-->
         <scene sceneID="XYF-yZ-eY1">
@@ -916,7 +920,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="By0-ca-Asr" kind="show" id="ERQ-kP-ZBf"/>
+                                    <segue destination="By0-ca-Asr" kind="presentation" modalTransitionStyle="crossDissolve" id="ERQ-kP-ZBf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubU-jd-0sD" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
@@ -942,18 +946,20 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="editProfileBtnTapped:" destination="Mcv-uX-0eA" eventType="touchUpInside" id="DTN-I1-f03"/>
-                                    <segue destination="TQA-Ti-7Pa" kind="show" id="6qo-lM-qrh"/>
+                                    <segue destination="TQA-Ti-7Pa" kind="presentation" modalTransitionStyle="crossDissolve" id="6qo-lM-qrh"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="353" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kev-eY-gh3">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="353" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kev-eY-gh3">
                                 <rect key="frame" x="0.0" y="241" width="375" height="376"/>
                                 <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="separatorColor" red="0.30196078430000001" green="0.31764705879999999" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="profilePostCell" rowHeight="215" id="zZh-og-Rjm" customClass="ProfilePostCell" customModule="SocialNet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="215"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zZh-og-Rjm" id="WSM-9s-lMH">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="215"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="214.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="nhS-NR-hgl" customClass="CustomImageView" customModule="SocialNet" customModuleProvider="target">
@@ -969,15 +975,15 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- - - - -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zg1-P7-rLS">
-                                                    <rect key="frame" x="149" y="19" width="40" height="15.5"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
+                                                    <rect key="frame" x="162.5" y="17.5" width="43" height="17"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="textColor" red="0.47450980390000003" green="0.4823529412" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="---" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubv-Mp-mra">
-                                                    <rect key="frame" x="52" y="35" width="308" height="60"/>
+                                                    <rect key="frame" x="52" y="36.5" width="308" height="40"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="60" id="UKT-HT-YYT"/>
+                                                        <constraint firstAttribute="height" constant="40" id="UKT-HT-YYT"/>
                                                     </constraints>
                                                     <color key="textColor" red="0.17254901959999999" green="0.20784313730000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
@@ -985,14 +991,14 @@
                                                     <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES" shipmentTrackingNumber="YES" flightNumber="YES" lookupSuggestion="YES"/>
                                                 </textView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noLiked" translatesAutoresizingMaskIntoConstraints="NO" id="MxJ-Us-Z4c">
-                                                    <rect key="frame" x="15" y="185" width="30" height="30"/>
+                                                    <rect key="frame" x="15" y="166.5" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="2L9-7a-6to"/>
                                                         <constraint firstAttribute="width" constant="30" id="jZ6-x1-Wr3"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunrise2" translatesAutoresizingMaskIntoConstraints="NO" id="CCg-hM-jC1" customClass="CustomImageView" customModule="SocialNet" customModuleProvider="target">
-                                                    <rect key="frame" x="72.5" y="95" width="230" height="90"/>
+                                                    <rect key="frame" x="72.5" y="76.5" width="230" height="90"/>
                                                     <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="230" id="0Dg-Ko-s47"/>
@@ -1005,24 +1011,24 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXT-Px-n69">
-                                                    <rect key="frame" x="52" y="18" width="92" height="17"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                                    <rect key="frame" x="52" y="17" width="105.5" height="19.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" red="0.30196078430000001" green="0.31764705879999999" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lSO-b8-AwC">
-                                                    <rect key="frame" x="53" y="188" width="51.5" height="25"/>
+                                                    <rect key="frame" x="53" y="169.5" width="60.5" height="25"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WK9-Jr-P0g">
-                                                            <rect key="frame" x="0.0" y="0.0" width="28.5" height="25"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="10"/>
-                                                            <nil key="textColor"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="34" height="25"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                                                            <color key="textColor" red="0.30196078430000001" green="0.31764705879999999" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- - -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NbD-a4-59C">
-                                                            <rect key="frame" x="33.5" y="0.0" width="18" height="25"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="10"/>
-                                                            <nil key="textColor"/>
+                                                            <rect key="frame" x="39" y="0.0" width="21.5" height="25"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                                                            <color key="textColor" red="0.30196078430000001" green="0.31764705879999999" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -1071,8 +1077,7 @@
                                                     <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="profileBtnPressed:" destination="rrP-G5-8K7" eventType="touchUpInside" id="3JC-nE-Obh"/>
-                                                    <segue destination="rrP-G5-8K7" kind="show" id="WCd-TQ-Caj"/>
+                                                    <segue destination="rrP-G5-8K7" kind="presentation" modalTransitionStyle="crossDissolve" id="WCd-TQ-Caj"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dH3-Kb-tyu" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
@@ -1085,7 +1090,7 @@
                                                     <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="70T-lS-ZoS" kind="show" id="ixe-Eg-9QW"/>
+                                                    <segue destination="70T-lS-ZoS" kind="presentation" modalTransitionStyle="crossDissolve" id="ixe-Eg-9QW"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="otm-0T-Llo" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
@@ -1097,6 +1102,9 @@
                                                 <state key="normal" image="Connect">
                                                     <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="nuW-NF-jhY" kind="presentation" modalTransitionStyle="crossDissolve" id="Jwr-Bl-lAx"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kL-Uv-z8W" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
                                                 <rect key="frame" x="221.5" y="0.0" width="40" height="40"/>
@@ -1107,6 +1115,9 @@
                                                 <state key="normal" image="Notifications">
                                                     <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="zCH-5D-gCE" kind="presentation" modalTransitionStyle="crossDissolve" id="H0c-Mk-pkx"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="myd-UY-2QH" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
                                                 <rect key="frame" x="295" y="0.0" width="40" height="40"/>
@@ -1262,7 +1273,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2079.1999999999998" y="134.48275862068968"/>
+            <point key="canvasLocation" x="2596" y="1101"/>
         </scene>
         <!--SearchVC-->
         <scene sceneID="jsP-Z4-gAT">
@@ -1292,7 +1303,7 @@
                                                     <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="profileBtnPressed:" destination="rrP-G5-8K7" eventType="touchUpInside" id="tyk-gZ-t92"/>
+                                                    <segue destination="rrP-G5-8K7" kind="presentation" modalTransitionStyle="crossDissolve" id="ail-iD-Zqw"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEf-y3-Ag9" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
@@ -1315,7 +1326,7 @@
                                                     <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="nuW-NF-jhY" kind="show" id="niV-z5-BbD"/>
+                                                    <segue destination="nuW-NF-jhY" kind="presentation" modalTransitionStyle="crossDissolve" id="niV-z5-BbD"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xby-rf-vJT" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
@@ -1327,6 +1338,9 @@
                                                 <state key="normal" image="Notifications">
                                                     <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="zCH-5D-gCE" kind="presentation" modalTransitionStyle="crossDissolve" id="F6A-R0-auS"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Fz-9s-hRX" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
                                                 <rect key="frame" x="295" y="0.0" width="40" height="40"/>
@@ -1360,7 +1374,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wpf-gi-j0H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3078" y="134"/>
+            <point key="canvasLocation" x="4564" y="2058"/>
         </scene>
         <!--ConnectVC-->
         <scene sceneID="fiR-u5-NQ7">
@@ -1390,7 +1404,7 @@
                                                     <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="profileBtnPressed:" destination="rrP-G5-8K7" eventType="touchUpInside" id="YNN-tC-ktd"/>
+                                                    <segue destination="rrP-G5-8K7" kind="presentation" id="fNr-Qx-L2Y"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KxS-ZT-m6c" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
@@ -1403,7 +1417,7 @@
                                                     <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="70T-lS-ZoS" kind="show" id="fNe-HU-NK7"/>
+                                                    <segue destination="70T-lS-ZoS" kind="presentation" modalTransitionStyle="crossDissolve" id="fNe-HU-NK7"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8c-Ly-QeA" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
@@ -1425,6 +1439,9 @@
                                                 <state key="normal" image="Notifications">
                                                     <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="zCH-5D-gCE" kind="presentation" modalTransitionStyle="crossDissolve" id="d56-gr-MDP"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmC-SN-OLl" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
                                                 <rect key="frame" x="295" y="0.0" width="40" height="40"/>
@@ -1458,7 +1475,108 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PJe-rz-pLw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4194" y="134"/>
+            <point key="canvasLocation" x="5919" y="1101"/>
+        </scene>
+        <!--NotificationVC-->
+        <scene sceneID="8Wo-jY-fIr">
+            <objects>
+                <viewController id="zCH-5D-gCE" customClass="NotificationVC" customModule="SocialNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HaC-jT-Nk8"/>
+                        <viewControllerLayoutGuide type="bottom" id="3vq-wA-7jH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="I5v-v2-z3T">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cXc-8C-w0Z">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <subviews>
+                                    <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="ISM-Sf-Wk2">
+                                        <rect key="frame" x="20" y="5" width="335" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybZ-BH-YiW" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="cGu-vA-6Jt"/>
+                                                    <constraint firstAttribute="width" constant="40" id="oOY-6Z-zkc"/>
+                                                </constraints>
+                                                <state key="normal" image="Feed">
+                                                    <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="rrP-G5-8K7" kind="presentation" modalTransitionStyle="crossDissolve" id="Grw-aZ-xqH"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Wp-EO-Ae4" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
+                                                <rect key="frame" x="74" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="koM-F9-uE1"/>
+                                                    <constraint firstAttribute="height" constant="40" id="w89-nT-O2g"/>
+                                                </constraints>
+                                                <state key="normal" image="Search">
+                                                    <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="70T-lS-ZoS" kind="presentation" modalTransitionStyle="crossDissolve" id="q6i-Ho-vP2"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f78-oj-5Wu" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
+                                                <rect key="frame" x="147.5" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="bdm-SP-SZJ"/>
+                                                    <constraint firstAttribute="width" constant="40" id="h4u-q5-K9S"/>
+                                                </constraints>
+                                                <state key="normal" image="Connect">
+                                                    <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="nuW-NF-jhY" kind="presentation" modalTransitionStyle="crossDissolve" id="w3O-kl-gXy"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2J-mj-bXH" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
+                                                <rect key="frame" x="221.5" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="0Z5-3d-9t3"/>
+                                                    <constraint firstAttribute="height" constant="40" id="HUX-w6-ZGJ"/>
+                                                </constraints>
+                                                <state key="normal" image="Notifications S">
+                                                    <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46H-gd-DhH" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
+                                                <rect key="frame" x="295" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="LeQ-31-G62"/>
+                                                    <constraint firstAttribute="height" constant="40" id="rri-ee-fnY"/>
+                                                </constraints>
+                                                <state key="normal" image="Profile">
+                                                    <color key="titleColor" red="0.113708131" green="0.1137354299" blue="0.11370643229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ISM-Sf-Wk2" firstAttribute="centerY" secondItem="cXc-8C-w0Z" secondAttribute="centerY" id="NpN-iJ-23v"/>
+                                    <constraint firstItem="ISM-Sf-Wk2" firstAttribute="leading" secondItem="cXc-8C-w0Z" secondAttribute="leadingMargin" constant="12" id="U7t-QC-7o2"/>
+                                    <constraint firstAttribute="height" constant="50" id="ca4-vQ-8h5"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="ISM-Sf-Wk2" secondAttribute="trailing" constant="12" id="f0L-rN-bU9"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="cXc-8C-w0Z" secondAttribute="trailing" id="CeV-vc-Aya"/>
+                            <constraint firstItem="cXc-8C-w0Z" firstAttribute="leading" secondItem="I5v-v2-z3T" secondAttribute="leading" id="ncu-6z-zdE"/>
+                            <constraint firstAttribute="bottom" secondItem="cXc-8C-w0Z" secondAttribute="bottom" id="w5P-Z4-R91"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GPa-gv-tzN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4564" y="134"/>
         </scene>
         <!--MessageVC-->
         <scene sceneID="2h0-wz-xlh">
@@ -1476,7 +1594,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Jo-ah-NVD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4193" y="1103"/>
+            <point key="canvasLocation" x="5918" y="134"/>
         </scene>
     </scenes>
     <resources>
@@ -1486,6 +1604,7 @@
         <image name="Feed" width="40" height="40"/>
         <image name="Feed S" width="40" height="40"/>
         <image name="Notifications" width="40" height="40"/>
+        <image name="Notifications S" width="40" height="40"/>
         <image name="Profile" width="40" height="40"/>
         <image name="Profile S" width="40" height="40"/>
         <image name="Search" width="28" height="28"/>
@@ -1497,7 +1616,9 @@
         <image name="sunrise2" width="2100" height="1400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fNe-HU-NK7"/>
+        <segue reference="H0c-Mk-pkx"/>
+        <segue reference="Jwr-Bl-lAx"/>
+        <segue reference="ixe-Eg-9QW"/>
         <segue reference="WCd-TQ-Caj"/>
     </inferredMetricsTieBreakers>
 </document>

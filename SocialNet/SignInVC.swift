@@ -47,7 +47,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         // Using keychain if ID is found
         if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
             print("ID found in keychain")
-            performSegue(withIdentifier: "goToFeed", sender: nil)
+//            performSegue(withIdentifier: "goToFeed", sender: nil)
         }
         
     }
@@ -169,16 +169,16 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 //    }
     
     // Move the text field in a pretty animation!
-    func moveTextField(_ textField: CustomTextField, moveDistance: Int, up: Bool) {
-        let moveDuration = 0.3
-        let movement: CGFloat = CGFloat(up ? moveDistance : -moveDistance)
-        
-        UIView.beginAnimations("animateTextField", context: nil)
-        UIView.setAnimationBeginsFromCurrentState(true)
-        UIView.setAnimationDuration(moveDuration)
-        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
-        UIView.commitAnimations()
-    }
+//    func moveTextField(_ textField: CustomTextField, moveDistance: Int, up: Bool) {
+//        let moveDuration = 0.3
+//        let movement: CGFloat = CGFloat(up ? moveDistance : -moveDistance)
+//
+//        UIView.beginAnimations("animateTextField", context: nil)
+//        UIView.setAnimationBeginsFromCurrentState(true)
+//        UIView.setAnimationDuration(moveDuration)
+//        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+//        UIView.commitAnimations()
+//    }
     
     func showAlertWithTitle( _ title:String, message:String ) {
         
