@@ -58,11 +58,11 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="anT-4q-YPw">
-                                <rect key="frame" x="34" y="180" width="78" height="30"/>
+                                <rect key="frame" x="34" y="180" width="65" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="3fL-DY-6Pm"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" red="0.17254901960784313" green="0.20784313725490194" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -226,11 +226,11 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Your Account" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gb-E7-ZVy">
-                                <rect key="frame" x="34" y="180" width="237" height="30"/>
+                                <rect key="frame" x="34" y="180" width="197.5" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="eiy-fL-CuN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" red="0.17254901959999999" green="0.20784313730000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -328,7 +328,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="signInBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cf4-5e-lbq"/>
                                     <action selector="signUpBtnPressed:" destination="J8c-ph-LPg" eventType="touchUpInside" id="a1U-9e-qJr"/>
                                 </connections>
                             </button>
@@ -427,12 +426,164 @@
                         <outlet property="passwordTextField" destination="TKg-ty-aM1" id="w92-hg-bQe"/>
                         <outlet property="signUpBtn" destination="yNk-Bo-fl8" id="e8G-pB-rZN"/>
                         <outlet property="usernameTextField" destination="LJ2-jR-kwD" id="5EA-gY-gcT"/>
-                        <segue destination="rrP-G5-8K7" kind="presentation" identifier="signedUp" modalTransitionStyle="flipHorizontal" id="Qeu-HZ-UYk"/>
+                        <segue destination="xOS-uk-2yH" kind="presentation" identifier="goToSignUp2" modalTransitionStyle="crossDissolve" id="FcR-Op-pRS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p82-CN-CGp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-311" y="1101"/>
+        </scene>
+        <!--Sign Up2VC-->
+        <scene sceneID="zPt-1l-zHg">
+            <objects>
+                <viewController id="xOS-uk-2yH" customClass="SignUp2VC" customModule="SocialNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kVX-gn-cef"/>
+                        <viewControllerLayoutGuide type="bottom" id="hLT-ZI-AMg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="goA-BJ-iFz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SocialNet3" translatesAutoresizingMaskIntoConstraints="NO" id="bdi-JM-3Rx">
+                                <rect key="frame" x="127.5" y="40" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="vog-CT-rWl"/>
+                                    <constraint firstAttribute="width" constant="120" id="xjt-kn-Vcw"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Your Account" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yv1-Qc-DDj">
+                                <rect key="frame" x="34" y="180" width="197.5" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="zTo-bu-JSO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" red="0.17254901959999999" green="0.20784313730000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="giG-zN-IFg">
+                                <rect key="frame" x="34" y="240" width="307" height="30"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="USERNAME" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="emW-T8-ef1" customClass="CustomTextField" customModule="SocialNet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="307" height="29"/>
+                                        <color key="textColor" red="0.17254901959999999" green="0.20784313730000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" textContentType="username"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NCM-j6-np5">
+                                        <rect key="frame" x="0.0" y="29" width="307" height="1"/>
+                                        <color key="backgroundColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="fd8-YJ-a3t"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Nkb-PS-mzv"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7JF-76-2QP">
+                                <rect key="frame" x="34" y="300" width="307" height="30"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="DISPLAY NAME" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BRq-u3-U1M" customClass="CustomTextField" customModule="SocialNet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="307" height="29"/>
+                                        <color key="textColor" red="0.17254901959999999" green="0.20784313730000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes" returnKeyType="done" textContentType="name"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5AU-TG-QV2">
+                                        <rect key="frame" x="0.0" y="29" width="307" height="1"/>
+                                        <color key="backgroundColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="X3G-kK-X4m"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="umz-VD-Lgr"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVm-ql-AUt" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
+                                <rect key="frame" x="58" y="370" width="259" height="40"/>
+                                <color key="backgroundColor" red="0.17254901959999999" green="0.20784313730000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="omx-H5-zk5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                <state key="normal" title="NEXT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" alpha="0.89999997615814209" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ijf-sP-X1P" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
+                                <rect key="frame" x="16" y="75" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="FIA-Vg-dPN"/>
+                                    <constraint firstAttribute="width" constant="50" id="Zkw-uP-LqM"/>
+                                </constraints>
+                                <state key="normal" image="Exit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backBtnPressed:" destination="J8c-ph-LPg" eventType="touchUpInside" id="vFf-XA-jz3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="giG-zN-IFg" firstAttribute="top" secondItem="Yv1-Qc-DDj" secondAttribute="bottom" constant="30" id="0KX-tj-J1F"/>
+                            <constraint firstItem="nVm-ql-AUt" firstAttribute="leading" secondItem="goA-BJ-iFz" secondAttribute="leadingMargin" constant="42" id="FEY-9S-srV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="giG-zN-IFg" secondAttribute="trailing" constant="18" id="Gz2-Tr-FRy"/>
+                            <constraint firstItem="bdi-JM-3Rx" firstAttribute="centerX" secondItem="goA-BJ-iFz" secondAttribute="centerX" id="IgJ-9L-PCs"/>
+                            <constraint firstItem="nVm-ql-AUt" firstAttribute="top" secondItem="7JF-76-2QP" secondAttribute="bottom" constant="40" id="Iuv-ni-Bwo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7JF-76-2QP" secondAttribute="trailing" constant="18" id="KIl-kE-F5d"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nVm-ql-AUt" secondAttribute="trailing" constant="42" id="LsH-Vz-cnE"/>
+                            <constraint firstItem="Yv1-Qc-DDj" firstAttribute="top" secondItem="bdi-JM-3Rx" secondAttribute="bottom" constant="20" id="NjU-az-TSE"/>
+                            <constraint firstItem="giG-zN-IFg" firstAttribute="leading" secondItem="goA-BJ-iFz" secondAttribute="leadingMargin" constant="18" id="PXM-Rd-xpY"/>
+                            <constraint firstItem="Ijf-sP-X1P" firstAttribute="leading" secondItem="goA-BJ-iFz" secondAttribute="leadingMargin" id="fZr-M3-GZQ"/>
+                            <constraint firstItem="7JF-76-2QP" firstAttribute="leading" secondItem="goA-BJ-iFz" secondAttribute="leadingMargin" constant="18" id="g82-6u-ion"/>
+                            <constraint firstItem="7JF-76-2QP" firstAttribute="top" secondItem="giG-zN-IFg" secondAttribute="bottom" constant="30" id="ngV-Sw-TJ7"/>
+                            <constraint firstItem="Yv1-Qc-DDj" firstAttribute="leading" secondItem="goA-BJ-iFz" secondAttribute="leadingMargin" constant="18" id="q7e-hI-WuB"/>
+                            <constraint firstItem="bdi-JM-3Rx" firstAttribute="centerY" secondItem="Ijf-sP-X1P" secondAttribute="centerY" id="smx-bK-2gs"/>
+                            <constraint firstItem="bdi-JM-3Rx" firstAttribute="top" secondItem="kVX-gn-cef" secondAttribute="bottom" constant="20" id="tNO-sZ-jyn"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MSs-xR-Dks" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-311" y="1865"/>
+        </scene>
+        <!--Sign Up3VC-->
+        <scene sceneID="coB-IR-pMT">
+            <objects>
+                <viewController id="MGI-7D-Q0s" customClass="SignUp3VC" customModule="SocialNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XNm-Pd-5bl"/>
+                        <viewControllerLayoutGuide type="bottom" id="Es7-dP-dwx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qAV-tY-iJm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rOx-xE-ggA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-311" y="2708"/>
         </scene>
         <!--FeedVC-->
         <scene sceneID="EYG-Lk-AxA">
@@ -1619,6 +1770,6 @@
         <segue reference="H0c-Mk-pkx"/>
         <segue reference="Jwr-Bl-lAx"/>
         <segue reference="ixe-Eg-9QW"/>
-        <segue reference="WCd-TQ-Caj"/>
+        <segue reference="zsL-Ni-eFF"/>
     </inferredMetricsTieBreakers>
 </document>

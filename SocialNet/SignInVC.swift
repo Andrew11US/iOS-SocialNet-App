@@ -66,6 +66,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 
     @IBAction func signInBtnPressed(_ sender: AnyObject) {
         
+        // Sign in using E-mail and Password
         if let email = emailTextField.text, let pwd = passwordTextField.text {
             FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, error) in
                 
@@ -79,8 +80,8 @@ class SignInVC: UIViewController, UITextFieldDelegate {
                     }
                     
                 } else {
-                    
                     print("Unable to authenticate")
+                    
                     self.showAlertWithTitle("Error", message: "E-mail or password is not correct")
                 }
             })
@@ -96,14 +97,12 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
             
             if error != nil {
-                print("Unable to authenticate with Facebook - \(String(describing: error)))")
+                print("Unable to authenticate with Facebook: \(String(describing: error)))")
                 
             } else if result?.isCancelled == true {
-                
                 print("User cancelled Facebook authentication")
                 
             } else {
-                
                 print("Successfully authenticated with Facebook")
                 
                 let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
@@ -146,8 +145,9 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         performSegue(withIdentifier: "goToFeed", sender: nil)
     }
     
+    // If user have no account - it'll be created automatically using FB credentials
     func completeSignUpFacebook(id: String, userData: Dictionary<String, String>) {
-        // Creating user in Database
+        
         DataService.ds.createFirbaseDBUser(uid: id, userData: userData)
         
         // Using keychain for segue

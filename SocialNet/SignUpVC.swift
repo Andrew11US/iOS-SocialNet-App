@@ -128,7 +128,7 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
         // Using keychain for segue
         let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
         print("Data saved to keychain \(keychainResult)")
-        performSegue(withIdentifier: "signedUp", sender: nil)
+        performSegue(withIdentifier: "goToSignUp2", sender: nil)
     }
     
     func showAlertWithTitle( _ title:String, message:String ) {

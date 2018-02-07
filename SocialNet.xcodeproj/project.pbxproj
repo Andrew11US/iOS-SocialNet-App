@@ -39,6 +39,8 @@
 		90DC99B9202A6B8D0062AF05 /* ConnectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DC99B8202A6B8D0062AF05 /* ConnectVC.swift */; };
 		90DC99BB202A6B990062AF05 /* MessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DC99BA202A6B990062AF05 /* MessageVC.swift */; };
 		90DDFAC41EC781030038226C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDFAC31EC781030038226C /* User.swift */; };
+		90F16CA2202BBE25008115A6 /* SignUp2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F16CA1202BBE25008115A6 /* SignUp2VC.swift */; };
+		90F16CA4202BBE33008115A6 /* SignUp3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F16CA3202BBE32008115A6 /* SignUp3VC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +82,8 @@
 		90DC99B8202A6B8D0062AF05 /* ConnectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectVC.swift; sourceTree = "<group>"; };
 		90DC99BA202A6B990062AF05 /* MessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVC.swift; sourceTree = "<group>"; };
 		90DDFAC31EC781030038226C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		90F16CA1202BBE25008115A6 /* SignUp2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp2VC.swift; sourceTree = "<group>"; };
+		90F16CA3202BBE32008115A6 /* SignUp3VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp3VC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +177,8 @@
 				902426761DE890D300A8D94A /* SignInVC.swift */,
 				903DECA31EC2420E00B0B1D2 /* FeedVC.swift */,
 				9090086A1EC49E4A00977BD3 /* SignUpVC.swift */,
+				90F16CA1202BBE25008115A6 /* SignUp2VC.swift */,
+				90F16CA3202BBE32008115A6 /* SignUp3VC.swift */,
 				9090086C1EC4A04700977BD3 /* PostVC.swift */,
 				9090086E1EC4A05700977BD3 /* ProfileVC.swift */,
 				90DC99B0202A6AA20062AF05 /* EditVC.swift */,
@@ -339,6 +345,7 @@
 			files = (
 				90DC99B3202A6B260062AF05 /* SettingsVC.swift in Sources */,
 				90DC99BB202A6B990062AF05 /* MessageVC.swift in Sources */,
+				90F16CA4202BBE33008115A6 /* SignUp3VC.swift in Sources */,
 				9090086F1EC4A05700977BD3 /* ProfileVC.swift in Sources */,
 				9060034D1EC209F40001E24F /* RoundedView.swift in Sources */,
 				9055077B1EC2FE900000F6A2 /* Post.swift in Sources */,
@@ -356,6 +363,7 @@
 				903DECA41EC2420E00B0B1D2 /* FeedVC.swift in Sources */,
 				903DECA21EC240AF00B0B1D2 /* Constants.swift in Sources */,
 				9060034A1EC209F40001E24F /* CustomButton.swift in Sources */,
+				90F16CA2202BBE25008115A6 /* SignUp2VC.swift in Sources */,
 				90DC99B5202A6B3B0062AF05 /* SearchVC.swift in Sources */,
 				9090086B1EC49E4A00977BD3 /* SignUpVC.swift in Sources */,
 				9060034C1EC209F40001E24F /* Material Design.swift in Sources */,
