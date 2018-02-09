@@ -26,6 +26,7 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     var userPicUrl: String!
     var posts = [Post]()
     var myPosts = [Post]()
+    let myPostsReference = DataService.ds.REF_USER_CURRENT.child("/myPosts")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -237,7 +238,7 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
 //        }
         
         
-        DataService.ds.REF_POSTS.queryOrdered(byChild: "timeStamp").observe(.value, with: { (snapshot) in
+        DataService.ds.REF_USER_CURRENT.child("/myPosts").queryOrdered(byChild: "timeStamp").observe(.value, with: { (snapshot) in
             
             // Fixes dublicate posts issue
             self.posts = []
@@ -267,20 +268,30 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 215
+        return 200
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let post = posts[indexPath.row]
         
-        if let cell = profileTableView.dequeueReusableCell(withIdentifier: "profilePostCell") as? ProfilePostCell {
+        if let cell = profileTableView.dequeueReusableCell(withIdentifier: "profilePostCell") as? PostCell {
+            
+//            DispatchQueue.main.async {
+//                if let img = ProfileVC.imageCache.object(forKey: post.imageUrl as NSString) {
+//
+//                    cell.configureCell(post: post, img: img)
+//
+//                } else {
+//
+//                    cell.configureCell(post: post)
+//                }
+//            }
             
             DispatchQueue.main.async {
-                if let img = ProfileVC.imageCache.object(forKey: post.imageUrl as NSString) {
+                if let img = FeedVC.imageCache.object(forKey: post.imageUrl as NSString) , let pic = FeedVC.imageCache.object(forKey: post.userPicUrl as NSString) {
                     
-                    cell.configureCell(post: post, img: img)
-                    
+                    cell.configureCell(post: post, img: img, pic: pic)
                 } else {
                     
                     cell.configureCell(post: post)
