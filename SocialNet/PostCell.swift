@@ -14,6 +14,7 @@ class PostCell: UITableViewCell {
     
     @IBOutlet weak var userImg: UIImageView!
     @IBOutlet weak var usernameLbl: UILabel!
+    @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var postImg: UIImageView!
     @IBOutlet weak var caption: UITextView!
     @IBOutlet weak var likesLbl: UILabel!
@@ -46,6 +47,7 @@ class PostCell: UITableViewCell {
         self.caption.text = post.caption
         self.likesLbl.text = "\(post.likes)"
         self.usernameLbl.text = post.username
+        self.nameLbl.text = post.name
         
         // Download Post Image & handle errors
         DispatchQueue.main.async {

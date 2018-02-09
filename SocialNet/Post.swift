@@ -15,6 +15,7 @@ class Post {
     private var _imageUrl: String!
     private var _likes: Int!
     private var _username: String!
+    private var _name: String!
     private var _userPicUrl: String!
     private var _postKey: String!
     private var _postRef: FIRDatabaseReference!
@@ -35,6 +36,10 @@ class Post {
         return _username
     }
     
+    var name: String {
+        return _name
+    }
+    
     var userPicUrl: String {
         return _userPicUrl
     }
@@ -43,12 +48,13 @@ class Post {
         return _postKey
     }
     
-    init(caption: String, imageUrl: String, likes: Int, username: String, userPicUrl: String) {
+    init(caption: String, imageUrl: String, likes: Int, username: String, userPicUrl: String, name: String) {
         self._caption = caption
         self._imageUrl = imageUrl
         self._likes = likes
         self._username = username
         self._userPicUrl = userPicUrl
+        self._name = name
     }
     
     init(postKey: String, postData: Dictionary<String, AnyObject>) {
@@ -72,6 +78,10 @@ class Post {
         
         if let userPicUrl = postData["userPicUrl"] as? String {
             self._userPicUrl = userPicUrl
+        }
+        
+        if let name = postData["name"] as? String {
+            self._name = name
         }
         
         _postRef = DataService.ds.REF_POSTS.child(_postKey)

@@ -16,7 +16,6 @@ import SwiftKeychainWrapper
 class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var profileBtn: UIButton!
     
     var posts = [Post]()
     static var imageCache: NSCache<NSString, UIImage> = NSCache()

@@ -22,6 +22,8 @@ enum Segues: String {
     case toSignUp3
     case toFeedFromSignUp
     case toMessage
+    case toEditFromSettings
+    case toProfile
 }
 
 // Global User reference

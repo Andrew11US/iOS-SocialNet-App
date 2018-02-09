@@ -22,6 +22,7 @@ class PostVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
     var imageSelected = false
     let userID = FIRAuth.auth()?.currentUser?.uid
     var username: String!
+    var name: String!
     var userPicUrl: String!
     
     override func viewDidLoad() {
@@ -111,7 +112,8 @@ class PostVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
             "userID": userID as AnyObject,
             "username": username as AnyObject,
             "userPicUrl": userPicUrl as AnyObject,
-            "timeStamp": FIRServerValue.timestamp() as AnyObject
+            "timeStamp": FIRServerValue.timestamp() as AnyObject,
+            "name": name as AnyObject
         ]
         
         let key = DataService.ds.REF_POSTS.childByAutoId().key
@@ -146,11 +148,14 @@ class PostVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
                 let value = snapshot.value as? NSDictionary
                 let userPic = value?["userPicUrl"] as? String ?? ""
                 let username = value?["username"] as? String ?? ""
+                let name = value?["name"] as? String ?? ""
                 self.userPicUrl = userPic
                 self.username = username
+                self.name = name
                 
                 print("UPU:" + self.userPicUrl)
                 print("UN:" + self.username)
+                print("N" + self.name)
             })
         }
     }

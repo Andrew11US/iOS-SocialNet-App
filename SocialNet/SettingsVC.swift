@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
+import SwiftKeychainWrapper
 
 class SettingsVC: UIViewController {
 
@@ -15,7 +18,25 @@ class SettingsVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func backBtnTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 
-
-
+    @IBAction func editBtnTapped(_ sender: Any) {
+        performSegue(withIdentifier: Segues.toEditFromSettings.rawValue, sender: nil)
+    }
+    
+    @IBAction func signOutBtnTapped(_ sender: Any) {
+        
+        let keychainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
+        print("ID removed from keychain \(keychainResult)")
+        try! FIRAuth.auth()?.signOut()
+        performSegue(withIdentifier: Segues.toSignIn.rawValue, sender: nil)
+        
+        self.view.endEditing(true)
+    }
+    
+    
+    
 }

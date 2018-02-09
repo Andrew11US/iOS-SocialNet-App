@@ -38,7 +38,7 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         profileTableView.dataSource = self
         
         updateUI()
-//        getUserImageUrl()
+        getUserImageUrl()
         loadMyPosts()
     }
     
@@ -55,7 +55,7 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         let keychainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
         print("ID removed from keychain \(keychainResult)")
         try! FIRAuth.auth()?.signOut()
-        performSegue(withIdentifier: "goToSignIn", sender: nil)
+        performSegue(withIdentifier: "toSignIn", sender: nil)
         
         self.view.endEditing(true)
     }
@@ -173,14 +173,14 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
             let username = value?["username"] as? String ?? ""
             let name = value?["name"] as? String ?? ""
             let bio = value?["bio"] as? String ?? ""
-            let userPic = value?["userPicUrl"] as? String ?? ""
+//            let userPic = value?["userPicUrl"] as? String ?? ""
             
-            self.userPicUrl = userPic
+//            self.userPicUrl = userPic
             self.usernameLbl.text = username
             self.nameLbl.text = name
             self.bioLbl.text = bio
             
-            print("UPU:" + self.userPicUrl)
+//            print("UPU:" + self.userPicUrl)
             
         }) { (error) in
             print(error.localizedDescription)
