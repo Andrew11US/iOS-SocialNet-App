@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseStorage
+import FirebaseDatabase
 import SwiftKeychainWrapper
 
 class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -25,6 +26,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        getUserData()
         
         // Read data from database
         DataService.ds.REF_POSTS.queryOrdered(byChild: "timeStamp").observe(.value, with: { (snapshot) in
@@ -98,7 +101,39 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    @IBAction func profileBtnPressed(_ sender: Any) {
+    func getUserData() {
+        
+        let ref = DataService.ds.REF_USER_CURRENT
+        ref.observe(.value, with: { (snapshot) in
+            
+            let value = snapshot.value as? NSDictionary
+            let userPic = value?["userPicUrl"] as? String ?? ""
+            let username = value?["username"] as? String ?? ""
+            let name = value?["name"] as? String ?? ""
+            
+            if username == "" && userPic == "" && name == "" {
+                setToDefault()
+            }
+            
+            print("UPU:" + userPic)
+            print("UN:" + username)
+            print("NAME:" + name)
+        })
+        
+        func setToDefault() {
+            
+            let userID = FIRAuth.auth()?.currentUser?.uid
+            
+            let childUpdates = [
+                
+                "/username": userID as AnyObject,
+                "/name": "none" as AnyObject,
+                "/bio": "bio" as AnyObject,
+                "/userPicUrl": "gs://socialnet-4d29a.appspot.com/SocialNet.png" as AnyObject
+                ]
+            
+            DataService.ds.REF_USER_CURRENT.updateChildValues(childUpdates)
+        }
     }
     
 }

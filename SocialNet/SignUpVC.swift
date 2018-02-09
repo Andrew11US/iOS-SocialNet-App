@@ -91,6 +91,7 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
                                     "provider": user.providerID,
                                     "username": "none",
                                     "name": "none",
+                                    "bio": "bio",
                                     "userPicUrl": userPicUrl
                                 ]
                                 

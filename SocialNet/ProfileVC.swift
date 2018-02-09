@@ -16,6 +16,7 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
 
     @IBOutlet weak var usernameLbl: UILabel!
     @IBOutlet weak var nameLbl: UILabel!
+    @IBOutlet weak var bioLbl: UILabel!
     @IBOutlet weak var userPic: CustomImageView!
     @IBOutlet weak var profileTableView: UITableView!
     
@@ -37,7 +38,7 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         profileTableView.dataSource = self
         
         updateUI()
-        getUserImageUrl()
+//        getUserImageUrl()
         loadMyPosts()
     }
     
@@ -171,9 +172,15 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
             let value = snapshot.value as? NSDictionary
             let username = value?["username"] as? String ?? ""
             let name = value?["name"] as? String ?? ""
+            let bio = value?["bio"] as? String ?? ""
+            let userPic = value?["userPicUrl"] as? String ?? ""
             
+            self.userPicUrl = userPic
             self.usernameLbl.text = username
             self.nameLbl.text = name
+            self.bioLbl.text = bio
+            
+            print("UPU:" + self.userPicUrl)
             
         }) { (error) in
             print(error.localizedDescription)
