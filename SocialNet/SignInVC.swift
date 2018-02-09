@@ -142,7 +142,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         // Using keychain for segue
         let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
         print("Data saved to keychain \(keychainResult)")
-        performSegue(withIdentifier: "goToFeed", sender: nil)
+        performSegue(withIdentifier: Segues.toFeed.rawValue, sender: nil)
     }
     
     // If user have no account - it'll be created automatically using FB credentials

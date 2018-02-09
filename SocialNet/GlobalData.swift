@@ -14,5 +14,15 @@ import FirebaseAuth
 // Unique Identifier
 let KEY_UID = "uid"
 
+// Segues between View Controllers
+enum Segues: String {
+    case toFeed
+    case toSignIn
+    case toSignUp2
+    case toSignUp3
+    case toFeedFromSignUp
+    case toMessage
+}
+
 // Global User reference
 //let user = FIRAuth.auth()?.currentUser

@@ -199,7 +199,7 @@
                         <outlet property="logInFacebook" destination="fMV-e6-7mr" id="J6k-P8-lwM"/>
                         <outlet property="passwordTextField" destination="Q4Z-8u-KP9" id="2IM-1N-Hg9"/>
                         <outlet property="signInBtn" destination="4XL-8f-6fw" id="dqm-gC-wlY"/>
-                        <segue destination="rrP-G5-8K7" kind="presentation" identifier="goToFeed" modalTransitionStyle="flipHorizontal" id="zsL-Ni-eFF"/>
+                        <segue destination="rrP-G5-8K7" kind="presentation" identifier="toFeed" modalTransitionStyle="flipHorizontal" id="zsL-Ni-eFF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -237,7 +237,7 @@
                             <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="T5d-on-nOl">
                                 <rect key="frame" x="34" y="240" width="307" height="30"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-MAIL" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="WWi-pE-gzU" customClass="CustomTextField" customModule="SocialNet" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="WWi-pE-gzU" customClass="CustomTextField" customModule="SocialNet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="307" height="29"/>
                                         <color key="textColor" red="0.17254901959999999" green="0.20784313730000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
@@ -263,7 +263,7 @@
                             <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="npU-GF-3A3">
                                 <rect key="frame" x="34" y="300" width="307" height="30"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="PASSWORD" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TKg-ty-aM1" customClass="CustomTextField" customModule="SocialNet" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TKg-ty-aM1" customClass="CustomTextField" customModule="SocialNet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="307" height="29"/>
                                         <color key="textColor" red="0.17254901959999999" green="0.20784313730000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
@@ -289,7 +289,7 @@
                             <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Tsr-UD-gYE">
                                 <rect key="frame" x="34" y="360" width="307" height="30"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="REPEAT PASSWORD" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PIJ-Tv-wI0" customClass="CustomTextField" customModule="SocialNet" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Repeat Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PIJ-Tv-wI0" customClass="CustomTextField" customModule="SocialNet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="307" height="29"/>
                                         <color key="textColor" red="0.17254901959999999" green="0.20784313730000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
@@ -344,62 +344,13 @@
                                     <action selector="backBtnPressed:" destination="J8c-ph-LPg" eventType="touchUpInside" id="crH-QD-i6S"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bnb-y0-Yyi">
-                                <rect key="frame" x="24" y="637" width="327" height="30"/>
-                                <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ylD-lv-bRh" customClass="CustomTextField" customModule="SocialNet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="327" height="10"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="10" id="cZc-cw-fTZ"/>
-                                        </constraints>
-                                        <color key="textColor" red="0.14135066060601192" green="0.25542525419506851" blue="0.30012690355329952" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.9882352941176471" green="0.29411764705882354" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LJ2-jR-kwD" customClass="CustomTextField" customModule="SocialNet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="20" width="327" height="10"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="10" id="cBv-I9-Zkz"/>
-                                        </constraints>
-                                        <color key="textColor" red="0.14135066060000001" green="0.25542525420000001" blue="0.30012690359999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.9882352941176471" green="0.29411764705882354" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="npU-GF-3A3" firstAttribute="leading" secondItem="Mhp-4T-Z1T" secondAttribute="leadingMargin" constant="18" id="0UY-hg-rim"/>
                             <constraint firstItem="T5d-on-nOl" firstAttribute="leading" secondItem="Mhp-4T-Z1T" secondAttribute="leadingMargin" constant="18" id="4MC-5F-I70"/>
-                            <constraint firstItem="bnb-y0-Yyi" firstAttribute="leading" secondItem="Mhp-4T-Z1T" secondAttribute="leadingMargin" constant="8" id="4gM-EP-bkc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Tsr-UD-gYE" secondAttribute="trailing" constant="18" id="523-VD-6zV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="T5d-on-nOl" secondAttribute="trailing" constant="18" id="A9R-KA-fwy"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="bnb-y0-Yyi" secondAttribute="trailing" constant="8" id="HVz-EH-Qkn"/>
                             <constraint firstItem="Tsr-UD-gYE" firstAttribute="leading" secondItem="Mhp-4T-Z1T" secondAttribute="leadingMargin" constant="18" id="KbZ-DJ-9b5"/>
                             <constraint firstItem="Tsr-UD-gYE" firstAttribute="top" secondItem="npU-GF-3A3" secondAttribute="bottom" constant="30" id="Lri-pl-YvR"/>
                             <constraint firstItem="wcf-ff-0WF" firstAttribute="top" secondItem="Xp7-0n-udl" secondAttribute="bottom" constant="20" id="S2U-Uh-bru"/>
@@ -411,7 +362,6 @@
                             <constraint firstItem="yNk-Bo-fl8" firstAttribute="leading" secondItem="Mhp-4T-Z1T" secondAttribute="leadingMargin" constant="42" id="iy6-Pj-Okn"/>
                             <constraint firstItem="T5d-on-nOl" firstAttribute="top" secondItem="7gb-E7-ZVy" secondAttribute="bottom" constant="30" id="lsk-Sl-Th2"/>
                             <constraint firstItem="wcf-ff-0WF" firstAttribute="centerY" secondItem="98O-a7-X07" secondAttribute="centerY" id="pWu-sz-53Y"/>
-                            <constraint firstItem="wMe-Uk-nmE" firstAttribute="top" secondItem="bnb-y0-Yyi" secondAttribute="bottom" id="s5C-nE-Ktk"/>
                             <constraint firstItem="7gb-E7-ZVy" firstAttribute="leading" secondItem="Mhp-4T-Z1T" secondAttribute="leadingMargin" constant="18" id="tmz-j6-O94"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yNk-Bo-fl8" secondAttribute="trailing" constant="42" id="vIr-84-RyX"/>
                             <constraint firstItem="98O-a7-X07" firstAttribute="leading" secondItem="Mhp-4T-Z1T" secondAttribute="leadingMargin" id="yEL-3t-gZR"/>
@@ -421,12 +371,10 @@
                     <connections>
                         <outlet property="backBtn" destination="98O-a7-X07" id="1KZ-aq-yEl"/>
                         <outlet property="emailTextField" destination="WWi-pE-gzU" id="3d3-nm-cOF"/>
-                        <outlet property="nameTextField" destination="ylD-lv-bRh" id="wc3-li-6Nj"/>
                         <outlet property="password2TextField" destination="PIJ-Tv-wI0" id="cP6-hh-wd9"/>
                         <outlet property="passwordTextField" destination="TKg-ty-aM1" id="w92-hg-bQe"/>
                         <outlet property="signUpBtn" destination="yNk-Bo-fl8" id="e8G-pB-rZN"/>
-                        <outlet property="usernameTextField" destination="LJ2-jR-kwD" id="5EA-gY-gcT"/>
-                        <segue destination="xOS-uk-2yH" kind="presentation" identifier="goToSignUp2" modalTransitionStyle="crossDissolve" id="FcR-Op-pRS"/>
+                        <segue destination="xOS-uk-2yH" kind="presentation" identifier="toSignUp2" modalTransitionStyle="crossDissolve" id="FcR-Op-pRS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p82-CN-CGp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -452,8 +400,8 @@
                                     <constraint firstAttribute="width" constant="120" id="xjt-kn-Vcw"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Your Account" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yv1-Qc-DDj">
-                                <rect key="frame" x="34" y="180" width="197.5" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yv1-Qc-DDj">
+                                <rect key="frame" x="34" y="180" width="167.5" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="zTo-bu-JSO"/>
                                 </constraints>
@@ -464,7 +412,7 @@
                             <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="giG-zN-IFg">
                                 <rect key="frame" x="34" y="240" width="307" height="30"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="USERNAME" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="emW-T8-ef1" customClass="CustomTextField" customModule="SocialNet" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="emW-T8-ef1" customClass="CustomTextField" customModule="SocialNet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="307" height="29"/>
                                         <color key="textColor" red="0.17254901959999999" green="0.20784313730000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
@@ -490,7 +438,7 @@
                             <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7JF-76-2QP">
                                 <rect key="frame" x="34" y="300" width="307" height="30"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="DISPLAY NAME" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BRq-u3-U1M" customClass="CustomTextField" customModule="SocialNet" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Display Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BRq-u3-U1M" customClass="CustomTextField" customModule="SocialNet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="307" height="29"/>
                                         <color key="textColor" red="0.17254901959999999" green="0.20784313730000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
@@ -528,22 +476,12 @@
                                         <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" alpha="0.89999997615814209" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ijf-sP-X1P" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
-                                <rect key="frame" x="16" y="75" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="FIA-Vg-dPN"/>
-                                    <constraint firstAttribute="width" constant="50" id="Zkw-uP-LqM"/>
-                                </constraints>
-                                <state key="normal" image="Exit">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                                 <connections>
-                                    <action selector="backBtnPressed:" destination="J8c-ph-LPg" eventType="touchUpInside" id="vFf-XA-jz3"/>
+                                    <action selector="nextBtnTapped:" destination="xOS-uk-2yH" eventType="touchUpInside" id="d9m-fN-u6y"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="giG-zN-IFg" firstAttribute="top" secondItem="Yv1-Qc-DDj" secondAttribute="bottom" constant="30" id="0KX-tj-J1F"/>
                             <constraint firstItem="nVm-ql-AUt" firstAttribute="leading" secondItem="goA-BJ-iFz" secondAttribute="leadingMargin" constant="42" id="FEY-9S-srV"/>
@@ -554,14 +492,17 @@
                             <constraint firstAttribute="trailingMargin" secondItem="nVm-ql-AUt" secondAttribute="trailing" constant="42" id="LsH-Vz-cnE"/>
                             <constraint firstItem="Yv1-Qc-DDj" firstAttribute="top" secondItem="bdi-JM-3Rx" secondAttribute="bottom" constant="20" id="NjU-az-TSE"/>
                             <constraint firstItem="giG-zN-IFg" firstAttribute="leading" secondItem="goA-BJ-iFz" secondAttribute="leadingMargin" constant="18" id="PXM-Rd-xpY"/>
-                            <constraint firstItem="Ijf-sP-X1P" firstAttribute="leading" secondItem="goA-BJ-iFz" secondAttribute="leadingMargin" id="fZr-M3-GZQ"/>
                             <constraint firstItem="7JF-76-2QP" firstAttribute="leading" secondItem="goA-BJ-iFz" secondAttribute="leadingMargin" constant="18" id="g82-6u-ion"/>
                             <constraint firstItem="7JF-76-2QP" firstAttribute="top" secondItem="giG-zN-IFg" secondAttribute="bottom" constant="30" id="ngV-Sw-TJ7"/>
                             <constraint firstItem="Yv1-Qc-DDj" firstAttribute="leading" secondItem="goA-BJ-iFz" secondAttribute="leadingMargin" constant="18" id="q7e-hI-WuB"/>
-                            <constraint firstItem="bdi-JM-3Rx" firstAttribute="centerY" secondItem="Ijf-sP-X1P" secondAttribute="centerY" id="smx-bK-2gs"/>
                             <constraint firstItem="bdi-JM-3Rx" firstAttribute="top" secondItem="kVX-gn-cef" secondAttribute="bottom" constant="20" id="tNO-sZ-jyn"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="BRq-u3-U1M" id="6Tt-7s-XJP"/>
+                        <outlet property="usernameTextField" destination="emW-T8-ef1" id="1B7-RM-k13"/>
+                        <segue destination="MGI-7D-Q0s" kind="presentation" identifier="toSignUp3" modalTransitionStyle="crossDissolve" id="fqd-sf-Xfe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MSs-xR-Dks" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -575,11 +516,72 @@
                         <viewControllerLayoutGuide type="top" id="XNm-Pd-5bl"/>
                         <viewControllerLayoutGuide type="bottom" id="Es7-dP-dwx"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qAV-tY-iJm">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="qAV-tY-iJm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SocialNet3" translatesAutoresizingMaskIntoConstraints="NO" id="sUk-fb-QR2">
+                                <rect key="frame" x="127.5" y="40" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="AAL-Be-WFX"/>
+                                    <constraint firstAttribute="height" constant="120" id="vmt-DH-2da"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Profile Pic" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYQ-Yb-BZs">
+                                <rect key="frame" x="34" y="180" width="141.5" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="El3-5Z-93a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" red="0.17254901959999999" green="0.20784313730000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IpU-jw-4UI" customClass="CustomButton" customModule="SocialNet" customModuleProvider="target">
+                                <rect key="frame" x="58" y="380" width="259" height="40"/>
+                                <color key="backgroundColor" red="0.17254901959999999" green="0.20784313730000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3W9-5S-eMd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                <state key="normal" title="NEXT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="ehz-Lz-bx4" customClass="CustomImageView" customModule="SocialNet" customModuleProvider="target">
+                                <rect key="frame" x="142.5" y="250" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="YGa-ZZ-mPZ"/>
+                                    <constraint firstAttribute="height" constant="90" id="mJl-38-ZKm"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="45"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="TYQ-Yb-BZs" firstAttribute="leading" secondItem="qAV-tY-iJm" secondAttribute="leadingMargin" constant="18" id="1ih-yh-sgh"/>
+                            <constraint firstItem="sUk-fb-QR2" firstAttribute="centerX" secondItem="qAV-tY-iJm" secondAttribute="centerX" id="9iq-mL-AdT"/>
+                            <constraint firstItem="IpU-jw-4UI" firstAttribute="leading" secondItem="qAV-tY-iJm" secondAttribute="leadingMargin" constant="42" id="FcG-02-mUq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IpU-jw-4UI" secondAttribute="trailing" constant="42" id="RtQ-9X-tYj"/>
+                            <constraint firstItem="IpU-jw-4UI" firstAttribute="centerX" secondItem="qAV-tY-iJm" secondAttribute="centerX" id="Uac-Ny-bFy"/>
+                            <constraint firstItem="TYQ-Yb-BZs" firstAttribute="top" secondItem="sUk-fb-QR2" secondAttribute="bottom" constant="20" id="aQ7-PT-2HX"/>
+                            <constraint firstItem="ehz-Lz-bx4" firstAttribute="top" secondItem="TYQ-Yb-BZs" secondAttribute="bottom" constant="40" id="bUJ-Cj-dFN"/>
+                            <constraint firstItem="sUk-fb-QR2" firstAttribute="top" secondItem="XNm-Pd-5bl" secondAttribute="bottom" constant="20" id="eol-KK-X8l"/>
+                            <constraint firstItem="IpU-jw-4UI" firstAttribute="top" secondItem="ehz-Lz-bx4" secondAttribute="bottom" constant="40" id="gE0-kR-6By"/>
+                            <constraint firstItem="ehz-Lz-bx4" firstAttribute="centerX" secondItem="qAV-tY-iJm" secondAttribute="centerX" id="zLC-JS-VNd"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <segue destination="rrP-G5-8K7" kind="presentation" identifier="toFeedFromSignUp" modalTransitionStyle="flipHorizontal" id="FFb-nC-eXc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rOx-xE-ggA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1623,6 +1625,9 @@
                             <constraint firstAttribute="bottom" secondItem="a9U-i4-XvL" secondAttribute="bottom" id="kVz-Xz-gqX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="ueO-iD-06C" kind="presentation" identifier="toMessage" modalTransitionStyle="crossDissolve" id="NkW-JU-bLV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PJe-rz-pLw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1745,7 +1750,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Jo-ah-NVD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5918" y="134"/>
+            <point key="canvasLocation" x="7364" y="1101"/>
         </scene>
     </scenes>
     <resources>
@@ -1770,6 +1775,6 @@
         <segue reference="H0c-Mk-pkx"/>
         <segue reference="Jwr-Bl-lAx"/>
         <segue reference="ixe-Eg-9QW"/>
-        <segue reference="zsL-Ni-eFF"/>
+        <segue reference="WCd-TQ-Caj"/>
     </inferredMetricsTieBreakers>
 </document>

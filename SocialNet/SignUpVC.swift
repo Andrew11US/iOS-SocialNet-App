@@ -20,23 +20,18 @@ import SwiftKeychainWrapper
 
 class SignUpVC: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var nameTextField: CustomTextField!
-    @IBOutlet weak var usernameTextField: CustomTextField!
     @IBOutlet weak var emailTextField: CustomTextField!
     @IBOutlet weak var passwordTextField: CustomTextField!
     @IBOutlet weak var password2TextField: CustomTextField!
     @IBOutlet weak var signUpBtn: CustomButton!
     @IBOutlet weak var backBtn: UIButton!
-    @IBOutlet weak var logo: UILabel!
     
     let user = FIRAuth.auth()?.currentUser
     let changeRequest = FIRAuth.auth()?.currentUser?.profileChangeRequest()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.nameTextField.delegate = self
-        self.usernameTextField.delegate = self
+        
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
         self.password2TextField.delegate = self
@@ -56,8 +51,7 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
     
     // Dismiss when return btn pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        nameTextField.resignFirstResponder()
-        usernameTextField.resignFirstResponder()
+        
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
         password2TextField.resignFirstResponder()
@@ -89,15 +83,14 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
                             
                             // Creating user
                             if let user = user {
-                                let username = self.usernameTextField.text
-                                let name = self.nameTextField.text
-                                let userPicUrl = "gs://socialnet-4d29a.appspot.com/user-pics/noImage.png"
+//                                let username = self.usernameTextField.text
+                                let userPicUrl = "gs://socialnet-4d29a.appspot.com/SocialNet.png"
 
                                 // Assign provider
                                 let userData = [
                                     "provider": user.providerID,
-                                    "username": username,
-                                    "name": name,
+                                    "username": "none",
+                                    "name": "none",
                                     "userPicUrl": userPicUrl
                                 ]
                                 
@@ -128,7 +121,7 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
         // Using keychain for segue
         let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
         print("Data saved to keychain \(keychainResult)")
-        performSegue(withIdentifier: "goToSignUp2", sender: nil)
+        performSegue(withIdentifier: Segues.toSignUp2.rawValue, sender: nil)
     }
     
     func showAlertWithTitle( _ title:String, message:String ) {
