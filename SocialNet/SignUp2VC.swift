@@ -19,7 +19,10 @@ class SignUp2VC: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.usernameTextField.delegate = self
+        self.nameTextField.delegate = self
+        
         getUserData()
     }
     
@@ -51,7 +54,9 @@ class SignUp2VC: UIViewController, UITextFieldDelegate {
             "/username": usernameTextField.text! as AnyObject,
             "/name": nameTextField.text! as AnyObject
         ]
+        
         DataService.ds.REF_USER_CURRENT.updateChildValues(childUpdates)
+        
         performSegue(withIdentifier: Segues.toSignUp3.rawValue, sender: nil)
         self.view.endEditing(true)
     }

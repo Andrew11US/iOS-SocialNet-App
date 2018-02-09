@@ -23,9 +23,7 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
     var imageSelected = false
     var userPicUrl: String!
-    var currentUsername: String!
     var posts = [Post]()
-//    var usernamesArray = [String]()
     var myPosts = [Post]()
     
     override func viewDidLoad() {
@@ -176,7 +174,6 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
             
             self.usernameLbl.text = username
             self.nameLbl.text = name
-            self.currentUsername = username
             
         }) { (error) in
             print(error.localizedDescription)

@@ -69,7 +69,7 @@
                             <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4mY-2v-eQ9">
                                 <rect key="frame" x="34" y="240" width="307" height="30"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-MAIL" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uSX-BU-yRA" customClass="CustomTextField" customModule="SocialNet" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uSX-BU-yRA" customClass="CustomTextField" customModule="SocialNet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="307" height="29"/>
                                         <color key="textColor" red="0.17254901959999999" green="0.20784313730000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
@@ -95,7 +95,7 @@
                             <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mUV-zX-O4o">
                                 <rect key="frame" x="34" y="300" width="307" height="30"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="PASSWORD" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Q4Z-8u-KP9" customClass="CustomTextField" customModule="SocialNet" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Q4Z-8u-KP9" customClass="CustomTextField" customModule="SocialNet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="307" height="29"/>
                                         <color key="textColor" red="0.17254901959999999" green="0.20784313730000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
@@ -543,7 +543,7 @@
                                     <constraint firstAttribute="height" constant="40" id="3W9-5S-eMd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
-                                <state key="normal" title="NEXT">
+                                <state key="normal" title="DONE">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -551,9 +551,13 @@
                                         <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="doneBtnTapped:" destination="MGI-7D-Q0s" eventType="touchUpInside" id="BVn-yn-ojo"/>
+                                </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="ehz-Lz-bx4" customClass="CustomImageView" customModule="SocialNet" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="ehz-Lz-bx4" customClass="CustomImageView" customModule="SocialNet" customModuleProvider="target">
                                 <rect key="frame" x="142.5" y="250" width="90" height="90"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="YGa-ZZ-mPZ"/>
                                     <constraint firstAttribute="height" constant="90" id="mJl-38-ZKm"/>
@@ -563,6 +567,9 @@
                                         <real key="value" value="45"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="qMi-eb-qUU" appends="YES" id="F9p-54-nVa"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -580,10 +587,16 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="userPic" destination="ehz-Lz-bx4" id="bhw-RO-FlF"/>
                         <segue destination="rrP-G5-8K7" kind="presentation" identifier="toFeedFromSignUp" modalTransitionStyle="flipHorizontal" id="FFb-nC-eXc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rOx-xE-ggA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="qMi-eb-qUU">
+                    <connections>
+                        <action selector="addImageTapped:" destination="MGI-7D-Q0s" id="Bun-ci-wo6"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-311" y="2708"/>
         </scene>
@@ -1775,6 +1788,6 @@
         <segue reference="H0c-Mk-pkx"/>
         <segue reference="Jwr-Bl-lAx"/>
         <segue reference="ixe-Eg-9QW"/>
-        <segue reference="WCd-TQ-Caj"/>
+        <segue reference="FFb-nC-eXc"/>
     </inferredMetricsTieBreakers>
 </document>
