@@ -122,7 +122,7 @@ class EditVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             return
         }
         
-        guard let bio = bioTextField.text, name != "" else {
+        guard let bio = bioTextField.text, bio != "" else {
             print("Bio must be entered")
             return
         }
