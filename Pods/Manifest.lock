@@ -93,6 +93,9 @@ PODS:
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.2.1)
   - leveldb-library (1.20)
+  - MessageInputBar/Core (0.4.1)
+  - MessageKit (2.0.0):
+    - MessageInputBar/Core
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -109,6 +112,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
+  - MessageKit
   - pop (~> 1.0)
   - SwiftKeychainWrapper
 
@@ -133,6 +137,8 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMSessionFetcher
     - leveldb-library
+    - MessageInputBar
+    - MessageKit
     - nanopb
     - pop
     - SwiftKeychainWrapper
@@ -157,10 +163,12 @@ SPEC CHECKSUMS:
   GoogleUtilities: 111a012f4c3a29c9e7c954c082fafd6ee3c999c0
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  MessageInputBar: e81c7535347f1f7b923de7080409a535a004b6e4
+  MessageKit: 29c1c87e5a396d2ca7a3f712e5171dc9aba42a1e
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   SwiftKeychainWrapper: 82c4c02cdc36f9a24f7edfcaab3e336401caa1a1
 
-PODFILE CHECKSUM: 865c20c13492f7d4ba0b3c1778c2ad8054094a64
+PODFILE CHECKSUM: e75053b2af4551d534a0ba9fc700a2ba4882ce12
 
 COCOAPODS: 1.6.0

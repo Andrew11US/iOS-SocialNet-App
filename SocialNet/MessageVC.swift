@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import MessageKit
+import MessageInputBar
+import MessageUI
 
-class MessageVC: UIViewController {
+class MessageVC: MessagesViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
