@@ -26,8 +26,8 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var signUpBtn: CustomButton!
     @IBOutlet weak var backBtn: UIButton!
     
-    let user = FIRAuth.auth()?.currentUser
-    let changeRequest = FIRAuth.auth()?.currentUser?.profileChangeRequest()
+    let user = Auth.auth().currentUser
+    let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,12 +65,14 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
         
         if let email = emailTextField.text, let pwd = passwordTextField.text {
             // Sign In via Firebase using email & password
-            FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, error) in
+            Auth.auth().signIn(withEmail: email, password: pwd, completion: { (user, error) in
                 
                 // If error not nil - create new user
                 if error != nil {
                     
-                    FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in
+                    Auth.auth().createUser(withEmail: email, password: pwd, completion: { (user, error) in
+                        
+                        guard let user = user?.user else { return }
                         
                         if error != nil {
                             
@@ -82,7 +84,7 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
                             print("Successfully created account & authenticated with Firebase")
                             
                             // Creating user
-                            if let user = user {
+//                            if let user = user {
 //                                let username = self.usernameTextField.text
                                 let userPicUrl = "gs://socialnet-4d29a.appspot.com/SocialNet.png"
 
@@ -97,7 +99,7 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
                                 
                                 // Complete sign up & assign UID & userData
                                 self.completeSignUp(id: user.uid, userData: userData as! Dictionary<String, String>)
-                            }
+//                            }
                         }
                     })
                     

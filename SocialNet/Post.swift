@@ -18,7 +18,7 @@ class Post {
     private var _name: String!
     private var _userPicUrl: String!
     private var _postKey: String!
-    private var _postRef: FIRDatabaseReference!
+    private var _postRef: DatabaseReference!
     
     var caption: String {
         return _caption

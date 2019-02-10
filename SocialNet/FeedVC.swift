@@ -35,7 +35,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             self.posts = []
             
             // Stores temporary data 
-            if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
+            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
                 for snap in snapshot {
                     print("SNAP: \(snap)")
                     if let postDict = snap.value as? Dictionary<String, AnyObject> {
@@ -121,7 +121,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         func setToDefault() {
             
-            let userID = FIRAuth.auth()?.currentUser?.uid
+            let userID = Auth.auth().currentUser?.uid
             
             let childUpdates = [
                 

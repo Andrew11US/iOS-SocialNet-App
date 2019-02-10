@@ -31,7 +31,7 @@ class SettingsVC: UIViewController {
         
         let keychainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
         print("ID removed from keychain \(keychainResult)")
-        try! FIRAuth.auth()?.signOut()
+        try! Auth.auth().signOut()
         performSegue(withIdentifier: Segues.toSignIn.rawValue, sender: nil)
         
         self.view.endEditing(true)

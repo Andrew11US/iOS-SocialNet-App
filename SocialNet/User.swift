@@ -15,7 +15,7 @@ class User {
     private var _userPicUrl: String!
     private var _userId: String!
     private var _name: String!
-    private var _userRef: FIRDatabaseReference!
+    private var _userRef: DatabaseReference!
     
     var username: String {
         return _username

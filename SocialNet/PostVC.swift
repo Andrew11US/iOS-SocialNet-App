@@ -20,7 +20,7 @@ class PostVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
     var imagePicker: UIImagePickerController!
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
     var imageSelected = false
-    let userID = FIRAuth.auth()?.currentUser?.uid
+    let userID = Auth.auth().currentUser?.uid
     var username: String!
     var name: String!
     var userPicUrl: String!
@@ -83,18 +83,32 @@ class PostVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
         if let imgData = UIImageJPEGRepresentation(img, 0.2) {
             
             let imgUid = NSUUID().uuidString
-            let metadata = FIRStorageMetadata()
+            let metadata = StorageMetadata()
             metadata.contentType = "image/jpeg"
             
-            DataService.ds.REF_POST_IMAGES.child(imgUid).put(imgData, metadata: metadata) { (metadata, error) in
+            DataService.ds.REF_POST_IMAGES.child(imgUid).putData(imgData, metadata: metadata) { (metadata, error) in
                 if error != nil {
                     print("Unable to upload image to Firebasee storage")
                 } else {
                     print("Successfully uploaded image to Firebase storage")
-                    let downloadURL = metadata?.downloadURL()?.absoluteString
-                    if let url = downloadURL {
-                        self.postToFirebase(imgUrl: url)
-                    }
+                    
+                    DataService.ds.REF_POST_IMAGES.child(imgUid).downloadURL(completion: { (url, error) in
+                        if let err = error {
+                            debugPrint(err.localizedDescription)
+                        } else {
+                            let downloadURL = url?.absoluteString
+                            
+                            if let url = downloadURL {
+                                self.postToFirebase(imgUrl: url)
+                            }
+                        }
+                    })
+                    
+//                    let downloadURL = metadata?.downloadURL()?.absoluteString
+//
+//                    if let url = downloadURL {
+//                        self.postToFirebase(imgUrl: url)
+//                    }
                 }
             }
         }
@@ -112,7 +126,7 @@ class PostVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
             "userID": userID as AnyObject,
             "username": username as AnyObject,
             "userPicUrl": userPicUrl as AnyObject,
-            "timeStamp": FIRServerValue.timestamp() as AnyObject,
+            "timeStamp": ServerValue.timestamp() as AnyObject,
             "name": name as AnyObject
         ]
         
@@ -170,8 +184,8 @@ class PostVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
                 
             } else {
                 
-                let ref = FIRStorage.storage().reference(forURL: self.userPicUrl)
-                ref.data(withMaxSize: 2 * 1024 * 1024, completion: { (data, error) in
+                let ref = Storage.storage().reference(forURL: self.userPicUrl)
+                ref.getData(maxSize: 2 * 1024 * 1024, completion: { (data, error) in
                     
                     if error != nil {
                         print("Unable to download image from Firebase storage")

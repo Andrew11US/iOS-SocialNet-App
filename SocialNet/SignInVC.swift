@@ -68,16 +68,18 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         
         // Sign in using E-mail and Password
         if let email = emailTextField.text, let pwd = passwordTextField.text {
-            FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, error) in
+            Auth.auth().signIn(withEmail: email, password: pwd, completion: { (user, error) in
+                
+                guard let user = user?.user else { return }
                 
                 if error == nil {
                     print("Email user authenticated with Firebase")
                     
-                    if let user = user {
+//                    if let user = user {
                         let userData = ["provider": user.providerID]
                         self.completeSignIn(id: user.uid, userData: userData)
                         
-                    }
+//                    }
                     
                 } else {
                     print("Unable to authenticate")
@@ -105,7 +107,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
             } else {
                 print("Successfully authenticated with Facebook")
                 
-                let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+                let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
                 self.firebaseAuth(credential)
             }
         }
@@ -114,9 +116,9 @@ class SignInVC: UIViewController, UITextFieldDelegate {
     }
     
     // Firebase authentication for Facebook logIn using credential
-    func firebaseAuth(_ credential: FIRAuthCredential) {
+    func firebaseAuth(_ credential: AuthCredential) {
         
-        FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
+        Auth.auth().signIn(with: credential, completion: { (user, error) in
             
             if error != nil {
                 

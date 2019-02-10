@@ -57,10 +57,10 @@ class SignUp3VC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         if let imgData = UIImageJPEGRepresentation(img, 0.2) {
             
             let imgUid = NSUUID().uuidString
-            let metadata = FIRStorageMetadata()
+            let metadata = StorageMetadata()
             metadata.contentType = "image/jpeg"
             
-            DataService.ds.REF_USER_IMAGES.child(imgUid).put(imgData, metadata: metadata) { (metadata, error) in
+            DataService.ds.REF_USER_IMAGES.child(imgUid).putData(imgData, metadata: metadata) { (metadata, error) in
                 
                 if error != nil {
                     print("Unable to upload image to Firebasee storage")
@@ -68,11 +68,24 @@ class SignUp3VC: UIViewController, UIImagePickerControllerDelegate, UINavigation
                 } else {
                     
                     print("Successfully uploaded image to Firebase storage")
-                    let downloadURL = metadata?.downloadURL()?.absoluteString
                     
-                    if let url = downloadURL {
-                        self.updateUserPicUrl(imgUrl: url)
-                    }
+                    DataService.ds.REF_USER_IMAGES.child(imgUid).downloadURL(completion: { (url, error) in
+                        if let err = error {
+                            debugPrint(err.localizedDescription)
+                        } else {
+                            let downloadURL = url?.absoluteString
+                            
+                            if let url = downloadURL {
+                                self.updateUserPicUrl(imgUrl: url)
+                            }
+                        }
+                    })
+                    
+//                    let downloadURL = metadata?.downloadURL()?.absoluteString
+//                    
+//                    if let url = downloadURL {
+//                        self.updateUserPicUrl(imgUrl: url)
+//                    }
                 }
             }
         }

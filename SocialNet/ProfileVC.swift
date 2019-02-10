@@ -55,7 +55,7 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         
         let keychainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
         print("ID removed from keychain \(keychainResult)")
-        try! FIRAuth.auth()?.signOut()
+        try! Auth.auth().signOut()
         performSegue(withIdentifier: "toSignIn", sender: nil)
         
         self.view.endEditing(true)
@@ -96,10 +96,10 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         if let imgData = UIImageJPEGRepresentation(img, 0.2) {
             
             let imgUid = NSUUID().uuidString
-            let metadata = FIRStorageMetadata()
+            let metadata = StorageMetadata()
             metadata.contentType = "image/jpeg"
             
-            DataService.ds.REF_USER_IMAGES.child(imgUid).put(imgData, metadata: metadata) { (metadata, error) in
+            DataService.ds.REF_USER_IMAGES.child(imgUid).putData(imgData, metadata: metadata) { (metadata, error) in
                 
                 if error != nil {
                     print("Unable to upload image to Firebasee storage")
@@ -107,11 +107,24 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
                 } else {
                     
                     print("Successfully uploaded image to Firebase storage")
-                    let downloadURL = metadata?.downloadURL()?.absoluteString
+//                    let downloadURL = metadata?.downloadURL()?.absoluteString
+                    DataService.ds.REF_USER_IMAGES.child(imgUid).downloadURL(completion: { (url, error) in
+                        if let err = error {
+                            debugPrint(err.localizedDescription)
+                        } else {
+                            let downloadURL = url?.absoluteString
+                            
+                            if let url = downloadURL {
+                                self.updateUserPicUrl(imgUrl: url)
+                            }
+
+                        }
+                    })
                     
-                    if let url = downloadURL {
-                        self.updateUserPicUrl(imgUrl: url)
-                    }
+                    
+//                    if let url = downloadURL {
+//                        self.updateUserPicUrl(imgUrl: url)
+//                    }
                 }
             }
         }
@@ -139,8 +152,8 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
                 
             } else {
                 
-                let ref = FIRStorage.storage().reference(forURL: self.userPicUrl)
-                ref.data(withMaxSize: 2 * 1024 * 1024, completion: { (data, error) in
+                let ref = Storage.storage().reference(forURL: self.userPicUrl)
+                ref.getData(maxSize: 2 * 1024 * 1024, completion: { (data, error) in
                     
                     if error != nil {
                         print("Unable to download image from Firebase storage")
@@ -244,7 +257,7 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
             self.posts = []
             
             // Stores temporary data
-            if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
+            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
                 for snap in snapshot {
                     print("SNAP: \(snap)")
                     if let postDict = snap.value as? Dictionary<String, AnyObject> {
