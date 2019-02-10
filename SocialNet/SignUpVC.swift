@@ -98,7 +98,7 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
                                 ]
                                 
                                 // Complete sign up & assign UID & userData
-                                self.completeSignUp(id: user.uid, userData: userData as! Dictionary<String, String>)
+                                self.completeSignUp(id: user.uid, userData: userData )
 //                            }
                         }
                     })

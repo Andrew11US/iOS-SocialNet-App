@@ -54,8 +54,11 @@ class PostVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
         return true
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
+        if let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage {
             imageAdd.image = image
             imageSelected = true
         } else {
@@ -80,7 +83,7 @@ class PostVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
             return
         }
         
-        if let imgData = UIImageJPEGRepresentation(img, 0.2) {
+        if let imgData = img.jpegData(compressionQuality: 0.2) {
             
             let imgUid = NSUUID().uuidString
             let metadata = StorageMetadata()
@@ -210,4 +213,14 @@ class PostVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
         }
     }
 
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
 }
