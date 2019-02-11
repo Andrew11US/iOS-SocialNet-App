@@ -11,7 +11,7 @@ import Foundation
 import Firebase
 import FirebaseAuth
 
-// Unique Identifier
+// User Unique Identifier
 let KEY_UID = "uid"
 
 // Segues between View Controllers

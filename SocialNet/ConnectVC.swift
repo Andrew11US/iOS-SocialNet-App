@@ -14,6 +14,7 @@ class ConnectVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var users = [User]()
+//    var user = User(username: "", name: "", userPicUrl: "")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +51,14 @@ class ConnectVC: UIViewController {
         
         self.collectionView.reloadData()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? MessageVC {
+            if let user = sender as? User {
+                destination.user = user
+            }
+        }
+    }
 
 
 
@@ -75,6 +84,14 @@ extension ConnectVC: UICollectionViewDelegate, UICollectionViewDataSource {
         } else {
             
             return ConnectCell()
+        }
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let user = users[indexPath.row]
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "toMessages", sender: user)
         }
         
     }

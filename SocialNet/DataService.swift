@@ -23,7 +23,7 @@ class DataService {
     private var _REF_BASE = DB_BASE
     private var _REF_POSTS = DB_BASE.child("posts")
     private var _REF_USERS = DB_BASE.child("users")
-    private var _REF_MESSAGES = DB_BASE.child("chatroom")
+    private var _REF_MESSAGES = DB_BASE.child("messages")
     
     // Storage references
     private var _REF_POST_IMAGES = STORAGE_BASE.child("post-pics")

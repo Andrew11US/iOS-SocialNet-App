@@ -84,7 +84,7 @@ class Post {
             self._name = name
         }
         
-        _postRef = DataService.ds.REF_POSTS.child(_postKey)
+        _postRef = DataService.ds.REF_POSTS.child(postKey)
         
     }
     

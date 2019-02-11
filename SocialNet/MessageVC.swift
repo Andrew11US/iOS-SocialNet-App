@@ -10,52 +10,107 @@ import UIKit
 import Firebase
 
 class MessageVC: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var inputField: UITextField!
+    @IBOutlet weak var sendBtn: UIButton!
+    @IBOutlet weak var dialogName: UILabel!
 
-    var users = [User]()
+    let userID = Auth.auth().currentUser?.uid
+    var user = User(username: "", name: "", userPicUrl: "")
+    var messages = [Message]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        DataService.ds.REF_USERS.observe(.value, with: { (snapshot) in
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        // Read data from database
+        DataService.ds.REF_MESSAGES.child("messageID").child("data").queryOrdered(byChild: "timeStamp").observe(.value, with: { (snapshot) in
             
             // Fixes dublicate posts issue
-            self.users = []
+            self.messages = []
             
             // Stores temporary data
             if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
                 for snap in snapshot {
-                    print("USER: \(snap.key)")
-                    if let userDict = snap.value as? Dictionary<String, AnyObject> {
+                    print("SNAP: \(snap)")
+                    if let messageDict = snap.value as? Dictionary<String, AnyObject> {
                         let key = snap.key
-                        let user = User(userId: key, userData: userDict)
-                        self.users.append(user)
-//                        print(self.users[0].userId)
+                        let message = Message(messageKey: key, messageData: messageDict)
+                        self.messages.append(message)
                     }
                 }
             }
-//            self.collectionView.reloadData()
+            
+            self.tableView.reloadData()
         })
         
-
+        self.dialogName.text = user.name
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        show()
+        
+        print(user.userId)
+    }
+    
+    @IBAction func sendBtnTapped(_ sender: UIButton) {
+        
+        if inputField.text != nil || inputField.text != "" {
+            sendMessage()
+            inputField.text = nil
+            print("Message sent!")
+        }
+    }
+    
+    @IBAction func inputEditingEnd(_ sender: UITextField) {
+        
+    }
+    
+    func sendMessage() {
+        let message: Dictionary<String, AnyObject> = [
+            
+            "content": inputField.text! as AnyObject,
+            "from": userID as AnyObject,
+            "timeStamp": ServerValue.timestamp() as AnyObject,
+            ]
+        
+        let key = DataService.ds.REF_POSTS.childByAutoId().key!
+        
+        let childUpdates = ["/messages/messageID/data/\(key)": message]
+        DataService.ds.REF_BASE.updateChildValues(childUpdates)
+        
     }
 
-    func show() {
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
-            for user in self.users {
-                print(user.name)
-            }
-        }
-//        DispatchQueue.main.async {
-//            for user in self.users {
-//                print(user.name)
-//            }
-//        }
+}
+
+extension MessageVC: UITableViewDelegate, UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messages.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let message = messages[indexPath.row]
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell") as? MessageCell {
+            
+            DispatchQueue.main.async {
+                cell.configureCell(message: message)
+                if message.from == self.userID {
+                    cell.layer.backgroundColor = UIColor.blue.cgColor
+                }
+            }
+            
+            return cell
+            
+        } else {
+            
+            return PostCell()
+        }
     }
 
 
