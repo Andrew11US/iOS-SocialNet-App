@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ueO-iD-06C">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nuW-NF-jhY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1894,21 +1894,73 @@
                                     <constraint firstAttribute="height" constant="50" id="ZvG-hV-UEK"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available to connect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VLh-Kr-8Jw">
+                                <rect key="frame" x="16" y="50" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="xd8-X1-15B"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <color key="textColor" red="0.72156862749999995" green="0.74509803919999995" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qyg-AN-k3t">
+                                <rect key="frame" x="16" y="88" width="343" height="521"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JI8-6N-MvZ">
+                                    <size key="itemSize" width="341" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ConnectCell" id="Syb-fO-odM" customClass="ConnectCell" customModule="SocialNet" customModuleProvider="target">
+                                        <rect key="frame" x="1" y="0.0" width="341" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rgt-EF-aeI">
+                                                    <rect key="frame" x="149.5" y="14.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="Rgt-EF-aeI" firstAttribute="centerX" secondItem="Syb-fO-odM" secondAttribute="centerX" id="Fk9-df-iDa"/>
+                                            <constraint firstItem="Rgt-EF-aeI" firstAttribute="centerY" secondItem="Syb-fO-odM" secondAttribute="centerY" id="Xhx-Ns-3wC"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="username" destination="Rgt-EF-aeI" id="PAb-Ns-HZu"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="a9U-i4-XvL" secondAttribute="trailing" id="82B-Jl-BJK"/>
+                            <constraint firstItem="qyg-AN-k3t" firstAttribute="leading" secondItem="zAw-B1-mcf" secondAttribute="leadingMargin" id="EfX-vK-i7A"/>
+                            <constraint firstItem="qyg-AN-k3t" firstAttribute="top" secondItem="VLh-Kr-8Jw" secondAttribute="bottom" constant="8" id="GDY-rD-YV4"/>
                             <constraint firstItem="a9U-i4-XvL" firstAttribute="leading" secondItem="zAw-B1-mcf" secondAttribute="leading" id="GIg-iH-SLq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VLh-Kr-8Jw" secondAttribute="trailing" id="XGL-kS-gB4"/>
                             <constraint firstAttribute="bottom" secondItem="a9U-i4-XvL" secondAttribute="bottom" id="kVz-Xz-gqX"/>
+                            <constraint firstItem="VLh-Kr-8Jw" firstAttribute="leading" secondItem="zAw-B1-mcf" secondAttribute="leadingMargin" id="nAv-Uo-f1X"/>
+                            <constraint firstItem="qyg-AN-k3t" firstAttribute="trailing" secondItem="zAw-B1-mcf" secondAttribute="trailingMargin" id="qmg-O0-kDY"/>
+                            <constraint firstItem="a9U-i4-XvL" firstAttribute="top" secondItem="qyg-AN-k3t" secondAttribute="bottom" constant="8" id="wLe-XQ-Tr7"/>
+                            <constraint firstItem="VLh-Kr-8Jw" firstAttribute="top" secondItem="eTT-VC-0Sy" secondAttribute="bottom" constant="30" id="xfc-ew-VLJ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="qyg-AN-k3t" id="K36-Kc-xJc"/>
                         <segue destination="ueO-iD-06C" kind="presentation" identifier="toMessage" modalTransitionStyle="crossDissolve" id="NkW-JU-bLV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PJe-rz-pLw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5919" y="1101"/>
+            <point key="canvasLocation" x="5917.6000000000004" y="1100.5997001499252"/>
         </scene>
         <!--NotificationVC-->
         <scene sceneID="8Wo-jY-fIr">
@@ -2052,11 +2104,11 @@
         <image name="noLiked" width="90" height="90"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tas-G0-moo"/>
+        <segue reference="d56-gr-MDP"/>
         <segue reference="hdW-If-ih7"/>
-        <segue reference="bTm-fa-nDk"/>
-        <segue reference="O6P-5O-wpW"/>
+        <segue reference="fNe-HU-NK7"/>
+        <segue reference="aR3-iv-wP9"/>
         <segue reference="6qo-lM-qrh"/>
-        <segue reference="WCd-TQ-Caj"/>
+        <segue reference="fNr-Qx-L2Y"/>
     </inferredMetricsTieBreakers>
 </document>

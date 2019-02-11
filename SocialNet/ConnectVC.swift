@@ -7,15 +7,92 @@
 //
 
 import UIKit
+import Firebase
 
 class ConnectVC: UIViewController {
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    var users = [User]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        getUserData()
+        
+        // Read data from database
+        DataService.ds.REF_USERS.queryOrdered(byChild: "username").observe(.value, with: { (snapshot) in
+            
+            // Fixes dublicate posts issue
+            self.users = []
+            
+            // Stores temporary data
+            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
+                for snap in snapshot {
+                    print("USER: \(snap)")
+                    if let userDict = snap.value as? Dictionary<String, AnyObject> {
+                        let key = snap.key
+                        let user = User(userId: key, userData: userDict)
+                        self.users.append(user)
+                    }
+                }
+            }
+            self.collectionView.reloadData()
+        })
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.collectionView.reloadData()
     }
 
 
 
+}
+
+extension ConnectVC: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return users.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let user = users[indexPath.row]
+        
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ConnectCell", for: indexPath) as? ConnectCell {
+            
+            DispatchQueue.main.async {
+                cell.configureCell(username: user.name)
+            }
+            
+            return cell
+            
+        } else {
+            
+            return ConnectCell()
+        }
+        
+    }
+    
+    func getUserData() {
+        
+        let ref = DataService.ds.REF_USER_CURRENT
+        ref.observe(.value, with: { (snapshot) in
+            
+            let value = snapshot.value as? NSDictionary
+            let userPic = value?["userPicUrl"] as? String ?? ""
+            let username = value?["username"] as? String ?? ""
+            let name = value?["name"] as? String ?? ""
+            
+            print("UPU:" + userPic)
+            print("UN:" + username)
+            print("NAME:" + name)
+        })
+        
+    }
 }

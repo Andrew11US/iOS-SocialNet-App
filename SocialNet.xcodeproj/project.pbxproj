@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01F2C4FE2211DCC7005910E6 /* ConnectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F2C4FD2211DCC7005910E6 /* ConnectCell.swift */; };
 		895B8477D26C13A0B2B0BACE /* Pods_SocialNet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076785F0BAE40539470C6BC3 /* Pods_SocialNet.framework */; };
 		902426751DE890D300A8D94A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902426741DE890D300A8D94A /* AppDelegate.swift */; };
 		902426771DE890D300A8D94A /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902426761DE890D300A8D94A /* SignInVC.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01F2C4FD2211DCC7005910E6 /* ConnectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectCell.swift; sourceTree = "<group>"; };
 		076785F0BAE40539470C6BC3 /* Pods_SocialNet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialNet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		514640B8C5F4588BFD2C7A77 /* Pods-SocialNet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialNet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialNet/Pods-SocialNet.debug.xcconfig"; sourceTree = "<group>"; };
 		6DB62236BD5DA921D1D7AF24 /* Pods-SocialNet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialNet.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialNet/Pods-SocialNet.release.xcconfig"; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				903DECA51EC2583D00B0B1D2 /* CustomImageView.swift */,
 				905507781EC2FDCC0000F6A2 /* PostCell.swift */,
 				90315AFD1ECCA448006EE467 /* ProfilePostCell.swift */,
+				01F2C4FD2211DCC7005910E6 /* ConnectCell.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 			files = (
 				90DC99B3202A6B260062AF05 /* SettingsVC.swift in Sources */,
 				90DC99BB202A6B990062AF05 /* MessageVC.swift in Sources */,
+				01F2C4FE2211DCC7005910E6 /* ConnectCell.swift in Sources */,
 				90F16CA4202BBE33008115A6 /* SignUp3VC.swift in Sources */,
 				9090086F1EC4A05700977BD3 /* ProfileVC.swift in Sources */,
 				9060034D1EC209F40001E24F /* RoundedView.swift in Sources */,
