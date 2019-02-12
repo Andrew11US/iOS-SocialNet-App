@@ -97,20 +97,22 @@ extension ConnectVC: UICollectionViewDelegate, UICollectionViewDataSource {
                 
                 var exists = false
                 
-                for key in currentUserMessages.messageKeys.keys {
+                for (key, value) in currentUserMessages.messageKeys {
                     if key == user.userId {
                         print("Message exists for: ", key)
+                        user.assingDialogKey(key: value)
+//                        user.assingDialogKey(key: key)
                         exists = true
                     }
                 }
                 
                 if !exists {
-                    createDialog(with: user)
+                    user.assingDialogKey(key: createDialog(with: user))
                 }
                 
             } else {
                 print("NO dialogs!")
-                createDialog(with: user)
+                user.assingDialogKey(key: createDialog(with: user))
             }
             
             DispatchQueue.main.async {
@@ -139,7 +141,7 @@ extension ConnectVC: UICollectionViewDelegate, UICollectionViewDataSource {
         })
     }
     
-    func createDialog(with: User) {
+    func createDialog(with: User) -> String {
         
         let key = DataService.ds.REF_MESSAGES.childByAutoId().key!
         
@@ -154,7 +156,8 @@ extension ConnectVC: UICollectionViewDelegate, UICollectionViewDataSource {
         } else {
             print("Unable to send message for yourself")
         }
-
+        
+        return key
     }
     
 }

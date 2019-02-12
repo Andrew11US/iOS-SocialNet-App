@@ -17,6 +17,7 @@ class User {
     private var _name: String!
     private var _userRef: DatabaseReference!
     private var _messageKeys: Dictionary<String, String>!
+    private var _dialogKey: String!
     
     var username: String {
         return _username
@@ -36,6 +37,10 @@ class User {
     
     var messageKeys: Dictionary<String, String> {
         return _messageKeys
+    }
+    
+    var dialogKey: String {
+        return _dialogKey
     }
     
     init(username: String, name: String, userPicUrl: String) {
@@ -63,6 +68,10 @@ class User {
     init(userID: String, messageKeys: Dictionary<String, String>) {
         self._userId = userID
         self._messageKeys = messageKeys
+    }
+    
+    func assingDialogKey(key: String) {
+        self._dialogKey = key
     }
     
 //    convenience init() {

@@ -36,8 +36,10 @@ class MessageVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        print(user.dialogKey)
+        
         // Read data from database
-        DataService.ds.REF_MESSAGES.child("messageID").child("data").queryOrdered(byChild: "timeStamp").observe(.value, with: { (snapshot) in
+        DataService.ds.REF_MESSAGES.child(user.dialogKey).queryOrdered(byChild: "timeStamp").observe(.value, with: { (snapshot) in
             
             // Fixes dublicate posts issue
             self.messages = []
@@ -56,8 +58,8 @@ class MessageVC: UIViewController {
             
             self.tableView.reloadData()
         })
-        
-        DataService.ds.REF_MESSAGES.child("messageID").observe(DataEventType.childAdded) { (snapshot) in
+//        notifyOnChanges()
+        DataService.ds.REF_MESSAGES.child(user.dialogKey).observe(DataEventType.childAdded) { (snapshot) in
             self.notifyOnChanges()
         }
         
@@ -100,7 +102,7 @@ class MessageVC: UIViewController {
         
         let key = DataService.ds.REF_POSTS.childByAutoId().key!
         
-        let childUpdates = ["/messages/messageID/data/\(key)": message]
+        let childUpdates = ["/messages/\(user.dialogKey)/\(key)": message]
         DataService.ds.REF_BASE.updateChildValues(childUpdates)
         
     }
