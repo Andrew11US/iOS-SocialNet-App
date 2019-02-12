@@ -58,13 +58,14 @@ class MessageVC: UIViewController {
             
             self.tableView.reloadData()
         })
-//        notifyOnChanges()
-        DataService.ds.REF_MESSAGES.child(user.dialogKey).observe(DataEventType.childAdded) { (snapshot) in
+        
+        DataService.ds.REF_MESSAGES.child(user.dialogKey).observeSingleEvent(of: DataEventType.childChanged) { (snapshot) -> Void in
+            
+            print("New Message!")
             self.notifyOnChanges()
         }
         
         self.dialogName.text = user.name
-//        notifyOnChanges()
     }
     
     override func viewDidAppear(_ animated: Bool) {
