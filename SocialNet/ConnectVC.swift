@@ -14,7 +14,9 @@ class ConnectVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var users = [User]()
-//    var user = User(username: "", name: "", userPicUrl: "")
+    let userID = Auth.auth().currentUser?.uid
+    
+    var currentUserMessages = User(userID: (Auth.auth().currentUser?.uid)!, messageKeys: [:])
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +24,7 @@ class ConnectVC: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        getUserData()
+//        getUserData()
         
         // Read data from database
         DataService.ds.REF_USERS.queryOrdered(byChild: "username").observe(.value, with: { (snapshot) in
@@ -33,7 +35,7 @@ class ConnectVC: UIViewController {
             // Stores temporary data
             if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
                 for snap in snapshot {
-                    print("USER: \(snap)")
+//                    print("USER: \(snap)")
                     if let userDict = snap.value as? Dictionary<String, AnyObject> {
                         let key = snap.key
                         let user = User(userId: key, userData: userDict)
@@ -50,6 +52,7 @@ class ConnectVC: UIViewController {
         super.viewDidAppear(animated)
         
         self.collectionView.reloadData()
+        getUserData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -59,8 +62,6 @@ class ConnectVC: UIViewController {
             }
         }
     }
-
-
 
 }
 
@@ -90,26 +91,70 @@ extension ConnectVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let user = users[indexPath.row]
-        DispatchQueue.main.async {
-            self.performSegue(withIdentifier: "toMessages", sender: user)
+        
+        if userID != user.userId {
+            if !currentUserMessages.messageKeys.keys.isEmpty {
+                
+                var exists = false
+                
+                for key in currentUserMessages.messageKeys.keys {
+                    if key == user.userId {
+                        print("Message exists for: ", key)
+                        exists = true
+                    }
+                }
+                
+                if !exists {
+                    createDialog(with: user)
+                }
+                
+            } else {
+                print("NO dialogs!")
+                createDialog(with: user)
+            }
+            
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "toMessages", sender: user)
+            }
+            
+        } else {
+            debugPrint("Message for yourself")
         }
+
+        
+        
         
     }
     
     func getUserData() {
         
-        let ref = DataService.ds.REF_USER_CURRENT
+        let ref = DataService.ds.REF_USER_CURRENT.child("/myMessages")
         ref.observe(.value, with: { (snapshot) in
             
-            let value = snapshot.value as? NSDictionary
-            let userPic = value?["userPicUrl"] as? String ?? ""
-            let username = value?["username"] as? String ?? ""
-            let name = value?["name"] as? String ?? ""
+            let value = snapshot.value as? Dictionary<String, String> ?? [:]
             
-            print("UPU:" + userPic)
-            print("UN:" + username)
-            print("NAME:" + name)
+            self.currentUserMessages = User(userID: self.userID!, messageKeys: value)
+
+            print(self.currentUserMessages.messageKeys.keys)
         })
-        
     }
+    
+    func createDialog(with: User) {
+        
+        let key = DataService.ds.REF_MESSAGES.childByAutoId().key!
+        
+        if userID != with.userId {
+            let childUpdates = [
+                "/messages/\(key)": "dialog created",
+                "/users/\(userID!)/myMessages/\(with.userId)": key,
+                "/users/\(with.userId)/myMessages/\(userID!)": key
+                
+            ]
+            DataService.ds.REF_BASE.updateChildValues(childUpdates)
+        } else {
+            print("Unable to send message for yourself")
+        }
+
+    }
+    
 }

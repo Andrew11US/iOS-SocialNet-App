@@ -16,6 +16,7 @@ class User {
     private var _userId: String!
     private var _name: String!
     private var _userRef: DatabaseReference!
+    private var _messageKeys: Dictionary<String, String>!
     
     var username: String {
         return _username
@@ -31,6 +32,10 @@ class User {
     
     var name: String {
         return _name
+    }
+    
+    var messageKeys: Dictionary<String, String> {
+        return _messageKeys
     }
     
     init(username: String, name: String, userPicUrl: String) {
@@ -54,5 +59,16 @@ class User {
             self._userPicUrl = userPicUrl
         }
     }
+    
+    init(userID: String, messageKeys: Dictionary<String, String>) {
+        self._userId = userID
+        self._messageKeys = messageKeys
+    }
+    
+//    convenience init() {
+//        
+//        _userId = ""
+//        _messageKeys = [:]
+//    }
     
 }

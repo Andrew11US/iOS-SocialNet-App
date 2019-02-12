@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import UserNotifications
 
 class MessageVC: UIViewController {
     
@@ -23,6 +24,15 @@ class MessageVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: {didAlow, Error in
+            if didAlow {
+                print("Granted!")
+            } else {
+                print("No permission")
+            }
+            
+        })
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -35,7 +45,7 @@ class MessageVC: UIViewController {
             // Stores temporary data
             if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
                 for snap in snapshot {
-                    print("SNAP: \(snap)")
+//                    print("SNAP: \(snap)")
                     if let messageDict = snap.value as? Dictionary<String, AnyObject> {
                         let key = snap.key
                         let message = Message(messageKey: key, messageData: messageDict)
@@ -47,7 +57,12 @@ class MessageVC: UIViewController {
             self.tableView.reloadData()
         })
         
+        DataService.ds.REF_MESSAGES.child("messageID").observe(DataEventType.childAdded) { (snapshot) in
+            self.notifyOnChanges()
+        }
+        
         self.dialogName.text = user.name
+//        notifyOnChanges()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -69,6 +84,12 @@ class MessageVC: UIViewController {
         
     }
     
+    @IBAction func backBtnTapped(_ sender: UIButton) {
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
     func sendMessage() {
         let message: Dictionary<String, AnyObject> = [
             
@@ -81,6 +102,20 @@ class MessageVC: UIViewController {
         
         let childUpdates = ["/messages/messageID/data/\(key)": message]
         DataService.ds.REF_BASE.updateChildValues(childUpdates)
+        
+    }
+    
+    func notifyOnChanges() {
+        
+        let content = UNMutableNotificationContent()
+        content.title = "New Message"
+        content.subtitle = "Hello"
+        content.body = "Open to see"
+        content.badge = 1
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
+        let request = UNNotificationRequest(identifier: "Timer done", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         
     }
 
